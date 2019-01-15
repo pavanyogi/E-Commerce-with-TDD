@@ -1,0 +1,15 @@
+services:
+  app.service.customer:
+    class: AppBundle\Service\CustomerService
+    arguments:
+    - "@doctrine.orm.entity_manager"
+
+  app.listener.request:
+    class: AppBundle\EventListener\RequestListener
+    tags:
+    - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+  app.listener.response:
+    class: AppBundle\EventListener\ResponseListener
+    tags:
+    - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
