@@ -1,0 +1,1 @@
+=tests/AppBundle/Command :<rtests/AppBundle/Command

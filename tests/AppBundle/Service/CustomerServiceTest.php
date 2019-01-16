@@ -1,16 +1,15 @@
 <?php
 namespace tests\PhpunitBundle\Service;
 
-use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\Customer;
 use AppBundle\Repository\CustomerRepository;
 use AppBundle\Service\CustomerService;
-use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class CustomerServiceTest extends TestCase
+class CustomerServiceTest extends KernelTestCase
 {
     /** @var CustomerRepository|PHPUnit_Framework_MockObject_MockObject */
     private $customerRepositoryMock;
@@ -30,7 +29,13 @@ class CustomerServiceTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->customerService = new CustomerService($this->entityManagerInterfaceMock);
+        $kernel = self::bootKernel();
+        $container = $kernel->getContainer();
+        $this->customerService = new CustomerService();
+        $this->customerService->setServiceContainer($container->get('service_container'));
+        $this->customerService->setEntityManager($this->entityManagerInterfaceMock);
+        $this->customerService->setLogger($container->get('monolog.logger.exception'));
+        $this->customerService->setTranslator($container->get('translator.default'));
     }
 
     protected function tearDown()

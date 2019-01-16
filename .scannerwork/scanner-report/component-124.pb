@@ -1,0 +1,1 @@
+|src/AppBundle/Constants :{rsrc/AppBundle/Constants

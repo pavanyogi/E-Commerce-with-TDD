@@ -1,0 +1,1 @@
+~src/AppBundle :}rsrc/AppBundle

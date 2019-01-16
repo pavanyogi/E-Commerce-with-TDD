@@ -2,7 +2,6 @@
 
 namespace AppBundle\Tests\EventListener;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,16 +9,22 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use AppBundle\EventListener\ResponseListener;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class ResponseListenerTest extends TestCase
+class ResponseListenerTest extends KernelTestCase
 {
     private $dispatcher;
     private $kernel;
 
     protected function setUp() {
         $this->dispatcher = new EventDispatcher();
-        $listener = new ResponseListener();
-        $this->dispatcher->addListener(KernelEvents::RESPONSE, array($listener, 'onKernelResponse'));
+        $container = (self::bootKernel())->getContainer();
+        $responseListener = new ResponseListener();
+        $responseListener->setServiceContainer($container->get('service_container'));
+        $responseListener->setEntityManager($container->get('doctrine')->getManager());
+        $responseListener->setLogger($container->get('monolog.logger.exception'));
+        $responseListener->setTranslator($container->get('translator.default'));
+        $this->dispatcher->addListener(KernelEvents::RESPONSE, array($responseListener, 'onKernelResponse'));
         $this->kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
     }
 

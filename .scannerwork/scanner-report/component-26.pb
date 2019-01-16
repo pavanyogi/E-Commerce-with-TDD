@@ -1,0 +1,1 @@
+tests/report/tests-junit.xml 2xmlXKhrtests/report/tests-junit.xml

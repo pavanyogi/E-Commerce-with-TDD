@@ -2,9 +2,10 @@
 
 namespace AppBundle\EventListener;
 
+use AppBundle\Service\BaseService;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
-class ResponseListener
+class ResponseListener extends BaseService
 {
     public function onKernelResponse(FilterResponseEvent $event)
     {

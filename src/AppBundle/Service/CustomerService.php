@@ -6,15 +6,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\Customer;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-class CustomerService
+class CustomerService extends BaseService
 {
-    /*private $customerRepository;*/
-    private $entityManager;
-
-    public function __construct(EntityManagerInterface $entityManager) {
-        $this->entityManager = $entityManager;
-    }
-
     public function getAll()
     {
         return $this->entityManager->getRepository(Customer::class)->findAll();

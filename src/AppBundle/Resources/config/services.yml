@@ -1,15 +1,38 @@
 services:
+  app.base_service:
+    abstract: true
+    class: AppBundle\Service\BaseService
+    calls:
+    - [ setServiceContainer, ["@service_container"] ]
+    - [ setEntityManager, ["@doctrine.orm.entity_manager"] ]
+    - [ setLogger, ["@monolog.logger.exception"] ]
+    - [ setTranslator, ["@translator.default"] ]
+
   app.service.customer:
     class: AppBundle\Service\CustomerService
-    arguments:
-    - "@doctrine.orm.entity_manager"
+    parent: app.base_service
+    public: true
+
+  app.service.product:
+    class: AppBundle\Service\ProductService
+    parent: app.base_service
+    public: true
 
   app.listener.request:
     class: AppBundle\EventListener\RequestListener
+    parent: app.base_service
     tags:
-    - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+    public: true
 
   app.listener.response:
     class: AppBundle\EventListener\ResponseListener
+    parent: app.base_service
     tags:
-    - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+      - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+    public: true
+
+  app.api_response_service:
+    class: AppBundle\Service\ApiResponseService
+    parent: app.base_service
+    public: true

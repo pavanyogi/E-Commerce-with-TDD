@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AppBundle\Tests\EventListener\ResponseListenerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/ResponseListenerTest.php" tests="1" assertions="0" errors="1" failures="0" skipped="0" time="0.048296">
+    <testcase name="testFilterDoesNothingForSubRequests" class="AppBundle\Tests\EventListener\ResponseListenerTest" classname="AppBundle.Tests.EventListener.ResponseListenerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/ResponseListenerTest.php" line="35" assertions="0" time="0.048296">
+      <error type="PHPUnit\Framework\Error\Notice">AppBundle\Tests\EventListener\ResponseListenerTest::testFilterDoesNothingForSubRequests
+Undefined variable: container
+
+/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/ResponseListenerTest.php:22
+</error>
+    </testcase>
+  </testsuite>
+</testsuites>

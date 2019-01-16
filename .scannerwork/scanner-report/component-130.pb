@@ -1,0 +1,1 @@
+‚ src/AppBundle/Entity/Product.php 2phpXÚhr src/AppBundle/Entity/Product.php

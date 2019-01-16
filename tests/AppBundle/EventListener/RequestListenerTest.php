@@ -2,15 +2,15 @@
 
 namespace AppBundle\Tests\EventListener;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use AppBundle\EventListener\RequestListener;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class RequestListenerTest extends TestCase
+class RequestListenerTest extends KernelTestCase
 {
     /**
      * @expectedException \Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException
@@ -24,7 +24,13 @@ class RequestListenerTest extends TestCase
         $request->server->set('REMOTE_ADDR', '1.1.1.1');
         $request->headers->set('FORWARDED', 'for=2.2.2.2');
         $request->headers->set('X_FORWARDED_FOR', '3.3.3.3');
-        $dispatcher->addListener(KernelEvents::REQUEST, array(new RequestListener(),
+        $container = (self::bootKernel())->getContainer();
+        $requestListener = new RequestListener();
+        $requestListener->setServiceContainer($container->get('service_container'));
+        $requestListener->setEntityManager($container->get('doctrine')->getManager());
+        $requestListener->setLogger($container->get('monolog.logger.exception'));
+        $requestListener->setTranslator($container->get('translator.default'));
+        $dispatcher->addListener(KernelEvents::REQUEST, array($requestListener,
             'onKernelRequest'));
         $event = new GetResponseEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST);
         $dispatcher->dispatch(KernelEvents::REQUEST, $event);

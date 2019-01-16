@@ -9,13 +9,14 @@
  */
 namespace AppBundle\EventListener;
 
+use AppBundle\Service\BaseService;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 /**
  * Validates Requests.
  *
  * @author Magnus Nordlander <magnus@fervo.se>
  */
-class RequestListener
+class RequestListener extends BaseService
 {
     /**
      * Performs the validation.
