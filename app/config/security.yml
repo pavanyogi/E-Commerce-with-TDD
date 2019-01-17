@@ -2,10 +2,18 @@
 # https://symfony.com/doc/current/security.html
 security:
 
+    encoders:
+        FOS\UserBundle\Model\UserInterface:
+            algorithm:           sha1
+            encode_as_base64:    false
+            iterations:          1
+
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
             memory: ~
+        fos_userbundle:
+            id: fos_user.user_provider.username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -14,8 +22,8 @@ security:
             security: false
 
         main:
-            anonymous: ~
-            logout_on_user_change: true
+            anonymous: true
+    access_control: ~
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate

@@ -27,4 +27,15 @@ class ApiResponseService extends BaseService
             $responseKey => $data,
         ];
     }
+
+    public function createAgentApiSuccessResponse($responseKey, $data)
+    {
+        return [
+            'Response' => [
+                'reasonCode' => '0',
+                'reasonText' => $this->translator->trans('api.response.success.message'),
+                $responseKey => $data,
+            ]
+        ];
+    }
 }

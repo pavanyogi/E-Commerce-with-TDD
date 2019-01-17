@@ -6,11 +6,20 @@
 api:
   response:
     error:
+      internal_error: An internal error has been occoured.
+      invalid_credential: Invalid Credentials found in the requesr content.
+      invalid_product_code: Invalid Product Code is provided in the request.
+      disabled_uesr: The user is disabled currently.
+      invalid_role: Invalid Role found for the given user.
+      invalid_content_type: Content-Type not set in the header or the content type/content is invalid.
+      invalid_user_name: Invalid User Name found.
+      invalid_authorization_token: Invalid Authorization Token.
+      invalid_authorization_or_username: Invalid Authorization Token or User Name found.
 
     success:
       message: success
-      product_created: Product Created Successfully
-      product_updated: Product Updated Successfully
+      product_created: Product Created Successfully.
+      product_updated: Product Updated Successfully.
 
     failure:
       message: failure

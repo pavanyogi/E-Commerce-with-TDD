@@ -7,67 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6937c8d-ca2d-463c-a0fb-b988159a978b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/ProductControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Service/AgentService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Service/AuthenticateAutherizeService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony_3.4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony_3.4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AgentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AgentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CalculatorController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/ApiResponseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Service/ApiResponseService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Service/ProductService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/CalculatorControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/EventListener/ResponseListenerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/EventListener/ResponseListenerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Service/ProductServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Service/ProductServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/AppBundle.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/AppBundle.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Command/CreateAgentCommand.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Command/CreateAgentCommand.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Command/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Command/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Command/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Command/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Constants/ErrorConstants.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Constants/ErrorConstants.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Constants/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Constants/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Constants/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Constants/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/AgentController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/AgentController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/CalculatorController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/CalculatorController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/CustomerController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/CustomerController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/DefaultController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/OrderController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/OrderController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/ProductController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/ProductController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Entity/Customer.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Entity/Customer.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Entity/OrderDetail.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Entity/OrderDetail.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Entity/Orders.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Entity/Orders.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Entity/Product.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Entity/Product.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Entity/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Entity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Entity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/EventListener/RequestListener.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/EventListener/RequestListener.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/EventListener/ResponseListener.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/EventListener/ResponseListener.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/EventListener/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/EventListener/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/EventListener/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/EventListener/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Repository/CustomerRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Repository/CustomerRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Repository/OrderDetailRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Repository/OrderDetailRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Repository/OrdersRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Repository/OrdersRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Repository/ProductRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Repository/ProductRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Repository/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Service/ApiResponseService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/ApiResponseService.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Service/BaseService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/BaseService.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Service/CustomerService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/CustomerService.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Service/ProductService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/ProductService.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Service/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/Service/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/testdox.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/testdox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/tests-clover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/tests-clover.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/tests-junit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/tests-junit.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +62,7 @@
     <session id="-1873217236">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -114,9 +71,9 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.68" value="1" />
-          <entry key="project.open.time.74" value="1" />
+          <entry key="project.open.time.74" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -125,11 +82,11 @@
           <entry key="html" value="4" />
           <entry key="json" value="2" />
           <entry key="log" value="1" />
-          <entry key="php" value="217" />
+          <entry key="php" value="242" />
           <entry key="properties" value="1" />
           <entry key="txt" value="1" />
           <entry key="xml" value="1" />
-          <entry key="yml" value="28" />
+          <entry key="yml" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -137,26 +94,26 @@
           <entry key="HTML" value="4" />
           <entry key="JSON" value="2" />
           <entry key="Log" value="1" />
-          <entry key="PHP" value="217" />
+          <entry key="PHP" value="242" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="12" />
-          <entry key="YAML" value="28" />
+          <entry key="YAML" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dist" value="126" />
           <entry key="json" value="2" />
-          <entry key="php" value="8647" />
-          <entry key="yml" value="284" />
+          <entry key="php" value="10083" />
+          <entry key="yml" value="731" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="PHP" value="8647" />
+          <entry key="PHP" value="10083" />
           <entry key="XML" value="126" />
-          <entry key="YAML" value="284" />
+          <entry key="YAML" value="731" />
         </counts>
       </usages-collector>
     </session>
@@ -164,58 +121,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductController.php">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AuthenticateAutherizeService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+            <state relative-caret-position="89">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
+                <element signature="e#190#216#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/ProductControllerTest.php">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AgentService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+            <state relative-caret-position="186">
+              <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
               <folding>
-                <element signature="e#46#98#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProductService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
-              <folding>
-                <element signature="e#36#65#0#PHP" expanded="true" />
+                <element signature="e#6#116#0#PHP" expanded="true" />
+                <element signature="e#147#186#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/AppBundle/Service/ProductServiceTest.php">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="277" column="5" lean-forward="true" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="22" />
               <folding>
-                <element signature="e#46#75#0#PHP" expanded="true" />
+                <element signature="e#6#192#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="87" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -224,10 +179,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CustomerService</find>
-      <find>ProductService</find>
-      <find>findon</find>
-      <find>uni</find>
       <find>INTERNAL_ERR</find>
       <find>main</find>
       <find>nested</find>
@@ -254,6 +205,10 @@
       <find>exception</find>
       <find>stric</find>
       <find>$this-&gt;serviceContainer</find>
+      <find>create</find>
+      <find>invalid</find>
+      <find>role</find>
+      <find>usermana</find>
     </findStrings>
     <replaceStrings>
       <replace>customer</replace>
@@ -270,17 +225,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CalculatorController.php" />
-        <option value="$PROJECT_DIR$/tests/bootstrap.php" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/web/app_test.php" />
         <option value="$PROJECT_DIR$/app/config/config_test.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/DemoCustomerService.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Service/DemoCustomerServiceTest.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Command/CreateUserCommand.php" />
         <option value="$PROJECT_DIR$/phpunit.xml" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/CalculatorControllerTest.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CustomerRepository.php" />
         <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Request.php" />
@@ -298,28 +248,34 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Constants/ErrrorConstants.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Service/ApiResponseService.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/translations/message.en.yml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/CustomerService.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/BaseService.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Service/CustomerServiceTest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/EventListener/ResponseListener.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/EventListener/RequestListenerTest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/EventListener/ResponseListenerTest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/ApiResponseService.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AgentController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/ProductService.php" />
         <option value="$PROJECT_DIR$/phpunit.xml.dist" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/ProductControllerTest.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Service/ProductServiceTest.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AgentController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/ApiResponseService.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/AgentService.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/AuthenticateAutherizeService.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php" />
       </list>
     </option>
   </component>
@@ -388,16 +344,19 @@
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/parser-lib" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
     </include_path>
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="57" />
-    <option name="y" value="16" />
-    <option name="width" value="1297" />
-    <option name="height" value="696" />
+    <option name="y" value="44" />
+    <option name="width" value="1299" />
+    <option name="height" value="704" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -410,17 +369,6 @@
             <path>
               <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
@@ -445,20 +393,6 @@
               <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
               <item name="EventListener" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -466,22 +400,7 @@
               <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
@@ -547,12 +466,6 @@
             <path>
               <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
               <item name="var" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -569,7 +482,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../B2BE-platform" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../live_project" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
@@ -587,7 +500,7 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.ApiResponseService.php">
-    <configuration name="ApiResponseService.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/symfony_3.4/AppBundle/Service/ApiResponseService.php">
+    <configuration name="ApiResponseService.php" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://localhost:63342/symfony_3.4/AppBundle/Service/ApiResponseService.php">
       <method v="2" />
     </configuration>
     <configuration name="CreateUserCommandTest.testExecute" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -621,15 +534,14 @@
       <item itemvalue="PHP Web Page.App" />
       <item itemvalue="PHPUnit.Unnamed" />
       <item itemvalue="PHPUnit.Unnamed (1)" />
+      <item itemvalue="JavaScript Debug.ApiResponseService.php" />
       <item itemvalue="PHPUnit.CustomerServiceTest" />
       <item itemvalue="PHPUnit.CustomerServiceTest.testDeleteOne" />
       <item itemvalue="PHPUnit.CreateUserCommandTest.testExecute" />
       <item itemvalue="PHPUnit.CustomerRepositoryTest.find_all_returns_all_records" />
-      <item itemvalue="JavaScript Debug.ApiResponseService.php" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.ApiResponseService.php" />
         <item itemvalue="PHPUnit.CustomerRepositoryTest.find_all_returns_all_records" />
         <item itemvalue="PHPUnit.CreateUserCommandTest.testExecute" />
         <item itemvalue="PHPUnit.CustomerServiceTest" />
@@ -657,7 +569,8 @@
       <workItem from="1547629398981" duration="14576000" />
       <workItem from="1547651208897" duration="12524000" />
       <workItem from="1547701487964" duration="2943000" />
-      <workItem from="1547704710940" duration="16019000" />
+      <workItem from="1547704710940" duration="18525000" />
+      <workItem from="1547726304638" duration="6032000" />
     </task>
     <servers />
   </component>
@@ -694,7 +607,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119663000" />
+    <option name="totallyTimeSpent" value="128201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,9 +620,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="-4" width="1319" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25765908" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2584446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -760,76 +672,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Command/CreateUserCommandTest.php" />
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Command/CreateAgentCommandTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Orders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CustomerRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/OrderDetail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/report/AppBundle.php.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/report/testdox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/ErrrorConstants.php" />
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Service/ApiResponseService.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/CreateAgentCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/translations/message.en.yml" />
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/var/logs/exception.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="255">
@@ -844,27 +687,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CalculatorController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CalculatorController.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/ResponseListener.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -879,13 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/CustomerService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -917,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Test/KernelTestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -938,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/EventListener/RequestListenerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AppBundle/Repository/CustomerRepositoryTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -952,13 +758,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
     <entry file="file://$PROJECT_DIR$/sonar-project.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -994,27 +794,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/CalculatorControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="94" column="27" lean-forward="true" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/CalculatorControllerTest.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding>
-            <element signature="e#40#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AgentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1032,13 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1046,47 +823,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/ProductControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
-          <folding>
-            <element signature="e#46#98#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ApiResponseService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="e#6#116#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProductService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+        <state relative-caret-position="141">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="e#36#65#0#PHP" expanded="true" />
           </folding>
@@ -1097,9 +837,192 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="277" column="5" lean-forward="true" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CustomerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding>
-            <element signature="e#46#75#0#PHP" expanded="true" />
+            <element signature="e#69#111#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/UserInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/ProductControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+          <folding>
+            <element signature="e#46#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/CustomerService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ApiResponseService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#6#116#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AgentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="120" column="25" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/translations/messages.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="87" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/ErrorConstants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#6#192#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/GeneralConstants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AuthenticateAutherizeService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#190#216#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/EventListener/RequestListenerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/AgentService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
+          <folding>
+            <element signature="e#6#116#0#PHP" expanded="true" />
+            <element signature="e#147#186#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/RequestListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>

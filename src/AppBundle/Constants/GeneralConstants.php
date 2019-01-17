@@ -14,6 +14,8 @@ final class GeneralConstants
     const DETAIL_PRODUCT_URL = '/api/product/detail';
     const CREATE_PRODUCT_URL = '/api/product/create';
 
+    const ROLE_AGENT = 'ROLE_AGENT';
+
     public static $urlMethodMap = [
         self::GET_PRODUCT_URL => [
             'method' => Request::METHOD_GET

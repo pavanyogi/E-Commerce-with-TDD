@@ -36,3 +36,8 @@ services:
     class: AppBundle\Service\ApiResponseService
     parent: app.base_service
     public: true
+
+  app.agent_service:
+    class: AppBundle\Service\AgentService
+    parent: app.base_service
+    public: true

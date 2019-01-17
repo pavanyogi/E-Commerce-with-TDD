@@ -23,13 +23,18 @@ class RequestListener extends BaseService
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
+        // Checking if the request is a SubRequest then return it
         if (!$event->isMasterRequest()) {
             return;
         }
+
+        // Checking the Proxies
         $request = $event->getRequest();
         if ($request::getTrustedProxies()) {
             $request->getClientIps();
         }
         $request->getHost();
+
+
     }
 }
