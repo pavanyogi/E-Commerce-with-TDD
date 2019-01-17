@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Product
  *
  * @ORM\Table(name="product")
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductRepository")
  */
 class Product
@@ -31,63 +32,63 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="product_name", type="string", length=255)
+     * @ORM\Column(name="product_name", type="string", length=255, nullable=true)
      */
     private $productName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_description", type="string", length=255)
+     * @ORM\Column(name="product_description", type="string", length=255, nullable=true)
      */
     private $productDescription;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="quantity", type="decimal", precision=8, scale=2)
+     * @ORM\Column(name="quantity", type="decimal", precision=8, scale=2, nullable=true)
      */
     private $quantity;
 
     /**
      * @var mixed
      *
-     * @ORM\Column(name="price_per_unit", type="decimal", precision=30, scale=2)
+     * @ORM\Column(name="price_per_unit", type="decimal", precision=30, scale=2, nullable=true)
      */
     private $pricePerUnit;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="stock_avialable", type="boolean")
+     * @ORM\Column(name="stock_avialable", type="boolean", nullable=true)
      */
     private $stockAvialable;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="unit", type="string", length=255)
+     * @ORM\Column(name="unit", type="string", length=255, nullable=true)
      */
     private $unit;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="status", type="boolean")
+     * @ORM\Column(name="status", type="boolean", nullable=true)
      */
     private $status;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_date_time", type="datetime")
+     * @ORM\Column(name="created_date_time", type="datetime", nullable=true)
      */
     private $createdDateTime;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_updated_date_time", type="datetime")
+     * @ORM\Column(name="last_updated_date_time", type="datetime", nullable=true)
      */
     private $lastUpdatedDateTime;
 
@@ -340,6 +341,28 @@ class Product
     public function getLastUpdatedDateTime()
     {
         return $this->lastUpdatedDateTime;
+    }
+
+    /**
+     * Gets triggered only on insert
+     *
+     * @ORM\PrePersist
+     */
+    public function onPrePersist()
+    {
+        $this->status = 1;
+        $this->createdDateTime = new \DateTime("now");
+        $this->lastUpdatedDateTime = new \DateTime("now");
+    }
+
+    /**
+     * Gets triggered every time on update
+     *
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        $this->lastUpdatedDateTime = new \DateTime("now");
     }
 }
 

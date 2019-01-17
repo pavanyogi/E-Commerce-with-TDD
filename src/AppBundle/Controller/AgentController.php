@@ -33,7 +33,7 @@ class AgentController extends Controller
     }
 
     /**
-     * @Route("/product/update", name="agent_update", methods={"PUT", "OPTIONS"})
+     * @Route("/agent/update", name="agent_update", methods={"PUT", "OPTIONS"})
      */
     public function updateAgentAction(Request $request)
     {

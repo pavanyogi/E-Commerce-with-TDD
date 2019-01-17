@@ -6,8 +6,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Repository\ProductRepository;
 use AppBundle\Service\ProductService;
 use PHPUnit_Framework_MockObject_MockObject;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
+use AppBundle\Constants\ErrorConstants;
 
 class ProductServiceTest extends KernelTestCase
 {
@@ -46,7 +47,88 @@ class ProductServiceTest extends KernelTestCase
         $this->productService = null;
     }
 
-    public function testCreateOne()
+    /**
+     * @dataProvider getFetchProductListDataProvider
+     */
+    public function testFetchProductList($requestContent, $products, $expected)
+    {
+        $requestContent['filter'] = !empty($requestContent['filter']) ? $requestContent['filter'] : null;
+        $this->productRepositoryMock
+            ->expects($this->once())
+            ->method('fetchProductListData')
+            ->with($requestContent['filter'], $requestContent['pagination'])
+            ->willReturn($products);
+
+        $this->productRepositoryMock
+            ->expects($this->once())
+            ->method('countProductRecords')
+            ->with($requestContent['filter'])
+            ->willReturn(count($products));
+
+        $this->entityManagerInterfaceMock
+            ->expects($this->any())
+            ->method('getRepository')
+            ->willReturn($this->productRepositoryMock);
+
+        $result = $this->productService->processFetchProductList($requestContent);
+        $this->assertEquals($expected, $result);
+    }
+
+    public function getFetchProductListDataProvider()
+    {
+        $requestContent['filter'] = [];
+        $requestContent['pagination'] = [];
+
+        $p0 = [];
+        $product0 = $p0;
+        $expectedResult0['status'] = true;
+        $expectedResult0['message']['response'] = [
+            'products' => $product0,
+            'count' => count($product0)
+        ];
+
+        $p1 = [
+            'productCode' => 'P001',
+            'productName' => 'shoes',
+            'productDescription' => 'Good shoes',
+            'quantity' => 12.0,
+            'pricePerunit' => 12.0,
+            'status' => 1,
+            'stockAvialable' => 1,
+            'unit' => 'pair'
+        ];
+        $product1 = [$p1];
+        $expectedResult1['status'] = true;
+        $expectedResult1['message']['response'] = [
+            'products' => $product1,
+            'count' => count($product1)
+        ];
+
+        $p2 = [
+            'productCode' => 'P002',
+            'productName' => 'shirt',
+            'productDescription' => 'Good shirt',
+            'quantity' => 12.0,
+            'pricePerunit' => 12.0,
+            'status' => 1,
+            'stockAvialable' => 1,
+            'unit' => 'piece'
+        ];
+        $product2 = [$p1, $p2];
+        $expectedResult2['status'] = true;
+        $expectedResult2['message']['response'] = [
+            'products' => $product2,
+            'count' => count($product2)
+        ];
+
+        return [
+            [$requestContent, $product0, $expectedResult0],
+            [$requestContent, $product1, $expectedResult1],
+            [$requestContent, $product2, $expectedResult2]
+        ];
+    }
+
+    public function testCreateProduct()
     {
         $product = new Product();
         $product->setProductCode('P001');
@@ -62,66 +144,76 @@ class ProductServiceTest extends KernelTestCase
             ->expects($this->once())
             ->method('persist')
             ->with($product);
-
         $this->entityManagerInterfaceMock
             ->expects($this->once())
             ->method('flush');
 
-        $result = $this->productService->createOne([
+        $result = $this->productService->createProduct([
             'productCode' => 'P001', 'productName' => 'shoes','productDescription' => 'Good Shoes', 'quantity' => 12.0,
             'pricePerUnit' => 200, 'unit' => 'pair', 'stockAvialable' => 1, 'status' => 1]);
-        $this->assertEquals($product->getId(), $result);
-        $this->assertEquals($product->getProductCode(), 'P001');
-        $this->assertEquals($product->getProductName(), 'shoes');
+
+        $expectedMessage['status'] = true;
+        $expectedMessage['message']['response'] = 'Product Created Successfully';
+
+        $this->assertEquals($result, $expectedMessage);
     }
 
     /**
-     * @dataProvider getAllProductDataProvider
+     * @dataProvider getProductDetailProvider
      */
-    public function testGetAll($products, $expected)
+    public function testGetProductDetail($productCode, $product, $expected)
     {
         $this->productRepositoryMock
             ->expects($this->once())
-            ->method('findAll')
-            ->willReturn($products);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->any())
-            ->method('getRepository')
-            ->willReturn($this->productRepositoryMock);
-
-        $result = $this->productService->getAll();
-        $this->assertEquals($expected, $result);
-    }
-
-    /**
-     * @dataProvider getOneProductDataProvider
-     */
-    public function testGetOne($id, $product, $expected)
-    {
-        $this->productRepositoryMock
-            ->expects($this->any())
-            ->method('find')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['productCode' => $productCode])
             ->willReturn($product);
 
         $this->entityManagerInterfaceMock
-            ->expects($this->any())
+            ->expects($this->once())
             ->method('getRepository')
             ->willReturn($this->productRepositoryMock);
 
-        $result = $this->productService->getOne($id);
+        $result = $this->productService->getProductDetail($productCode);
         $this->assertEquals($expected, $result);
     }
 
-    public function testUpdateOneShouldThrowExceptionForInvalidProductId()
+    public function getProductDetailProvider()
     {
-        $id = 666;
+        $productCode = 'P001';
+
+        $product = new Product();
+        $product->setProductCode('P001');
+        $product->setProductName('shoes');
+        $product->setProductDescription('Good shoes');
+        $product->setQuantity(12.0);
+        $product->setPricePerUnit(12.0);
+        $product->setStockAvialable(1);
+        $product->setUnit('pair');
+        $product->setStatus(1);
+
+        $expected['status'] = true;
+        $expected['message']['response'] = [
+            'productCode' => $product->getProductCode(),
+            'productName' => $product->getProductName(),
+            'quantity' => $product->getQuantity(),
+            'pricePerUnit' => $product->getPricePerUnit(),
+            'stockAvialable' => $product->getStockAvialable()
+        ];
+
+        return [
+            [$productCode, $product, $expected],
+        ];
+    }
+
+    public function testGetProductDetailThrowExceptionForInvalidProductCode()
+    {
+        $productCode = 'XXXX';
 
         $this->productRepositoryMock
             ->expects($this->once())
-            ->method('find')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['productCode' => $productCode])
             ->willReturn(null);
 
         $this->entityManagerInterfaceMock
@@ -129,21 +221,42 @@ class ProductServiceTest extends KernelTestCase
             ->method('getRepository')
             ->willReturn($this->productRepositoryMock);
 
-        $this->expectException(BadRequestHttpException::class);
-        $this->expectExceptionMessage(sprintf('Product with id [%s] not found', $id));
+        $this->expectException(UnprocessableEntityHttpException::class);
+        $this->expectExceptionMessage(ErrorConstants::INVALID_PROUCT_CODE);
 
-        $this->productService->updateOne(['quantity' => 12.0, 'pricePerUnit' => 12.0, 'stockAvialable' => 0], $id);
+        $this->productService->getProductDetail($productCode);
+    }
+
+    public function testUpdateProductThrowExceptionForInvalidProductCode()
+    {
+        $updateParameter = ['productCode' => 'P001', 'quantity' => 12.0, 'pricePerUnit' => 12.0, 'stockAvialable' => 0];
+
+        $this->productRepositoryMock
+            ->expects($this->once())
+            ->method('findOneBy')
+            ->with(['productCode' => $updateParameter['productCode']])
+            ->willReturn(null);
+
+        $this->entityManagerInterfaceMock
+            ->expects($this->once())
+            ->method('getRepository')
+            ->willReturn($this->productRepositoryMock);
+
+        $this->expectException(UnprocessableEntityHttpException::class);
+        $this->expectExceptionMessage(ErrorConstants::INVALID_PROUCT_CODE);
+
+        $this->productService->updateProduct($updateParameter);
     }
 
     /**
-     * @dataProvider getUpdateOneProductDataProvider
+     * @dataProvider getUpdateOneDataProvider
      */
-    public function testUpdateOne($id, $product)
+    public function testUpdateOne($product, $updateParameter, $expextedResult)
     {
         $this->productRepositoryMock
             ->expects($this->once())
-            ->method('find')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['productCode' => $updateParameter['productCode']])
             ->willReturn($product);
 
         $this->entityManagerInterfaceMock
@@ -155,120 +268,13 @@ class ProductServiceTest extends KernelTestCase
             ->expects($this->once())
             ->method('flush');
 
-        $this->productService->updateOne(['quantity' => 12.0, 'pricePerUnit' => 12.0, 'stockAvialable' => 0], $id);
+        $this->productService->updateProduct($updateParameter);
 
-        $this->assertEquals($product->getQuantity(), 12.0);
-        $this->assertEquals($product->getPricePerUnit(), 12.0);
+        $this->assertEquals($product->getQuantity(), $expextedResult['message']['response']->getQuantity());
+        $this->assertEquals($product->getPricePerUnit(), $expextedResult['message']['response']->getPricePerUnit());
     }
 
-    public function testDeleteOneShouldThrowExceptionForInvalidProductId()
-    {
-        $id = 666;
-
-        $this->productRepositoryMock
-            ->expects($this->once())
-            ->method('find')
-            ->with($id)
-            ->willReturn(null);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('getRepository')
-            ->willReturn($this->productRepositoryMock);
-
-        $this->expectException(BadRequestHttpException::class);
-        $this->expectExceptionMessage(sprintf('Product with id [%s] not found', $id));
-
-        $this->productService->deleteOne($id);
-    }
-
-    /**
-     * @dataProvider getRemoveOneProductDataProvider
-     */
-    public function testDeleteOne($id, $product)
-    {
-        $this->productRepositoryMock
-            ->expects($this->once())
-            ->method('find')
-            ->with($id)
-            ->willReturn($product);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('getRepository')
-            ->willReturn($this->productRepositoryMock);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('remove')
-            ->with($product);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('flush');
-
-        $this->productService->deleteOne($id);
-    }
-
-    public function getAllProductDataProvider()
-    {
-        $p0 = [];
-        $product0 = [$p0];
-
-        $p1 = new Product();
-        $p1->setProductCode('P001');
-        $p1->setProductName('shoes');
-        $p1->setProductDescription('Good shoes');
-        $p1->setQuantity(12.0);
-        $p1->setPricePerUnit(12.0);
-        $p1->setStockAvialable(1);
-        $p1->setUnit('pair');
-        $p1->setStatus(1);
-        $product1 = [$p1];
-
-        $p2 = new Product();
-        $p2->setProductCode('P002');
-        $p2->setProductName('watch');
-        $p2->setProductDescription('Good watch');
-        $p2->setQuantity(12.0);
-        $p2->setPricePerUnit(12.0);
-        $p2->setStockAvialable(1);
-        $p2->setUnit('pieces');
-        $p2->setStatus(1);
-        $product2 = [$p1, $p2];
-
-        return [
-            [$product0, $product0],
-            [$product1, $product1],
-            [$product2, $product2]
-        ];
-    }
-
-    public function getOneProductDataProvider()
-    {
-        $id0 = 0;
-        $p0 = null;
-        $product0 = $p0;
-
-        $id1 = 1;
-        $p1 = new Product();
-        $p1->setProductCode('P001');
-        $p1->setProductName('shoes');
-        $p1->setProductDescription('Good shoes');
-        $p1->setQuantity(12.0);
-        $p1->setPricePerUnit(12.0);
-        $p1->setStockAvialable(1);
-        $p1->setUnit('pair');
-        $p1->setStatus(1);
-        $product1 = $p1;
-
-        return [
-            [$id0, $product0, $p0],
-            [$id1, $product1, $p1],
-        ];
-    }
-
-    public function getUpdateOneProductDataProvider()
+    public function getUpdateOneDataProvider()
     {
         $product = new Product();
         $product->setProductCode('P001');
@@ -280,25 +286,12 @@ class ProductServiceTest extends KernelTestCase
         $product->setUnit('pair');
         $product->setStatus(1);
 
-        return [
-            [1, $product],
-        ];
-    }
-
-    public function getRemoveOneProductDataProvider()
-    {
-        $product = new Product();
-        $product->setProductCode('P001');
-        $product->setProductName('shoes');
-        $product->setProductDescription('Good shoes');
-        $product->setQuantity(12.0);
-        $product->setPricePerUnit(12.0);
-        $product->setStockAvialable(0);
-        $product->setUnit('pair');
-        $product->setStatus(1);
+        $updateParameter = ['productCode' => 'P001', 'quantity' => 12.0, 'pricePerUnit' => 12.0, 'stockAvialable' => 0];
+        $expextedResult['status'] = true;
+        $expextedResult['message']['response'] = $product;
 
         return [
-            [1, $product],
+            [$product, $updateParameter, $expextedResult],
         ];
     }
 }

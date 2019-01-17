@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class ResponseListenerTest extends KernelTestCase
 {
     private $dispatcher;
-    private $kernel;
+    private $kernelMock;
 
     protected function setUp() {
         $this->dispatcher = new EventDispatcher();
@@ -25,17 +25,17 @@ class ResponseListenerTest extends KernelTestCase
         $responseListener->setLogger($container->get('monolog.logger.exception'));
         $responseListener->setTranslator($container->get('translator.default'));
         $this->dispatcher->addListener(KernelEvents::RESPONSE, array($responseListener, 'onKernelResponse'));
-        $this->kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $this->kernelMock = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
     }
 
     protected function tearDown() {
         $this->dispatcher = null;
-        $this->kernel = null;
+        $this->kernelMock = null;
     }
 
     public function testFilterDoesNothingForSubRequests() {
         $response = new Response('foo');
-        $event = new FilterResponseEvent($this->kernel, new Request(), HttpKernelInterface::SUB_REQUEST,
+        $event = new FilterResponseEvent($this->kernelMock, new Request(), HttpKernelInterface::SUB_REQUEST,
             $response);
         $this->dispatcher->dispatch(KernelEvents::RESPONSE, $event);
         $this->assertEquals('', $event->getResponse()->headers->get('content-type'));

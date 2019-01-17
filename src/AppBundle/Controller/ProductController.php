@@ -19,15 +19,17 @@ class ProductController extends Controller
         // $response to be returned from API.
         $response = NULL;
         try {
+            $content = json_decode($request->getContent(), true);
             // Process the request and fetch the list of products
-            $products = $this->container
+            $processResult = $this->container
                 ->get('app.service.product')
-                ->getAll();
+                ->processFetchProductList($content);
 
             // Creating the final array response.
             $response = $this->container
                 ->get('app.api_response_service')
-                ->createGetProductsApiResponse($products);
+                ->createProductsApiResponse('productListResponse',
+                    $processResult['message']['response']);
         } catch (\Exception $ex) {
             $logger->error(__FUNCTION__ . 'Function failed due to error : '.
                 $ex->getMessage());
@@ -43,7 +45,28 @@ class ProductController extends Controller
      */
     public function getProductDetailAction(Request $request)
     {
+        $logger = $this->container->get('monolog.logger.exception');
+        $content = json_decode(trim($request->getContent()), true);
+        // $response to be returned from API.
+        $response = NULL;
+        try {
+            // Process the request and fetch the list of products
+            $processResult = $this->container
+                ->get('app.service.product')
+                ->getProductDetail($content['productCode']);
 
+            // Creating the final array response.
+            $response = $this->container
+                ->get('app.api_response_service')
+                ->createProductsApiResponse('productDetailResponse', $processResult['message']['response']);
+        } catch (\Exception $ex) {
+            $logger->error(__FUNCTION__ . 'Function failed due to error : '.
+                $ex->getMessage());
+            // Throwing Internal Server Error Response In case of Unknown Errors.
+            throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
+        }
+
+        return $response;
     }
 
     /**
@@ -51,7 +74,28 @@ class ProductController extends Controller
      */
     public function createProductAction(Request $request)
     {
+        $logger = $this->container->get('monolog.logger.exception');
+        $content = json_decode(trim($request->getContent()), true);
+        // $response to be returned from API.
+        $response = NULL;
+        try {
+            // Process the request and fetch the list of products
+            $processProduct = $this->container
+                ->get('app.service.product')
+                ->createProduct($content);
 
+            // Creating the final array response.
+            $response = $this->container
+                ->get('app.api_response_service')
+                ->createProductsApiResponse('productCreatedResponse', $processProduct['message']['response']);
+        } catch (\Exception $ex) {
+            $logger->error(__FUNCTION__ . 'Function failed due to error : '.
+                $ex->getMessage());
+            // Throwing Internal Server Error Response In case of Unknown Errors.
+            throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
+        }
+
+        return $response;
     }
 
     /**
@@ -59,6 +103,27 @@ class ProductController extends Controller
      */
     public function updateProductAction(Request $request)
     {
+        $logger = $this->container->get('monolog.logger.exception');
+        $content = json_decode(trim($request->getContent()), true);
+        // $response to be returned from API.
+        $response = NULL;
+        try {
+            // Process the request and fetch the list of products
+            $processResult = $this->container
+                ->get('app.service.product')
+                ->updateProduct($content);
 
+            // Creating the final array response.
+            $response = $this->container
+                ->get('app.api_response_service')
+                ->createProductsApiResponse('productUpdateResponse', $processResult['message']['response']);
+        } catch (\Exception $ex) {
+            $logger->error(__FUNCTION__ . 'Function failed due to error : '.
+                $ex->getMessage());
+            // Throwing Internal Server Error Response In case of Unknown Errors.
+            throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
+        }
+
+        return $response;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\ORMException;
+use Doctrine\ORM\QueryBuilder;
 /**
  * ProductRepository
  *
@@ -10,4 +12,96 @@ namespace AppBundle\Repository;
  */
 class ProductRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     *  Function to FETCH the users data as per provided filters.
+     *
+     *  @param array $filter
+     *  @param array $pagination
+     *
+     *  @return array
+     */
+    public function fetchProductListData($filter = [], $pagination = [])
+    {
+        $qb = $this
+            ->createQueryBuilder('p')
+            ->select('p.id')
+            ->addSelect('p.productCode')
+            ->addSelect('p.productName')
+            ->addSelect('p.productDescription')
+            ->addSelect('p.quantity')
+            ->addSelect('p.stockAvialable');
+
+        // Applying Filters.
+        $qb = $this->addFilterSortParameters($qb, $filter);
+        $qb->setFirstResult(($pagination['page'] - 1) * $pagination['limit'])
+            ->setMaxResults($pagination['limit'])
+        ;
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    /**
+     *  Function to count the number of records for applied filters and sort
+     *  parameters.
+     *
+     *  @param array $filter
+     *
+     *  @return integer
+     */
+    public function countProductRecords($filter)
+    {
+        $qb = $this
+            ->createQueryBuilder('p')
+            ->select('count(p.id) as totalRecords')
+        ;
+
+        // Applying Filters.
+        $qb = $this->addFilterSortParameters($qb, $filter);
+
+        return (int)$qb->getQuery()->getArrayResult()[0]['totalRecords'];
+    }
+
+    /**
+     *  Function to add Filter and Sort parameters to List Query Builder.
+     *
+     *  @param QueryBuilder $qb
+     *  @param array $filter
+     *
+     *  @return QueryBuilder
+     */
+    public function addFilterSortParameters($qb, $filter = [])
+    {
+        $params = [];
+
+        // Adding Filters to QueryBuilder
+        if (isset($filter['productCode'])) {
+            $qb->where('p.productCode LIKE :productCode');
+            $params['productCode'] = '%'.$filter['productCode'].'%';
+        }
+
+        if (isset($filter['productName'])) {
+            $qb->andWhere('p.productName LIKE :productName');
+            $params['productName'] = '%'.$filter['productName'].'%';
+        }
+
+        if (isset($filter['productDescription'])) {
+            $qb->andWhere('p.productDescription LIKE :productDescription');
+            $params['productDescription'] = '%'.$filter['productDescription'].'%';
+        }
+
+        if (isset($filter['quantity'])) {
+            $qb->andWhere('p.quantity = :quantity');
+            $params['quantity'] = $filter['quantity'];
+        }
+
+        if (isset($filter['stockAvialable'])) {
+            $qb->andWhere('p.stockAvialable = :stockAvialable');
+            $params['stockAvialable'] = $filter['stockAvialable'];
+        }
+
+        // Setting the Parameters.
+        $qb->setParameters($params);
+
+        return $qb;
+    }
 }

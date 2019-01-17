@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1547647147">
-  <project timestamp="1547647147">
+<coverage generated="1547720676">
+  <project timestamp="1547720676">
     <package name="AppBundle">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/AppBundle.php">
         <class name="AppBundle\AppBundle" namespace="AppBundle">
@@ -12,24 +12,19 @@
     <package name="AppBundle\Command">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Command/CreateAgentCommand.php">
         <class name="AppBundle\Command\CreateAgentCommand" namespace="AppBundle\Command">
-          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="15" coveredelements="0"/>
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
         </class>
-        <line num="14" type="method" name="configure" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="20" type="stmt" count="0"/>
-        <line num="22" type="method" name="execute" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <metrics loc="32" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="15" coveredelements="0"/>
+        <line num="14" type="method" name="configure" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="20" type="stmt" count="1"/>
+        <line num="22" type="method" name="execute" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <metrics loc="32" ncloc="28" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
       </file>
     </package>
     <package name="AppBundle\Constants">
@@ -37,57 +32,35 @@
         <class name="AppBundle\Constants\ErrorConstants" namespace="AppBundle\Constants">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
         </class>
-        <metrics loc="18" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics loc="20" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Constants/GeneralConstants.php">
+        <class name="AppBundle\Constants\GeneralConstants" namespace="AppBundle\Constants">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="30" ncloc="25" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
     <package name="AppBundle\Controller">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Controller/AgentController.php">
         <class name="AppBundle\Controller\AgentController" namespace="AppBundle\Controller">
-          <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="12" coveredelements="0"/>
+          <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="8" coveredelements="0"/>
         </class>
         <line num="14" type="method" name="getAgentListAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="15" type="stmt" count="0"/>
         <line num="17" type="stmt" count="0"/>
         <line num="22" type="method" name="getAgentDetailAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="23" type="stmt" count="0"/>
         <line num="25" type="stmt" count="0"/>
         <line num="30" type="method" name="createAgentAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="31" type="stmt" count="0"/>
         <line num="33" type="stmt" count="0"/>
         <line num="38" type="method" name="updateAgentAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="39" type="stmt" count="0"/>
         <line num="41" type="stmt" count="0"/>
-        <metrics loc="42" ncloc="30" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="12" coveredelements="0"/>
-      </file>
-      <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Controller/CalculatorController.php">
-        <class name="AppBundle\Controller\CalculatorController" namespace="AppBundle\Controller">
-          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
-        </class>
-        <line num="15" type="method" name="add" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="24" type="method" name="calculatorAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <metrics loc="37" ncloc="33" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+        <metrics loc="42" ncloc="30" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Controller/CustomerController.php">
         <class name="AppBundle\Controller\CustomerController" namespace="AppBundle\Controller">
-          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="10" coveredelements="0"/>
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
         </class>
         <line num="14" type="method" name="customerAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="15" type="stmt" count="0"/>
         <line num="16" type="stmt" count="0"/>
         <line num="19" type="stmt" count="0"/>
         <line num="23" type="stmt" count="0"/>
@@ -95,103 +68,109 @@
         <line num="30" type="stmt" count="0"/>
         <line num="34" type="stmt" count="0"/>
         <line num="37" type="stmt" count="0"/>
-        <line num="38" type="stmt" count="0"/>
-        <metrics loc="39" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="10" coveredelements="0"/>
-      </file>
-      <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Controller/DefaultController.php">
-        <class name="AppBundle\Controller\DefaultController" namespace="AppBundle\Controller">
-          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
-        </class>
-        <line num="14" type="method" name="indexAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="20" type="stmt" count="0"/>
-        <metrics loc="21" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        <metrics loc="39" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Controller/OrderController.php">
         <class name="AppBundle\Controller\OrderController" namespace="AppBundle\Controller">
-          <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="9" coveredelements="0"/>
+          <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
         </class>
         <line num="14" type="method" name="getOrderListAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="15" type="stmt" count="0"/>
         <line num="17" type="stmt" count="0"/>
         <line num="22" type="method" name="getOrderDetailAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="23" type="stmt" count="0"/>
         <line num="25" type="stmt" count="0"/>
         <line num="30" type="method" name="placeOrderAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="31" type="stmt" count="0"/>
         <line num="33" type="stmt" count="0"/>
-        <metrics loc="34" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="9" coveredelements="0"/>
+        <metrics loc="34" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Controller/ProductController.php">
         <class name="AppBundle\Controller\ProductController" namespace="AppBundle\Controller">
-          <metrics complexity="5" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="27" coveredelements="0"/>
+          <metrics complexity="8" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="41" elements="61" coveredelements="41"/>
         </class>
-        <line num="16" type="method" name="getProductListAction" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="20" type="stmt" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
+        <line num="16" type="method" name="getProductListAction" visibility="public" complexity="2" crap="2.08" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="20" type="stmt" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="32" type="stmt" count="2"/>
         <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
         <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="38" type="stmt" count="0"/>
-        <line num="39" type="stmt" count="0"/>
-        <line num="44" type="method" name="getProductDetailAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="52" type="method" name="createProductAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="60" type="method" name="updateProductAction" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="61" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="2"/>
+        <line num="46" type="method" name="getProductDetailAction" visibility="public" complexity="2" crap="2.09" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="62" type="stmt" count="0"/>
         <line num="63" type="stmt" count="0"/>
-        <metrics loc="64" ncloc="44" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="27" coveredelements="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="75" type="method" name="createProductAction" visibility="public" complexity="2" crap="2.09" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="0"/>
+        <line num="98" type="stmt" count="1"/>
+        <line num="104" type="method" name="updateProductAction" visibility="public" complexity="2" crap="2.09" count="1"/>
+        <line num="106" type="stmt" count="1"/>
+        <line num="107" type="stmt" count="1"/>
+        <line num="109" type="stmt" count="1"/>
+        <line num="112" type="stmt" count="1"/>
+        <line num="113" type="stmt" count="1"/>
+        <line num="114" type="stmt" count="1"/>
+        <line num="117" type="stmt" count="1"/>
+        <line num="118" type="stmt" count="1"/>
+        <line num="119" type="stmt" count="1"/>
+        <line num="120" type="stmt" count="0"/>
+        <line num="121" type="stmt" count="0"/>
+        <line num="122" type="stmt" count="0"/>
+        <line num="124" type="stmt" count="0"/>
+        <line num="127" type="stmt" count="1"/>
+        <metrics loc="129" ncloc="85" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="41" elements="61" coveredelements="41"/>
       </file>
     </package>
     <package name="AppBundle\Entity">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Entity/Customer.php">
         <class name="AppBundle\Entity\Customer" namespace="AppBundle\Entity">
-          <metrics complexity="6" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="27" coveredelements="0"/>
+          <metrics complexity="6" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="7" elements="15" coveredelements="12"/>
         </class>
-        <line num="44" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
+        <line num="44" type="method" name="getId" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="46" type="stmt" count="1"/>
         <line num="56" type="method" name="setId" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="57" type="stmt" count="0"/>
         <line num="58" type="stmt" count="0"/>
         <line num="60" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="70" type="method" name="setName" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <line num="72" type="stmt" count="0"/>
-        <line num="74" type="stmt" count="0"/>
-        <line num="75" type="stmt" count="0"/>
-        <line num="82" type="method" name="getName" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="94" type="method" name="setPhoneNumber" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="95" type="stmt" count="0"/>
-        <line num="96" type="stmt" count="0"/>
-        <line num="98" type="stmt" count="0"/>
-        <line num="99" type="stmt" count="0"/>
-        <line num="106" type="method" name="getPhoneNumber" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="107" type="stmt" count="0"/>
-        <line num="108" type="stmt" count="0"/>
-        <line num="109" type="stmt" count="0"/>
-        <metrics loc="111" ncloc="52" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="27" coveredelements="0"/>
+        <line num="70" type="method" name="setName" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="72" type="stmt" count="2"/>
+        <line num="74" type="stmt" count="2"/>
+        <line num="82" type="method" name="getName" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="84" type="stmt" count="2"/>
+        <line num="94" type="method" name="setPhoneNumber" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="96" type="stmt" count="2"/>
+        <line num="98" type="stmt" count="2"/>
+        <line num="106" type="method" name="getPhoneNumber" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="108" type="stmt" count="2"/>
+        <metrics loc="111" ncloc="52" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="7" elements="15" coveredelements="12"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Entity/OrderDetail.php">
         <class name="AppBundle\Entity\OrderDetail" namespace="AppBundle\Entity">
@@ -323,154 +302,113 @@
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Entity/Product.php">
         <class name="AppBundle\Entity\Product" namespace="AppBundle\Entity">
-          <metrics complexity="21" methods="21" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="73" coveredstatements="0" elements="94" coveredelements="0"/>
+          <metrics complexity="23" methods="23" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="27" elements="60" coveredelements="42"/>
         </class>
-        <line num="100" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="101" type="stmt" count="0"/>
-        <line num="102" type="stmt" count="0"/>
+        <line num="101" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="103" type="stmt" count="0"/>
-        <line num="112" type="method" name="setProductCode" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="113" type="stmt" count="0"/>
-        <line num="114" type="stmt" count="0"/>
-        <line num="116" type="stmt" count="0"/>
-        <line num="117" type="stmt" count="0"/>
-        <line num="124" type="method" name="getProductCode" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="125" type="stmt" count="0"/>
-        <line num="126" type="stmt" count="0"/>
-        <line num="127" type="stmt" count="0"/>
-        <line num="136" type="method" name="setProductName" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="137" type="stmt" count="0"/>
-        <line num="138" type="stmt" count="0"/>
-        <line num="140" type="stmt" count="0"/>
-        <line num="141" type="stmt" count="0"/>
-        <line num="148" type="method" name="getProductName" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="149" type="stmt" count="0"/>
-        <line num="150" type="stmt" count="0"/>
-        <line num="151" type="stmt" count="0"/>
-        <line num="160" type="method" name="setProductDescription" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="161" type="stmt" count="0"/>
-        <line num="162" type="stmt" count="0"/>
-        <line num="164" type="stmt" count="0"/>
-        <line num="165" type="stmt" count="0"/>
-        <line num="172" type="method" name="getProductDescription" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="173" type="stmt" count="0"/>
-        <line num="174" type="stmt" count="0"/>
+        <line num="113" type="method" name="setProductCode" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="115" type="stmt" count="2"/>
+        <line num="117" type="stmt" count="2"/>
+        <line num="125" type="method" name="getProductCode" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="127" type="stmt" count="2"/>
+        <line num="137" type="method" name="setProductName" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="139" type="stmt" count="2"/>
+        <line num="141" type="stmt" count="2"/>
+        <line num="149" type="method" name="getProductName" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="151" type="stmt" count="2"/>
+        <line num="161" type="method" name="setProductDescription" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="163" type="stmt" count="2"/>
+        <line num="165" type="stmt" count="2"/>
+        <line num="173" type="method" name="getProductDescription" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="175" type="stmt" count="0"/>
-        <line num="184" type="method" name="setQuantity" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="185" type="stmt" count="0"/>
-        <line num="186" type="stmt" count="0"/>
-        <line num="188" type="stmt" count="0"/>
-        <line num="189" type="stmt" count="0"/>
-        <line num="196" type="method" name="getQuantity" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="197" type="stmt" count="0"/>
-        <line num="198" type="stmt" count="0"/>
-        <line num="199" type="stmt" count="0"/>
-        <line num="208" type="method" name="setStatus" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="209" type="stmt" count="0"/>
-        <line num="210" type="stmt" count="0"/>
-        <line num="212" type="stmt" count="0"/>
-        <line num="213" type="stmt" count="0"/>
-        <line num="220" type="method" name="getStatus" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="221" type="stmt" count="0"/>
-        <line num="222" type="stmt" count="0"/>
+        <line num="185" type="method" name="setQuantity" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="187" type="stmt" count="4"/>
+        <line num="189" type="stmt" count="4"/>
+        <line num="197" type="method" name="getQuantity" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="199" type="stmt" count="3"/>
+        <line num="209" type="method" name="setStatus" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="211" type="stmt" count="2"/>
+        <line num="213" type="stmt" count="2"/>
+        <line num="221" type="method" name="getStatus" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="223" type="stmt" count="0"/>
-        <line num="232" type="method" name="setPricePerUnit" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="233" type="stmt" count="0"/>
-        <line num="234" type="stmt" count="0"/>
-        <line num="236" type="stmt" count="0"/>
-        <line num="237" type="stmt" count="0"/>
-        <line num="244" type="method" name="getPricePerUnit" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="245" type="stmt" count="0"/>
-        <line num="246" type="stmt" count="0"/>
-        <line num="247" type="stmt" count="0"/>
-        <line num="256" type="method" name="setStockAvialable" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="257" type="stmt" count="0"/>
-        <line num="258" type="stmt" count="0"/>
-        <line num="260" type="stmt" count="0"/>
-        <line num="261" type="stmt" count="0"/>
-        <line num="268" type="method" name="getStockAvialable" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="269" type="stmt" count="0"/>
-        <line num="270" type="stmt" count="0"/>
-        <line num="271" type="stmt" count="0"/>
-        <line num="280" type="method" name="setUnit" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="281" type="stmt" count="0"/>
-        <line num="282" type="stmt" count="0"/>
-        <line num="284" type="stmt" count="0"/>
-        <line num="285" type="stmt" count="0"/>
-        <line num="292" type="method" name="getUnit" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="293" type="stmt" count="0"/>
-        <line num="294" type="stmt" count="0"/>
+        <line num="233" type="method" name="setPricePerUnit" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="235" type="stmt" count="4"/>
+        <line num="237" type="stmt" count="4"/>
+        <line num="245" type="method" name="getPricePerUnit" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="247" type="stmt" count="3"/>
+        <line num="257" type="method" name="setStockAvialable" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="259" type="stmt" count="3"/>
+        <line num="261" type="stmt" count="3"/>
+        <line num="269" type="method" name="getStockAvialable" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="271" type="stmt" count="2"/>
+        <line num="281" type="method" name="setUnit" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="283" type="stmt" count="2"/>
+        <line num="285" type="stmt" count="2"/>
+        <line num="293" type="method" name="getUnit" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="295" type="stmt" count="0"/>
-        <line num="304" type="method" name="setCreatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="305" type="stmt" count="0"/>
-        <line num="306" type="stmt" count="0"/>
-        <line num="308" type="stmt" count="0"/>
+        <line num="305" type="method" name="setCreatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="307" type="stmt" count="0"/>
         <line num="309" type="stmt" count="0"/>
-        <line num="316" type="method" name="getCreatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="317" type="stmt" count="0"/>
-        <line num="318" type="stmt" count="0"/>
+        <line num="317" type="method" name="getCreatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="319" type="stmt" count="0"/>
-        <line num="328" type="method" name="setLastUpdatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="329" type="stmt" count="0"/>
-        <line num="330" type="stmt" count="0"/>
-        <line num="332" type="stmt" count="0"/>
+        <line num="329" type="method" name="setLastUpdatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="331" type="stmt" count="0"/>
         <line num="333" type="stmt" count="0"/>
-        <line num="340" type="method" name="getLastUpdatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="341" type="stmt" count="0"/>
-        <line num="342" type="stmt" count="0"/>
+        <line num="341" type="method" name="getLastUpdatedDateTime" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="343" type="stmt" count="0"/>
-        <metrics loc="345" ncloc="157" classes="1" methods="21" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="73" coveredstatements="0" elements="94" coveredelements="0"/>
+        <line num="351" type="method" name="onPrePersist" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="353" type="stmt" count="1"/>
+        <line num="354" type="stmt" count="1"/>
+        <line num="355" type="stmt" count="1"/>
+        <line num="356" type="stmt" count="1"/>
+        <line num="363" type="method" name="onPreUpdate" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="365" type="stmt" count="1"/>
+        <line num="366" type="stmt" count="1"/>
+        <metrics loc="368" ncloc="169" classes="1" methods="23" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="27" elements="60" coveredelements="42"/>
       </file>
     </package>
     <package name="AppBundle\EventListener">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/EventListener/RequestListener.php">
         <class name="AppBundle\EventListener\RequestListener" namespace="AppBundle\EventListener">
-          <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="11" coveredelements="0"/>
+          <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="8" coveredelements="6"/>
         </class>
-        <line num="24" type="method" name="onKernelRequest" visibility="public" complexity="3" crap="12" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
+        <line num="24" type="method" name="onKernelRequest" visibility="public" complexity="3" crap="3.03" count="6"/>
+        <line num="26" type="stmt" count="6"/>
         <line num="27" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <metrics loc="34" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="11" coveredelements="0"/>
+        <line num="29" type="stmt" count="6"/>
+        <line num="30" type="stmt" count="6"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="5"/>
+        <line num="34" type="stmt" count="5"/>
+        <metrics loc="34" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="8" coveredelements="6"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/EventListener/ResponseListener.php">
         <class name="AppBundle\EventListener\ResponseListener" namespace="AppBundle\EventListener">
-          <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <line num="10" type="method" name="onKernelResponse" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="12" type="stmt" count="0"/>
-        <line num="13" type="stmt" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <metrics loc="15" ncloc="15" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+        <line num="10" type="method" name="onKernelResponse" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="12" type="stmt" count="6"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="15" type="stmt" count="5"/>
+        <metrics loc="15" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
     </package>
     <package name="AppBundle\Repository">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Repository/CustomerRepository.php">
         <class name="AppBundle\Repository\CustomerRepository" namespace="AppBundle\Repository">
-          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
         </class>
-        <line num="13" type="method" name="findAll" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="20" type="method" name="findOneById" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <metrics loc="28" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+        <line num="13" type="method" name="findAll" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="15" type="stmt" count="3"/>
+        <line num="16" type="stmt" count="3"/>
+        <line num="17" type="stmt" count="3"/>
+        <line num="20" type="method" name="findOneById" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <metrics loc="28" ncloc="22" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Repository/OrderDetailRepository.php">
         <class name="AppBundle\Repository\OrderDetailRepository" namespace="AppBundle\Repository">
@@ -486,49 +424,61 @@
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Repository/ProductRepository.php">
         <class name="AppBundle\Repository\ProductRepository" namespace="AppBundle\Repository">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics complexity="8" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="36" coveredelements="36"/>
         </class>
-        <metrics loc="13" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="23" type="method" name="fetchProductListData" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="28" type="stmt" count="2"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="32" type="stmt" count="2"/>
+        <line num="35" type="stmt" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="37" type="stmt" count="2"/>
+        <line num="40" type="stmt" count="2"/>
+        <line num="51" type="method" name="countProductRecords" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="54" type="stmt" count="2"/>
+        <line num="55" type="stmt" count="2"/>
+        <line num="59" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="2"/>
+        <line num="72" type="method" name="addFilterSortParameters" visibility="public" complexity="6" crap="6" count="2"/>
+        <line num="74" type="stmt" count="2"/>
+        <line num="77" type="stmt" count="2"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
+        <line num="82" type="stmt" count="2"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="87" type="stmt" count="2"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="2"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="97" type="stmt" count="2"/>
+        <line num="98" type="stmt" count="1"/>
+        <line num="99" type="stmt" count="1"/>
+        <line num="103" type="stmt" count="2"/>
+        <line num="105" type="stmt" count="2"/>
+        <metrics loc="107" ncloc="69" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="36" coveredelements="36"/>
       </file>
     </package>
     <package name="AppBundle\Service">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Service/ApiResponseService.php">
         <class name="AppBundle\Service\ApiResponseService" namespace="AppBundle\Service">
-          <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="28" coveredelements="0"/>
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <line num="22" type="method" name="createApiErrorResponse" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="37" type="stmt" count="0"/>
-        <line num="38" type="stmt" count="0"/>
-        <line num="39" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="0"/>
-        <line num="50" type="method" name="createGetProductsApiResponse" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <metrics loc="60" ncloc="38" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="28" coveredelements="0"/>
+        <line num="22" type="method" name="createProductsApiResponse" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="25" type="stmt" count="5"/>
+        <line num="26" type="stmt" count="5"/>
+        <line num="27" type="stmt" count="5"/>
+        <metrics loc="30" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Service/BaseService.php">
         <class name="AppBundle\Service\BaseService" namespace="AppBundle\Service">
-          <metrics complexity="8" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="20" coveredelements="0"/>
+          <metrics complexity="8" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="9" elements="20" coveredelements="14"/>
         </class>
         <line num="41" type="method" name="getServiceContainer" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="43" type="stmt" count="0"/>
@@ -536,114 +486,135 @@
         <line num="51" type="stmt" count="0"/>
         <line num="57" type="method" name="getLogger" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="59" type="stmt" count="0"/>
-        <line num="65" type="method" name="getTranslator" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="73" type="method" name="setServiceContainer" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="75" type="stmt" count="0"/>
-        <line num="76" type="stmt" count="0"/>
-        <line num="81" type="method" name="setEntityManager" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="89" type="method" name="setLogger" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="91" type="stmt" count="0"/>
-        <line num="92" type="stmt" count="0"/>
-        <line num="97" type="method" name="setTranslator" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="99" type="stmt" count="0"/>
-        <line num="100" type="stmt" count="0"/>
-        <metrics loc="100" ncloc="57" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="20" coveredelements="0"/>
+        <line num="65" type="method" name="getTranslator" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="67" type="stmt" count="2"/>
+        <line num="73" type="method" name="setServiceContainer" visibility="public" complexity="1" crap="1" count="25"/>
+        <line num="75" type="stmt" count="25"/>
+        <line num="76" type="stmt" count="25"/>
+        <line num="81" type="method" name="setEntityManager" visibility="public" complexity="1" crap="1" count="25"/>
+        <line num="83" type="stmt" count="25"/>
+        <line num="84" type="stmt" count="25"/>
+        <line num="89" type="method" name="setLogger" visibility="public" complexity="1" crap="1" count="25"/>
+        <line num="91" type="stmt" count="25"/>
+        <line num="92" type="stmt" count="25"/>
+        <line num="97" type="method" name="setTranslator" visibility="public" complexity="1" crap="1" count="25"/>
+        <line num="99" type="stmt" count="25"/>
+        <line num="100" type="stmt" count="25"/>
+        <metrics loc="100" ncloc="57" classes="1" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="9" elements="20" coveredelements="14"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Service/CustomerService.php">
         <class name="AppBundle\Service\CustomerService" namespace="AppBundle\Service">
-          <metrics complexity="7" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="0" elements="36" coveredelements="0"/>
+          <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="26" coveredelements="26"/>
         </class>
-        <line num="11" type="method" name="getAll" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="12" type="stmt" count="0"/>
-        <line num="13" type="stmt" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="16" type="method" name="getOne" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="21" type="method" name="createOne" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="32" type="method" name="updateOne" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="37" type="stmt" count="0"/>
-        <line num="39" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="45" type="method" name="deleteOne" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="48" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <metrics loc="54" ncloc="54" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="0" elements="36" coveredelements="0"/>
+        <line num="11" type="method" name="getAll" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="13" type="stmt" count="3"/>
+        <line num="16" type="method" name="getOne" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="21" type="method" name="createOne" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="32" type="method" name="updateOne" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="34" type="stmt" count="2"/>
+        <line num="35" type="stmt" count="2"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="45" type="method" name="deleteOne" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="47" type="stmt" count="2"/>
+        <line num="48" type="stmt" count="2"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <metrics loc="54" ncloc="54" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="26" coveredelements="26"/>
       </file>
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/Service/ProductService.php">
         <class name="AppBundle\Service\ProductService" namespace="AppBundle\Service">
-          <metrics complexity="7" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="0" elements="43" coveredelements="0"/>
+          <metrics complexity="16" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="58" elements="74" coveredelements="58"/>
         </class>
-        <line num="11" type="method" name="getAll" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="12" type="stmt" count="0"/>
-        <line num="13" type="stmt" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="16" type="method" name="getOne" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="21" type="method" name="createOne" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
+        <line num="13" type="method" name="processFetchProductList" visibility="public" complexity="3" crap="3.11" count="5"/>
+        <line num="15" type="stmt" count="5"/>
+        <line num="17" type="stmt" count="5"/>
+        <line num="18" type="stmt" count="5"/>
+        <line num="19" type="stmt" count="5"/>
+        <line num="20" type="stmt" count="5"/>
+        <line num="22" type="stmt" count="5"/>
+        <line num="23" type="stmt" count="5"/>
+        <line num="24" type="stmt" count="5"/>
+        <line num="26" type="stmt" count="5"/>
         <line num="27" type="stmt" count="0"/>
         <line num="28" type="stmt" count="0"/>
         <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="38" type="method" name="updateOne" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="39" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="52" type="method" name="deleteOne" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="5"/>
+        <line num="35" type="method" name="getProductDetail" visibility="public" complexity="4" crap="4.07" count="3"/>
+        <line num="37" type="stmt" count="3"/>
+        <line num="40" type="stmt" count="3"/>
+        <line num="41" type="stmt" count="3"/>
+        <line num="43" type="stmt" count="3"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="2"/>
+        <line num="48" type="stmt" count="2"/>
+        <line num="49" type="stmt" count="2"/>
+        <line num="50" type="stmt" count="2"/>
+        <line num="51" type="stmt" count="2"/>
+        <line num="52" type="stmt" count="2"/>
+        <line num="54" type="stmt" count="2"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
         <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
         <line num="59" type="stmt" count="0"/>
-        <line num="60" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <metrics loc="61" ncloc="61" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="0" elements="43" coveredelements="0"/>
+        <line num="62" type="stmt" count="2"/>
+        <line num="65" type="method" name="createProduct" visibility="public" complexity="2" crap="2.02" count="2"/>
+        <line num="67" type="stmt" count="2"/>
+        <line num="69" type="stmt" count="2"/>
+        <line num="70" type="stmt" count="2"/>
+        <line num="71" type="stmt" count="2"/>
+        <line num="72" type="stmt" count="2"/>
+        <line num="73" type="stmt" count="2"/>
+        <line num="74" type="stmt" count="2"/>
+        <line num="75" type="stmt" count="2"/>
+        <line num="76" type="stmt" count="2"/>
+        <line num="77" type="stmt" count="2"/>
+        <line num="79" type="stmt" count="2"/>
+        <line num="80" type="stmt" count="2"/>
+        <line num="81" type="stmt" count="2"/>
+        <line num="82" type="stmt" count="2"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="2"/>
+        <line num="91" type="method" name="updateProduct" visibility="public" complexity="7" crap="7.14" count="3"/>
+        <line num="93" type="stmt" count="3"/>
+        <line num="95" type="stmt" count="3"/>
+        <line num="96" type="stmt" count="3"/>
+        <line num="97" type="stmt" count="3"/>
+        <line num="98" type="stmt" count="3"/>
+        <line num="99" type="stmt" count="1"/>
+        <line num="102" type="stmt" count="2"/>
+        <line num="103" type="stmt" count="2"/>
+        <line num="105" type="stmt" count="2"/>
+        <line num="106" type="stmt" count="2"/>
+        <line num="108" type="stmt" count="2"/>
+        <line num="109" type="stmt" count="1"/>
+        <line num="112" type="stmt" count="2"/>
+        <line num="113" type="stmt" count="2"/>
+        <line num="114" type="stmt" count="2"/>
+        <line num="115" type="stmt" count="1"/>
+        <line num="116" type="stmt" count="1"/>
+        <line num="117" type="stmt" count="0"/>
+        <line num="118" type="stmt" count="0"/>
+        <line num="119" type="stmt" count="0"/>
+        <line num="122" type="stmt" count="2"/>
+        <metrics loc="123" ncloc="121" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="58" elements="74" coveredelements="58"/>
       </file>
     </package>
-    <metrics files="23" loc="1583" ncloc="913" classes="18" methods="94" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="395" coveredstatements="0" elements="489" coveredelements="0"/>
+    <metrics files="22" loc="1771" ncloc="1044" classes="17" methods="94" coveredmethods="39" conditionals="0" coveredconditionals="0" statements="372" coveredstatements="224" elements="466" coveredelements="263"/>
   </project>
 </coverage>

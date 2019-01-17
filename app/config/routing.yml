@@ -1,3 +1,9 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+app_product:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /api
+    defaults: {_format:json}
