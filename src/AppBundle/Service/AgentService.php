@@ -62,9 +62,6 @@ class AgentService extends BaseService
             if(!$user->isEnabled()) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::DISABLEDUSER);
             }
-            if(in_array(GeneralConstants::ROLE_AGENT, $user->getRoles()) && count($user->getRoles()) === 1) {
-                throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_ROLE);
-            }
             if ($user->getPassword() !== $encoder->encodePassword($credentials['password'], $user->getSalt())) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CRED);
             }

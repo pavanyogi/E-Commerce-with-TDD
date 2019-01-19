@@ -30,8 +30,8 @@ class ProductServiceTest extends KernelTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $kernel = self::bootKernel();
-        $container = $kernel->getContainer();
+        self::bootKernel();
+        $container = self::$kernel->getContainer();
         $this->productService = new ProductService();
         $this->productService->setServiceContainer($container->get('service_container'));
         $this->productService->setEntityManager($this->entityManagerInterfaceMock);
@@ -153,7 +153,7 @@ class ProductServiceTest extends KernelTestCase
             'pricePerUnit' => 200, 'unit' => 'pair', 'stockAvialable' => 1, 'status' => 1]);
 
         $expectedMessage['status'] = true;
-        $expectedMessage['message']['response'] = 'Product Created Successfully';
+        $expectedMessage['message']['response'] = 'Product Created Successfully.';
 
         $this->assertEquals($result, $expectedMessage);
     }

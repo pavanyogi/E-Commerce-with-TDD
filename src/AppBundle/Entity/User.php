@@ -24,4 +24,35 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="authentication_token", type="string")
+     */
+    protected $authenticationToken;
+
+    /**
+     * Set authenticationToken
+     *
+     * @param string $authenticationToken
+     *
+     * @return User
+     */
+    public function setAuthenticationToken($authenticationToken)
+    {
+        $this->authenticationToken = $authenticationToken;
+
+        return $this;
+    }
+
+    /**
+     * Get authenticationToken
+     *
+     * @return string
+     */
+    public function getAuthenticationToken()
+    {
+        return $this->authenticationToken;
+    }
 }
