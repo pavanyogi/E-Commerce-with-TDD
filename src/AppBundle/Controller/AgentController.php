@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use AppBundle\Constants\ErrorConstants;
 
 class AgentController extends Controller
 {
@@ -32,12 +33,6 @@ class AgentController extends Controller
                 ->get('app.api_response_service')
                 ->createAgentApiSuccessResponse('AgentResponse', $authResult)
             ;
-        } catch (BadRequestHttpException $ex) {
-            throw $ex;
-        } catch (UnprocessableEntityHttpException $ex) {
-            throw $ex;
-        } catch (HttpException $ex) {
-            throw $ex;
         } catch (\Exception $ex) {
             $logger->error(__FUNCTION__.' function failed due to Error : '.
                 $ex->getMessage());

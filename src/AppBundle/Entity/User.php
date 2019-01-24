@@ -28,9 +28,9 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="authentication_token", type="string")
+     * @ORM\Column(name="authentication_token", type="string", nullable=true)
      */
-    protected $authenticationToken;
+    private $authenticationToken;
 
     /**
      * Set authenticationToken

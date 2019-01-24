@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * OrderDetail
  *
  * @ORM\Table(name="order_detail")
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="AppBundle\Repository\OrderDetailRepository")
  */
 class OrderDetail
@@ -214,6 +215,27 @@ class OrderDetail
     public function getLastUpdatedDateTime()
     {
         return $this->lastUpdatedDateTime;
+    }
+
+    /**
+     * Gets triggered only on insert
+     *
+     * @ORM\PrePersist
+     */
+    public function onPrePersist()
+    {
+        $this->createdDateTime = new \DateTime("now");
+        $this->lastUpdatedDateTime = new \DateTime("now");
+    }
+
+    /**
+     * Gets triggered every time on update
+     *
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        $this->lastUpdatedDateTime = new \DateTime("now");
     }
 }
 

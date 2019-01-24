@@ -9,6 +9,7 @@ use AppBundle\Entity\Customer;
  * Orders
  *
  * @ORM\Table(name="orders")
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="AppBundle\Repository\OrdersRepository")
  */
 class Orders
@@ -32,7 +33,7 @@ class Orders
     /**
      * @var int
      *
-     * @ORM\Column(name="user_id", type="integer")
+     * @ORM\Column(name="agent_id", type="integer", nullable=true)
      */
     private $agentId;
 
@@ -216,6 +217,27 @@ class Orders
     public function getLastUpdateDateTime()
     {
         return $this->lastUpdateDateTime;
+    }
+
+    /**
+     * Gets triggered only on insert
+     *
+     * @ORM\PrePersist
+     */
+    public function onPrePersist()
+    {
+        $this->createdDateTime = new \DateTime("now");
+        $this->lastUpdateDateTime = new \DateTime("now");
+    }
+
+    /**
+     * Gets triggered every time on update
+     *
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        $this->lastUpdateDateTime = new \DateTime("now");
     }
 }
 

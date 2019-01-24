@@ -74,7 +74,7 @@ class Product
     /**
      * @var bool
      *
-     * @ORM\Column(name="status", type="boolean", nullable=true)
+     * @ORM\Column(name="status", type="integer", nullable=true)
      */
     private $status;
 

@@ -30,8 +30,8 @@ class AuthenticateAuthorizeService extends BaseService
         try {
             // Validating Content-Type in Request.
             $contentType = $request->headers->get('Content-Type');
-            if ($request->getMethod() === Request::METHOD_POST
-                && 'application/json' !== $contentType
+            if ($request->getMethod() !== Request::METHOD_POST
+                || 'application/json' !== $contentType
             ) {
                 throw new UnauthorizedHttpException(null, ErrorConstants::INVALID_CONTENT_TYPE);
             }
@@ -45,15 +45,11 @@ class AuthenticateAuthorizeService extends BaseService
             $userName = $request->headers->get('username');
             $userManager = $this->serviceContainer->get('fos_user.user_manager');
             $user = $userManager->findUserByUsername($userName);
-            if(!$user->isEnabled()) {
-                throw new UnauthorizedHttpException(null, ErrorConstants::DISABLEDUSER);
-            }
-            if(!$user || ($user->getAuthorizationToken() !== $authorization)) {
+            if(!$user || ($user->getAuthenticationToken() !== $authorization)) {
                 throw new UnauthorizedHttpException(null, ErrorConstants::INVALID_AUTHORIZATION_OR_USER_NAME);
             }
-
-            if(count($user->getRoles()) !== 1 || !in_array(GeneralConstants::ROLE_AGENT, $user->getRoles())) {
-                throw new UnauthorizedHttpException(null, ErrorConstants::INVALID_ROLE);
+            if(!$user->isEnabled()) {
+                throw new UnauthorizedHttpException(null, ErrorConstants::DISABLEDUSER);
             }
 
             $authenticateResult['message']['username'] = $request->headers->get('username');

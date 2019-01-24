@@ -1,5 +1,5 @@
 <?php
-namespace tests\PhpunitBundle\Service;
+namespace tests\AppBundle\Service;
 
 use AppBundle\Service\AgentService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -78,8 +78,8 @@ class AgentServiceTest extends KernelTestCase
         $testCases = [];
 
         // setting first test cases
-        $userName['username'] = 'superadmin';
-        $user = $entityManager->getRepository(User::class)->findOneBy(['enabled' => true]);
+        $userName['username'] = 'testuser';
+        $user = $entityManager->getRepository(User::class)->findOneBy(['username' => $userName['username']]);
 
         $testCases[] = [$userName, $user];
 

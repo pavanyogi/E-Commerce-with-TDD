@@ -32,18 +32,22 @@
         <ul>
             <li style="color: #555753;">✓ Execute</li>
         </ul>
-        <h2 id="Tests\AppBundle\Controller\ProductControllerTest">s\AppBundle\Controller\ProductController</h2>
+        <h2 id="tests\AppBundle\Controller\AgentControllerTest">tests\AppBundle\Controller\AgentController</h2>
+        <ul>
+            <li style="color: #555753;">✓ Login action </li>
+        </ul>
+        <h2 id="tests\AppBundle\Controller\ProductControllerTest">tests\AppBundle\Controller\ProductController</h2>
         <ul>
             <li style="color: #555753;">✓ Get product list action </li>
             <li style="color: #555753;">✓ Get product detail action </li>
             <li style="color: #555753;">✓ Update product action </li>
             <li style="color: #555753;">✓ Create product action </li>
         </ul>
-        <h2 id="AppBundle\Tests\EventListener\RequestListenerTest">AppBundle\Tests\EventListener\RequestListener</h2>
+        <h2 id="tests\AppBundle\EventListener\RequestListenerTest">tests\AppBundle\EventListener\RequestListener</h2>
         <ul>
             <li style="color: #555753;">✓ Listener throws when master request has inconsistent client ips</li>
         </ul>
-        <h2 id="AppBundle\Tests\EventListener\ResponseListenerTest">AppBundle\Tests\EventListener\ResponseListener</h2>
+        <h2 id="tests\AppBundle\EventListener\ResponseListenerTest">tests\AppBundle\EventListener\ResponseListener</h2>
         <ul>
             <li style="color: #555753;">✓ Filter does nothing for sub requests</li>
         </ul>
@@ -52,7 +56,25 @@
             <li style="color: #555753;">✓ Find all records test </li>
             <li style="color: #555753;">✓ Find one by id test </li>
         </ul>
-        <h2 id="tests\PhpunitBundle\Service\CustomerServiceTest">tests\PhpunitBundle\Service\CustomerService</h2>
+        <h2 id="tests\AppBundle\Service\AgentServiceTest">tests\AppBundle\Service\AgentService</h2>
+        <ul>
+            <li style="color: #555753;">✓ Get user </li>
+            <li style="color: #555753;">✓ Validate user credentials </li>
+            <li style="color: #555753;">✓ Validate user credentials through exception with invalid user name </li>
+            <li style="color: #555753;">✓ Validate user credentials through exception with disabled user </li>
+            <li style="color: #555753;">✓ Validate user credentials through exception with invalid credential </li>
+            <li style="color: #555753;">✓ Generate authentication token</li>
+        </ul>
+        <h2 id="tests\PhpunitBundle\Service\AuthenticateAuthorizeServiceTest">tests\PhpunitBundle\Service\AuthenticateAuthorizeService</h2>
+        <ul>
+            <li style="color: #555753;">✓ Authenticate api request </li>
+            <li style="color: #555753;">✓ Authenticate api request should throw exception for invalid content type</li>
+            <li style="color: #555753;">✓ Authenticate api request should throw exception for invalid authorization</li>
+            <li style="color: #555753;">✓ Authenticate api request should throw exception for invalid user</li>
+            <li style="color: #555753;">✓ Authenticate api request should throw exception for invalid method</li>
+            <li style="color: #555753;">✓ Authenticate api request should throw exception for disabled user </li>
+        </ul>
+        <h2 id="tests\AppBundle\Service\CustomerServiceTest">tests\AppBundle\Service\CustomerService</h2>
         <ul>
             <li style="color: #555753;">✓ Create one</li>
             <li style="color: #555753;">✓ Get all </li>
@@ -62,7 +84,13 @@
             <li style="color: #555753;">✓ Delete one should throw exception for invalid customer id</li>
             <li style="color: #555753;">✓ Delete one </li>
         </ul>
-        <h2 id="tests\PhpunitBundle\Service\ProductServiceTest">tests\PhpunitBundle\Service\ProductService</h2>
+        <h2 id="tests\AppBundle\Service\OrderServiceTest">tests\AppBundle\Service\OrderService</h2>
+        <ul>
+            <li style="color: #555753;">✓ Process place order request </li>
+            <li style="color: #555753;">✓ Validate place order request </li>
+            <li style="color: #555753;">✓ Fetch or create customer </li>
+        </ul>
+        <h2 id="tests\AppBundle\Service\ProductServiceTest">tests\AppBundle\Service\ProductService</h2>
         <ul>
             <li style="color: #555753;">✓ Fetch product list </li>
             <li style="color: #555753;">✓ Create product</li>

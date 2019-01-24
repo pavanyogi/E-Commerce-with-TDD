@@ -19,6 +19,7 @@ final class ErrorConstants
     const INVALID_USER_NAME = 'INVALIDUSER';
     const INVALID_AUTHORIZATION = 'INVALID_AUTHORIZATION';
     const INVALID_AUTHORIZATION_OR_USER_NAME = 'INVALIDAUTHORIZATIONORUSER_NAME';
+    const INVALID_PRODUCT_QUANTITY = 'INVALIDPRODUCTQUANTITY';
 
     public static $errorCodeMap = [
         self::INTERNAL_ERR => ['code' => '500', 'message' => 'api.response.error.internal_error'],
@@ -31,5 +32,7 @@ final class ErrorConstants
         self::INVALID_AUTHORIZATION => ['code' => '1008', 'message' => 'api.response.error.invalid_authorization_token'],
         self::INVALID_AUTHORIZATION_OR_USER_NAME => ['code' => '1008',
             'message' => 'api.response.error.invalid_authorization_or_username'],
+        self::INVALID_PRODUCT_QUANTITY => ['code' => '1008',
+            'message' => 'api.response.error.invalid_product_quantity'],
     ];
 }

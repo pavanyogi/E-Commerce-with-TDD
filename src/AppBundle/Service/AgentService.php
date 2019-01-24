@@ -107,18 +107,19 @@ class AgentService extends BaseService
                     $loop = false;
                 }
             }
-            $user->authenticationToken = $authenticationToken;
+            $user->setAuthenticationToken($authenticationToken);
             $this->entityManager->flush();
 
             $processingResult['status'] = true;
             $processingResult['message']['token'] = $authenticationToken;
         } catch (\Exception $ex) {
+            print_r($ex->getMessage()); die();
             $this->logger->error('Authentication Request could not be processed due to Error : '.
                 $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
         }
 
-        return $authenticationToken;
+        return $processingResult;
     }
 
     public function generateAuthenticationToken()

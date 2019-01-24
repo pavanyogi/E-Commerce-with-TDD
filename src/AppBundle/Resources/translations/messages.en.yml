@@ -15,6 +15,7 @@ api:
       invalid_user_name: Invalid User Name found.
       invalid_authorization_token: Invalid Authorization Token.
       invalid_authorization_or_username: Invalid Authorization Token or User Name found.
+      invalid_product_quantity: Limited amount of product with the given quantity present.
 
     success:
       message: success

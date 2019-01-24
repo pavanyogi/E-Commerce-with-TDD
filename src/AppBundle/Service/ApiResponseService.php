@@ -38,4 +38,26 @@ class ApiResponseService extends BaseService
             ]
         ];
     }
+
+    public function createOrderApiSuccessResponse($responseKey, $data)
+    {
+        return [
+            'Response' => [
+                'reasonCode' => '0',
+                'reasonText' => $this->translator->trans('api.response.success.message'),
+                $responseKey => $data,
+            ]
+        ];
+    }
+
+    public function createCustomerApiSuccessResponse($responseKey, $data)
+    {
+        return [
+            'Response' => [
+                'reasonCode' => '0',
+                'reasonText' => $this->translator->trans('api.response.success.message'),
+                $responseKey => $data,
+            ]
+        ];
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Tests\EventListener;
+namespace tests\AppBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,5 +1,5 @@
 <?php
-namespace tests\PhpunitBundle\Service;
+namespace tests\AppBundle\Service;
 
 use AppBundle\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
