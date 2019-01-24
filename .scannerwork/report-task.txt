@@ -2,5 +2,5 @@ projectKey=tdd_learning
 serverUrl=http://localhost:9000
 serverVersion=7.1.0.11001
 dashboardUrl=http://localhost:9000/dashboard/index/tdd_learning
-ceTaskId=AWhWIZGOFUsp66L1eQVn
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWhWIZGOFUsp66L1eQVn
+ceTaskId=AWh_Vry7sBdo30WhGRnH
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWh_Vry7sBdo30WhGRnH

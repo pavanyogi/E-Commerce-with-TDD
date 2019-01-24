@@ -123,6 +123,10 @@ class OrderServiceTest extends KernelTestCase
                 }
             ));
 
+        $this->entityManagerInterfaceMock->expects($this->any())
+            ->method('getConnection')
+            ->will($this->returnValue($this->getConnectionMock()));
+
         $this->productRepositoryMock
             ->expects($this->once())
             ->method('lockProduct')
@@ -273,5 +277,29 @@ class OrderServiceTest extends KernelTestCase
             [$customerDataInput, null, $expectedResult],
             [$customerDataInput, $customer, $expectedResult]
         ];
+    }
+
+
+    /**
+     * @return \Doctrine\DBAL\Connection|\PHPUnit_Framework_MockObject_MockObject
+     */
+    public function getConnectionMock()
+    {
+        $mock = $this->getMockBuilder('Doctrine\DBAL\Connection')
+            ->disableOriginalConstructor()
+            ->setMethods(
+                array(
+                    'beginTransaction',
+                    'commit',
+                    'rollback',
+                    'prepare',
+                    'query',
+                    'executeQuery',
+                    'executeUpdate',
+                    'getDatabasePlatform',
+                )
+            )
+            ->getMock();
+        return $mock;
     }
 }

@@ -35,7 +35,6 @@ class CustomerRepositoryTest extends KernelTestCase
             ->getRepository(Customer::class)
             ->findAll();
 
-        $this->assertCount(3, $customers);
         $this->assertSame($id, $customers[$id-1]['id']);
         $this->assertSame($name, $customers[$id-1]['name']);
     }

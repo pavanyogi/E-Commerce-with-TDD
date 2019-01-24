@@ -1,1 +1,0 @@
-:tests/AppBundle/EventListener :9;rtests/AppBundle/EventListener

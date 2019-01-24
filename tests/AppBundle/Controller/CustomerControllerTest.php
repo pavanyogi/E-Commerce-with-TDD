@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use AppBundle\Constants\GeneralConstants;
 use Symfony\Component\HttpFoundation\Response;
 
-class OrderControllerTest extends WebTestCase
+class CustomerControllerTest extends WebTestCase
 {
     private $client;
 

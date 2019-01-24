@@ -1,1 +1,0 @@
-/.tests/AppBundle/Service/ProductServiceTest.php 2phpX«hr.tests/AppBundle/Service/ProductServiceTest.php

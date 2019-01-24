@@ -60,7 +60,6 @@ class OrderService extends BaseService
             $processingResult['status'] = true;
             $processingResult['message']['response'] = $orders->getOrderId();
         } catch (\Exception $ex) {
-            print_r($ex->getMessage()); die();
             $this->logger->error('OAuth Request could not be processed due to Error : '.
                 $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
@@ -95,7 +94,6 @@ class OrderService extends BaseService
             }
 
         } catch (\Exception $ex) {
-            print_r($ex->getMessage()); die();
             $this->logger->error('Fetch/Create Customer could not be processed due to Error : '.
                 $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
