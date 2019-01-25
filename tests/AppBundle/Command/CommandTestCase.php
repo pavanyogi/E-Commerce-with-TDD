@@ -1,8 +1,8 @@
 <?php
 /**
- *  Service Class for Creating Sample Test Case.
+ *  CommandTestCase Class for providing the test case to command class.
  *
- *  @category SampleTestCase
+ *  @category CommandTestCase
  *  @author Prafulla Meher
  */
 namespace Tests\AppBundle\Command;

@@ -3,7 +3,7 @@
  *  Service Class for Creating API Request Response.
  *
  *  @category Service
- *  @author Ashish Kumar
+ *  @author Prafulla Meher
  */
 namespace AppBundle\Service;
 
@@ -12,6 +12,7 @@ use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use AppBundle\Entity\User;
 use AppBundle\Constants\GeneralConstants;
+use FOS\UserBundle\Model\UserInterface;
 
 class AgentService extends BaseService
 {
@@ -78,6 +79,13 @@ class AgentService extends BaseService
         return $validateResult;
     }
 
+    /**
+     * Function to get Current User From username and password.
+     *
+     * @param $username
+     * @param null $password
+     * @return UserInterface|null|object
+     */
     public function getUser($username, $password = null)
     {
         $userManager = $this->serviceContainer->get('fos_user.user_manager');

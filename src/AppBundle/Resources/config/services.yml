@@ -46,3 +46,8 @@ services:
     class: AppBundle\Service\OrderService
     parent: app.base_service
     public: true
+
+  app.service_test_case:
+    class: Tests\AppBundle\Service\ServiceTestCase
+    calls:
+    - [ setContainer, ["@service_container"] ]
