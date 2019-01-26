@@ -48,20 +48,8 @@ class AgentServiceTest extends BaseServiceTest
     public function getUserDataProvider()
     {
         $serviceTest = new ServiceTestCase();
-        var_dump($serviceTest->getUserTestCase());
-        echo 5; die();
-        $serviceTest->getUserTestCase();
-        $kernel = self::bootKernel();
-        $entityManager = $kernel->getContainer()->get('doctrine')->getManager();
+        $userTestCases = $serviceTest->getUserTestCase();
 
-        $testCases = [];
-
-        // setting first test cases
-        $userName['username'] = 'testuser';
-        $user = $entityManager->getRepository(User::class)->findOneBy(['username' => $userName['username']]);
-
-        return [
-            [$userName, $user]
-        ];
+        return $userTestCases;
     }
 }
