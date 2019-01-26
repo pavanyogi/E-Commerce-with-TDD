@@ -52,6 +52,7 @@ class AgentService extends BaseService
         $validateResult['status'] = false;
         try {
             $user = $this->getUser($credentials['username']);
+
             // checking if username is valid or not.
             if (empty($user)) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CRED);

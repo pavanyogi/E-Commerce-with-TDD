@@ -24,7 +24,30 @@ class ServiceTestCase
             'salt' => 'DQva6c/qhcN/YEkQG4.ynx4AFbf.5MhfsgGEKZiNi7k',
             'emailCanonical' => 'test@gmail.com'
         ];
-        $testData0['user'] = $this->createObjectFromArray($testData0, User::class, null);
+        $testData0['user'] = $this->createObjectFromArray($testData0['inputData'], User::class, null);
+        $testCases = [
+            $testData0
+        ];
+
+        return $testCases;
+    }
+
+    public function getInvalidCredentialUserTestCase() {
+        // Making the testcase0
+        $inputData0 = [
+            'username' => 'testUser',
+            'usernameCanonical' => 'testUser',
+            'email' => 'test@gmail.com',
+            'enabled' => 1,
+            'password' => 'b671b9be4bc2ee60ee7f61ad19c06e5203488b69',
+            'salt' => 'DQva6c/qhcN/YEkQG4.ynx4AFbf.5MhfsgGEKZiNi7k',
+            'emailCanonical' => 'test@gmail.com'
+        ];
+        $testData0['credentials'] = [
+            'username' => 'testUser',
+            'password' => '123',
+        ];
+        $testData0['user'] = $this->createObjectFromArray($inputData0, User::class, null);
         $testCases = [
             $testData0
         ];
