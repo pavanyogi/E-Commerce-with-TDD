@@ -30,8 +30,8 @@ class AuthenticateAuthorizeService extends BaseService
         try {
             // Validating Content-Type in Request.
             $contentType = $request->headers->get('Content-Type');
-            if ($request->getMethod() !== Request::METHOD_POST
-                || 'application/json' !== $contentType
+            if ($request->getMethod() === Request::METHOD_POST
+                && 'application/json' !== $contentType
             ) {
                 throw new UnauthorizedHttpException(null, ErrorConstants::INVALID_CONTENT_TYPE);
             }

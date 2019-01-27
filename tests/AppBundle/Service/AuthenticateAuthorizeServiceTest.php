@@ -1,173 +1,178 @@
 <?php
-namespace tests\PhpunitBundle\Service;
+namespace Tests\AppBundle\Service;
 
 use AppBundle\Service\AuthenticateAuthorizeService;
-use Doctrine\ORM\EntityManagerInterface;
-use FOS\UserBundle\Model\UserManager;
-use PHPUnit_Framework_MockObject_MockObject;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\HttpFoundation\Request;
 
-class AuthenticateAuthorizeServiceTest extends KernelTestCase
+class AuthenticateAuthorizeServiceTest extends BaseServiceTest
 {
-    /** @var UserManager|PHPUnit_Framework_MockObject_MockObject */
-    private $userManagerMock;
-    /** @var EntityManagerInterface|PHPUnit_Framework_MockObject_MockObject */
-    private $entityManagerInterfaceMock;
     /** @var AuthenticateAuthorizeService */
     private $authenticateAutherizeService;
+
+    public static function setUpBeforeClass()
+    {
+        self::bootKernel();
+    }
 
     protected function setUp()
     {
         parent::setUp();
-        $this->userManagerMock = $this->getMockBuilder(UserManager::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $this->entityManagerInterfaceMock = $this->getMockBuilder(EntityManagerInterface::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        self::bootKernel();
-        $container = self::$kernel->getContainer();
         $this->authenticateAutherizeService = new AuthenticateAuthorizeService();
-        $this->authenticateAutherizeService->setServiceContainer($container->get('service_container'));
+        $this->authenticateAutherizeService->setServiceContainer($this->serviceContainerMock);
         $this->authenticateAutherizeService->setEntityManager($this->entityManagerInterfaceMock);
-        $this->authenticateAutherizeService->setLogger($container->get('monolog.logger.exception'));
-        $this->authenticateAutherizeService->setTranslator($container->get('translator.default'));
+        $this->authenticateAutherizeService->setLogger($this->logger);
+        $this->authenticateAutherizeService->setTranslator($this->translator);
     }
 
     protected function tearDown()
     {
         parent::tearDown();
-        $this->userManagerMock = null;
-        $this->entityManagerInterfaceMock = null;
         $this->authenticateAutherizeService = null;
     }
 
     /**
      * @dataProvider authenticateApiRequestDataProvider
      */
-    public function testAuthenticateApiRequest($user, $expectedResponse)
+    public function testAuthenticateApiRequest($headerData, $user, $expectedResult)
     {
         $request = new Request();
-        $request->headers->set('Content-Type', 'application/json');
-        $request->headers->set('Authorization', $user->getAuthenticationToken());
-        $request->headers->set('username', $user->getUserName());
+        foreach ($headerData as $key => $value) {
+            $request->headers->set($key, $value);
+        }
         $request->setMethod(Request::METHOD_POST);
         $this->userManagerMock
             ->expects($this->any())
             ->method('findUserByUsername')
             ->with($user->getUSerName())
             ->willReturn($user);
+        $this->serviceContainerMock->expects($this->any())
+            ->method('get')
+            ->with('fos_user.user_manager')
+            ->willReturn($this->userManagerMock);
 
+        // Calling the function
         $result = $this->authenticateAutherizeService->authenticateApiRequest($request);
-        $this->assertEquals($result, $expectedResponse);
+
+        $this->assertEquals($result, $expectedResult);
     }
 
     public function authenticateApiRequestDataProvider()
     {
-        $kernel = self::bootKernel();
-        $entityManager = $kernel->getContainer()->get('doctrine')->getManager();
+        $authenticateAutherizeApiTest = new ServiceTestCase();
+        $authenticateAutherizeApiTestCases = $authenticateAutherizeApiTest->authenticateApiRequestTestCase();
 
-        $testCases = [];
-
-        // setting first test cases
-        $user = $entityManager->getRepository(User::class)
-            ->findOneBy(['username' => 'testAuthenticationAuthorization']);
-        $expectedResponse = [
-            'status' => 1,
-            'message' => [
-                'username' => 'testAuthenticationAuthorization'
-            ]
-        ];
-        $testCases[] = [$user, $expectedResponse];
-
-        return $testCases;
+        return $authenticateAutherizeApiTestCases;
     }
 
-
-    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidContentType()
+    /**
+     * @dataProvider authenticateApiRequestInvalidContentTypeDataProvider
+     */
+    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidContentType($headerData)
     {
         $request = new Request();
-        $request->headers->set('Content-Type', 'application/xml');
-        $this->expectException(UnauthorizedHttpException::class);
-        $this->authenticateAutherizeService->authenticateApiRequest($request);
-    }
-
-    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidAuthorization()
-    {
-        $request = new Request();
-        $request->headers->set('Content-Type', 'application/json');
-        $request->headers->set('Authorization', '123');
+        foreach ($headerData as $key => $value) {
+            $request->headers->set($key, $value);
+        }
         $request->setMethod(Request::METHOD_POST);
         $this->expectException(UnauthorizedHttpException::class);
         $this->authenticateAutherizeService->authenticateApiRequest($request);
     }
 
+    public function authenticateApiRequestInvalidContentTypeDataProvider() {
+        $authenticateAutherizeApiTest = new ServiceTestCase();
+        $authenticateAutherizeApiInvalidContentTypeTestCases = $authenticateAutherizeApiTest
+            ->authenticateApiRequestInvalidContentTypeTestCase();
 
-    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidUser()
+        return $authenticateAutherizeApiInvalidContentTypeTestCases;
+    }
+
+    /**
+     * @dataProvider authenticateApiRequestInvalidAuthorizationDataProvider
+     */
+    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidAuthorization($headerdata)
     {
         $request = new Request();
-        $request->headers->set('Content-Type', 'application/json');
-        $request->headers->set('Authorization', 'ABCDFGRTEDRTFY');
-        $request->headers->set('username', 'xxxxxxxx');
+        foreach ($headerdata as $key => $value) {
+            $request->headers->set($key, $value);
+        }
+        $request->setMethod(Request::METHOD_POST);
+        $this->expectException(UnauthorizedHttpException::class);
+        $this->authenticateAutherizeService->authenticateApiRequest($request);
+    }
+
+    public function authenticateApiRequestInvalidAuthorizationDataProvider() {
+        $authenticateAutherizeApiTest = new ServiceTestCase();
+        $authenticateAutherizeApiInvalidAuthorizationTestCases = $authenticateAutherizeApiTest
+            ->authenticateApiRequestInvalidAuthorizationTestCase();
+
+        return $authenticateAutherizeApiInvalidAuthorizationTestCases;
+    }
+
+    /**
+     * @dataProvider authenticateApiRequestInvalidUserDataProvider
+     */
+    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidUser($headerData)
+    {
+        $request = new Request();
+        foreach ($headerData as $key => $value) {
+            $request->headers->set($key, $value);
+        }
         $request->setMethod(Request::METHOD_POST);
         $this->userManagerMock
             ->expects($this->any())
             ->method('findUserByUsername')
-            ->with('xxxxxxxx')
+            ->with($headerData['username'])
             ->willReturn(null);
+        $this->serviceContainerMock->expects($this->any())
+            ->method('get')
+            ->with('fos_user.user_manager')
+            ->willReturn($this->userManagerMock);
 
         $this->expectException(UnauthorizedHttpException::class);
-        $result = $this->authenticateAutherizeService->authenticateApiRequest($request);
+        $this->authenticateAutherizeService->authenticateApiRequest($request);
     }
 
-    public function testAuthenticateApiRequestShouldThrowExceptionForInvalidMethod()
-    {
-        $request = new Request();
-        $request->headers->set('Content-Type', 'application/json');
-        $request->headers->set('Authorization', 'ABCDFGRTEDRTFY');
-        $request->headers->set('username', 'xxxxxxxx');
-        $request->setMethod(Request::METHOD_GET);
+    public function authenticateApiRequestInvalidUserDataProvider() {
+        $authenticateAutherizeApiTest = new ServiceTestCase();
+        $authenticateAutherizeApiInvalidUserTestCases = $authenticateAutherizeApiTest
+            ->authenticateApiRequestInvalidUserTestCase();
 
-        $this->expectException(UnauthorizedHttpException::class);
-        $result = $this->authenticateAutherizeService->authenticateApiRequest($request);
+        return $authenticateAutherizeApiInvalidUserTestCases;
     }
+
 
     /**
      * @dataProvider authenticateApiRequestDataProviderForDisabledUser
      */
-    public function testAuthenticateApiRequestShouldThrowExceptionForDisabledUser($user)
+    public function testAuthenticateApiRequestShouldThrowExceptionForDisabledUser($headerData, $user)
     {
         $request = new Request();
-        $request->headers->set('Content-Type', 'application/json');
-        $request->headers->set('Authorization', $user->getAuthenticationToken());
-        $request->headers->set('username', $user->getUserName());
+        foreach ($headerData as $key => $value) {
+            $request->headers->set($key, $value);
+        }
         $request->setMethod(Request::METHOD_POST);
         $this->userManagerMock
             ->expects($this->any())
             ->method('findUserByUsername')
             ->with($user->getUSerName())
             ->willReturn($user);
+        $this->serviceContainerMock->expects($this->any())
+            ->method('get')
+            ->with('fos_user.user_manager')
+            ->willReturn($this->userManagerMock);
 
         $this->expectException(UnauthorizedHttpException::class);
         $this->authenticateAutherizeService->authenticateApiRequest($request);
     }
 
     public function authenticateApiRequestDataProviderForDisabledUser() {
-        $kernel = self::bootKernel();
-        $entityManager = $kernel->getContainer()->get('doctrine')->getManager();
+        $authenticateAutherizeApiTest = new ServiceTestCase();
+        $authenticateAutherizeApiDisabledUserTestCases = $authenticateAutherizeApiTest
+            ->authenticateApiRequestDisabledUserTestCase();
 
-        $testCases = [];
-
-        // setting first test cases
-        $user = $entityManager->getRepository(User::class)
-            ->findOneBy(['enabled' => false, 'username' => 'testAuthenticationAuthorizationDisabled']);
-        $testCases[] = [$user];
-
-        return $testCases;
+        return $authenticateAutherizeApiDisabledUserTestCases;
     }
+
 }

@@ -58,12 +58,12 @@ class AgentService extends BaseService
                 throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CRED);
             }
 
-            $encoder = $this->serviceContainer
-                ->get('security.encoder_factory')
-                ->getEncoder($user);
             if(!$user->isEnabled()) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::DISABLEDUSER);
             }
+            $encoder = $this->serviceContainer
+                ->get('security.encoder_factory')
+                ->getEncoder($user);
             if ($user->getPassword() !== $encoder->encodePassword($credentials['password'], $user->getSalt())) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CRED);
             }
@@ -122,7 +122,6 @@ class AgentService extends BaseService
             $processingResult['status'] = true;
             $processingResult['message']['token'] = $authenticationToken;
         } catch (\Exception $ex) {
-            print_r($ex->getMessage()); die();
             $this->logger->error('Authentication Request could not be processed due to Error : '.
                 $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
