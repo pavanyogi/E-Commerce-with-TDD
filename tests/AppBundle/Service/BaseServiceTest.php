@@ -33,8 +33,9 @@ class BaseServiceTest extends KernelTestCase
     protected function setUp()
     {
         parent::setUp();
+        self::bootKernel();
         $this->setServiceContainerMock()->setEntityManagerInterfaceMock()
-            ->setUserManagerMock()->setEncodeFactoryMock();
+            ->setUserManagerMock()->setEncodeFactoryMock()->setLogger()->setTranslator();
     }
 
     /**

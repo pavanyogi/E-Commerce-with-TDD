@@ -1,153 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Project Test Suite" tests="53" assertions="112" errors="0" failures="1" skipped="0" time="9.707230">
-    <testsuite name="Tests\AppBundle\Command\CreateAgentCommandTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Command/CreateAgentCommandTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.623216">
-      <testcase name="testExecuteCreateAgentCommand" class="Tests\AppBundle\Command\CreateAgentCommandTest" classname="Tests.AppBundle.Command.CreateAgentCommandTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Command/CreateAgentCommandTest.php" line="54" assertions="1" time="0.623216"/>
+  <testsuite name="Tests\AppBundle\Service\ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" tests="5" assertions="9" errors="1" failures="0" skipped="0" time="30.014029">
+    <testsuite name="Tests\AppBundle\Service\ProductServiceTest::testFetchProductList" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="29.899132">
+      <testcase name="testFetchProductList with data set #0" class="Tests\AppBundle\Service\ProductServiceTest" classname="Tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="51" assertions="2" time="29.774686"/>
+      <testcase name="testFetchProductList with data set #1" class="Tests\AppBundle\Service\ProductServiceTest" classname="Tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="51" assertions="2" time="0.061663"/>
+      <testcase name="testFetchProductList with data set #2" class="Tests\AppBundle\Service\ProductServiceTest" classname="Tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="51" assertions="2" time="0.062783"/>
     </testsuite>
-    <testsuite name="tests\AppBundle\Controller\AgentControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/AgentControllerTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="1.430562">
-      <testsuite name="tests\AppBundle\Controller\AgentControllerTest::testLoginAction" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="1.430562">
-        <testcase name="testLoginAction with data set #0" class="tests\AppBundle\Controller\AgentControllerTest" classname="tests.AppBundle.Controller.AgentControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/AgentControllerTest.php" line="28" assertions="3" time="1.430562"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="tests\AppBundle\Controller\CustomerControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/CustomerControllerTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="1.976071">
-      <testcase name="testGetCustomerListAction" class="tests\AppBundle\Controller\CustomerControllerTest" classname="tests.AppBundle.Controller.CustomerControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/CustomerControllerTest.php" line="25" assertions="2" time="0.382249"/>
-      <testsuite name="tests\AppBundle\Controller\CustomerControllerTest::testGetCustomerDetailAction" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.370363">
-        <testcase name="testGetCustomerDetailAction with data set #0" class="tests\AppBundle\Controller\CustomerControllerTest" classname="tests.AppBundle.Controller.CustomerControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/CustomerControllerTest.php" line="44" assertions="2" time="0.370363"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Controller\CustomerControllerTest::testCreateCustomerAction" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="1.223459">
-        <testcase name="testCreateCustomerAction with data set #0" class="tests\AppBundle\Controller\CustomerControllerTest" classname="tests.AppBundle.Controller.CustomerControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/CustomerControllerTest.php" line="73" assertions="2" time="1.223459"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="tests\AppBundle\Controller\OrderControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/OrderControllerTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="1.313167">
-      <testsuite name="tests\AppBundle\Controller\OrderControllerTest::testPlaceOrderAction" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="1.313167">
-        <testcase name="testPlaceOrderAction with data set #0" class="tests\AppBundle\Controller\OrderControllerTest" classname="tests.AppBundle.Controller.OrderControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/OrderControllerTest.php" line="28" assertions="3" time="1.313167"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="tests\AppBundle\Controller\ProductControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/ProductControllerTest.php" tests="5" assertions="15" errors="0" failures="0" skipped="0" time="2.087720">
-      <testsuite name="tests\AppBundle\Controller\ProductControllerTest::testGetProductListAction" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.799805">
-        <testcase name="testGetProductListAction with data set #0" class="tests\AppBundle\Controller\ProductControllerTest" classname="tests.AppBundle.Controller.ProductControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/ProductControllerTest.php" line="29" assertions="3" time="0.383569"/>
-        <testcase name="testGetProductListAction with data set #1" class="tests\AppBundle\Controller\ProductControllerTest" classname="tests.AppBundle.Controller.ProductControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/ProductControllerTest.php" line="29" assertions="3" time="0.416236"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Controller\ProductControllerTest::testGetProductDetailAction" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.355409">
-        <testcase name="testGetProductDetailAction with data set #0" class="tests\AppBundle\Controller\ProductControllerTest" classname="tests.AppBundle.Controller.ProductControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/ProductControllerTest.php" line="72" assertions="3" time="0.355409"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Controller\ProductControllerTest::testUpdateProductAction" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.441550">
-        <testcase name="testUpdateProductAction with data set #0" class="tests\AppBundle\Controller\ProductControllerTest" classname="tests.AppBundle.Controller.ProductControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/ProductControllerTest.php" line="102" assertions="3" time="0.441550"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Controller\ProductControllerTest::testCreateProductAction" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.490956">
-        <testcase name="testCreateProductAction with data set #0" class="tests\AppBundle\Controller\ProductControllerTest" classname="tests.AppBundle.Controller.ProductControllerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Controller/ProductControllerTest.php" line="136" assertions="3" time="0.490956"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="tests\AppBundle\EventListener\RequestListenerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/RequestListenerTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.085453">
-      <testcase name="testListenerThrowsWhenMasterRequestHasInconsistentClientIps" class="tests\AppBundle\EventListener\RequestListenerTest" classname="tests.AppBundle.EventListener.RequestListenerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/RequestListenerTest.php" line="18" assertions="1" time="0.085453"/>
-    </testsuite>
-    <testsuite name="tests\AppBundle\EventListener\ResponseListenerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/ResponseListenerTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.060379">
-      <testcase name="testFilterDoesNothingForSubRequests" class="tests\AppBundle\EventListener\ResponseListenerTest" classname="tests.AppBundle.EventListener.ResponseListenerTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/EventListener/ResponseListenerTest.php" line="36" assertions="1" time="0.060379"/>
-    </testsuite>
-    <testsuite name="Tests\AppBundle\Repository\CustomerRepositoryTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Repository/CustomerRepositoryTest.php" tests="5" assertions="8" errors="0" failures="0" skipped="0" time="0.438464">
-      <testsuite name="Tests\AppBundle\Repository\CustomerRepositoryTest::findAllRecordsTest" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.263052">
-        <testcase name="findAllRecordsTest with data set #0" class="Tests\AppBundle\Repository\CustomerRepositoryTest" classname="Tests.AppBundle.Repository.CustomerRepositoryTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Repository/CustomerRepositoryTest.php" line="32" assertions="2" time="0.089354"/>
-        <testcase name="findAllRecordsTest with data set #1" class="Tests\AppBundle\Repository\CustomerRepositoryTest" classname="Tests.AppBundle.Repository.CustomerRepositoryTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Repository/CustomerRepositoryTest.php" line="32" assertions="2" time="0.088476"/>
-        <testcase name="findAllRecordsTest with data set #2" class="Tests\AppBundle\Repository\CustomerRepositoryTest" classname="Tests.AppBundle.Repository.CustomerRepositoryTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Repository/CustomerRepositoryTest.php" line="32" assertions="2" time="0.085222"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Repository\CustomerRepositoryTest::findOneByIdTest" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.175412">
-        <testcase name="findOneByIdTest with data set #0" class="Tests\AppBundle\Repository\CustomerRepositoryTest" classname="Tests.AppBundle.Repository.CustomerRepositoryTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Repository/CustomerRepositoryTest.php" line="64" assertions="1" time="0.087858"/>
-        <testcase name="findOneByIdTest with data set #1" class="Tests\AppBundle\Repository\CustomerRepositoryTest" classname="Tests.AppBundle.Repository.CustomerRepositoryTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Repository/CustomerRepositoryTest.php" line="64" assertions="1" time="0.087554"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="Tests\AppBundle\Service\AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" tests="7" assertions="9" errors="0" failures="0" skipped="0" time="0.172076">
-      <testsuite name="Tests\AppBundle\Service\AgentServiceTest::testGetUser" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.075391">
-        <testcase name="testGetUser with data set #0" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="38" assertions="1" time="0.075391"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AgentServiceTest::testValidateUserCredentialsThroughExceptionWithInvalidCredential" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.025799">
-        <testcase name="testValidateUserCredentialsThroughExceptionWithInvalidCredential with data set #0" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="66" assertions="1" time="0.025799"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AgentServiceTest::testValidateUserCredentials" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.016452">
-        <testcase name="testValidateUserCredentials with data set #0" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="118" assertions="1" time="0.016452"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AgentServiceTest::testValidateUserCredentialsThroughExceptionWithInvalidUserName" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.010259">
-        <testcase name="testValidateUserCredentialsThroughExceptionWithInvalidUserName with data set #0" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="170" assertions="1" time="0.010259"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AgentServiceTest::testValidateUserCredentialsThroughExceptionWithDisabledUser" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.010914">
-        <testcase name="testValidateUserCredentialsThroughExceptionWithDisabledUser with data set #0" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="197" assertions="1" time="0.010914"/>
-      </testsuite>
-      <testcase name="testGenerateAuthenticationToken" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="222" assertions="1" time="0.007140"/>
-      <testsuite name="Tests\AppBundle\Service\AgentServiceTest::testCreateAuthenticationTokenForUser" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.026121">
-        <testcase name="testCreateAuthenticationTokenForUser with data set #0" class="Tests\AppBundle\Service\AgentServiceTest" classname="Tests.AppBundle.Service.AgentServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AgentServiceTest.php" line="231" assertions="3" time="0.026121"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AuthenticateAuthorizeServiceTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.056236">
-      <testsuite name="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest::testAuthenticateApiRequest" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.016410">
-        <testcase name="testAuthenticateApiRequest with data set #0" class="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest" classname="Tests.AppBundle.Service.AuthenticateAuthorizeServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AuthenticateAuthorizeServiceTest.php" line="38" assertions="1" time="0.016410"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest::testAuthenticateApiRequestShouldThrowExceptionForInvalidContentType" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.008333">
-        <testcase name="testAuthenticateApiRequestShouldThrowExceptionForInvalidContentType with data set #0" class="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest" classname="Tests.AppBundle.Service.AuthenticateAuthorizeServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AuthenticateAuthorizeServiceTest.php" line="72" assertions="1" time="0.008333"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest::testAuthenticateApiRequestShouldThrowExceptionForInvalidAuthorization" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.007361">
-        <testcase name="testAuthenticateApiRequestShouldThrowExceptionForInvalidAuthorization with data set #0" class="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest" classname="Tests.AppBundle.Service.AuthenticateAuthorizeServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AuthenticateAuthorizeServiceTest.php" line="94" assertions="1" time="0.007361"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest::testAuthenticateApiRequestShouldThrowExceptionForInvalidUser" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.011496">
-        <testcase name="testAuthenticateApiRequestShouldThrowExceptionForInvalidUser with data set #0" class="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest" classname="Tests.AppBundle.Service.AuthenticateAuthorizeServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AuthenticateAuthorizeServiceTest.php" line="115" assertions="1" time="0.011496"/>
-      </testsuite>
-      <testsuite name="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest::testAuthenticateApiRequestShouldThrowExceptionForDisabledUser" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.012636">
-        <testcase name="testAuthenticateApiRequestShouldThrowExceptionForDisabledUser with data set #0" class="Tests\AppBundle\Service\AuthenticateAuthorizeServiceTest" classname="Tests.AppBundle.Service.AuthenticateAuthorizeServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/AuthenticateAuthorizeServiceTest.php" line="147" assertions="1" time="0.012636"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="Tests\AppBundle\Service\BaseServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/BaseServiceTest.php" tests="1" assertions="0" errors="0" failures="1" skipped="0" time="0.003654">
-      <testcase name="Warning" assertions="0" time="0.003654">
-        <warning type="PHPUnit\Framework\Warning">Warning
-No tests found in class "Tests\AppBundle\Service\BaseServiceTest".
+    <testcase name="testCreateProduct" class="Tests\AppBundle\Service\ProductServiceTest" classname="Tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="83" assertions="0" time="0.056415">
+      <error type="ArgumentCountError">Tests\AppBundle\Service\ProductServiceTest::testCreateProduct
+ArgumentCountError: Too few arguments to function Tests\AppBundle\Service\ProductServiceTest::testCreateProduct(), 0 passed and exactly 3 expected
 
-</warning>
-      </testcase>
-    </testsuite>
-    <testsuite name="tests\AppBundle\Service\CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" tests="10" assertions="26" errors="0" failures="0" skipped="0" time="0.633912">
-      <testcase name="testCreateOne" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="50" assertions="4" time="0.075542"/>
-      <testsuite name="tests\AppBundle\Service\CustomerServiceTest::testGetAll" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.178163">
-        <testcase name="testGetAll with data set #0" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="74" assertions="2" time="0.061662"/>
-        <testcase name="testGetAll with data set #1" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="74" assertions="2" time="0.057209"/>
-        <testcase name="testGetAll with data set #2" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="74" assertions="2" time="0.059292"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Service\CustomerServiceTest::testGetOne" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.126305">
-        <testcase name="testGetOne with data set #0" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="118" assertions="1" time="0.060238"/>
-        <testcase name="testGetOne with data set #1" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="118" assertions="1" time="0.066067"/>
-      </testsuite>
-      <testcase name="testUpdateOneShouldThrowExceptionForInvalidCustomerId" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="154" assertions="4" time="0.063887"/>
-      <testsuite name="tests\AppBundle\Service\CustomerServiceTest::testUpdateOne" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.062235">
-        <testcase name="testUpdateOne with data set #0" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="178" assertions="4" time="0.062235"/>
-      </testsuite>
-      <testcase name="testDeleteOneShouldThrowExceptionForInvalidCustomerId" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="213" assertions="4" time="0.058393"/>
-      <testsuite name="tests\AppBundle\Service\CustomerServiceTest::testDeleteOne" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.069387">
-        <testcase name="testDeleteOne with data set #0" class="tests\AppBundle\Service\CustomerServiceTest" classname="tests.AppBundle.Service.CustomerServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/CustomerServiceTest.php" line="239" assertions="2" time="0.069387"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="tests\AppBundle\Service\OrderServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/OrderServiceTest.php" tests="4" assertions="11" errors="0" failures="0" skipped="0" time="0.312313">
-      <testsuite name="tests\AppBundle\Service\OrderServiceTest::testProcessPlaceOrderRequest" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.119577">
-        <testcase name="testProcessPlaceOrderRequest with data set #0" class="tests\AppBundle\Service\OrderServiceTest" classname="tests.AppBundle.Service.OrderServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/OrderServiceTest.php" line="65" assertions="3" time="0.119577"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Service\OrderServiceTest::testValidatePlaceOrderRequest" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.057145">
-        <testcase name="testValidatePlaceOrderRequest with data set #0" class="tests\AppBundle\Service\OrderServiceTest" classname="tests.AppBundle.Service.OrderServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/OrderServiceTest.php" line="186" assertions="2" time="0.057145"/>
-      </testsuite>
-      <testsuite name="tests\AppBundle\Service\OrderServiceTest::testFetchOrCreateCustomer" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.135591">
-        <testcase name="testFetchOrCreateCustomer with data set #0" class="tests\AppBundle\Service\OrderServiceTest" classname="tests.AppBundle.Service.OrderServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/OrderServiceTest.php" line="236" assertions="3" time="0.074570"/>
-        <testcase name="testFetchOrCreateCustomer with data set #1" class="tests\AppBundle\Service\OrderServiceTest" classname="tests.AppBundle.Service.OrderServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/OrderServiceTest.php" line="236" assertions="3" time="0.061021"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="tests\AppBundle\Service\ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" tests="8" assertions="23" errors="0" failures="0" skipped="0" time="0.514008">
-      <testsuite name="tests\AppBundle\Service\ProductServiceTest::testFetchProductList" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.190912">
-        <testcase name="testFetchProductList with data set #0" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="53" assertions="2" time="0.061664"/>
-        <testcase name="testFetchProductList with data set #1" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="53" assertions="2" time="0.063319"/>
-        <testcase name="testFetchProductList with data set #2" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="53" assertions="2" time="0.065929"/>
-      </testsuite>
-      <testcase name="testCreateProduct" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="131" assertions="2" time="0.076371"/>
-      <testsuite name="tests\AppBundle\Service\ProductServiceTest::testGetProductDetail" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.059546">
-        <testcase name="testGetProductDetail with data set #0" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="164" assertions="3" time="0.059546"/>
-      </testsuite>
-      <testcase name="testGetProductDetailThrowExceptionForInvalidProductCode" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="209" assertions="4" time="0.060701"/>
-      <testcase name="testUpdateProductThrowExceptionForInvalidProductCode" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="230" assertions="4" time="0.061164"/>
-      <testsuite name="tests\AppBundle\Service\ProductServiceTest::testUpdateOne" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.065314">
-        <testcase name="testUpdateOne with data set #0" class="tests\AppBundle\Service\ProductServiceTest" classname="tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="254" assertions="4" time="0.065314"/>
-      </testsuite>
+/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php:83
+</error>
+    </testcase>
+    <testsuite name="Tests\AppBundle\Service\ProductServiceTest::testGetProductDetail" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.058482">
+      <testcase name="testGetProductDetail with data set #0" class="Tests\AppBundle\Service\ProductServiceTest" classname="Tests.AppBundle.Service.ProductServiceTest" file="/var/www/html/TDD/symfony_3.4/tests/AppBundle/Service/ProductServiceTest.php" line="101" assertions="3" time="0.058482"/>
     </testsuite>
   </testsuite>
 </testsuites>

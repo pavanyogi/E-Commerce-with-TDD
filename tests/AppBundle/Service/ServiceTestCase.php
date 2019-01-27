@@ -7,6 +7,7 @@
  */
 namespace Tests\AppBundle\Service;
 
+use AppBundle\Entity\Product;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
@@ -221,6 +222,183 @@ class ServiceTestCase
             'username' => $inputData0['username']
         ];
         $testData0['user'] = $this->createObjectFromArray($inputData0, User::class, null);
+        $testCases = [
+            $testData0
+        ];
+
+        return $testCases;
+    }
+
+    public function fetchProductListTestCase() {
+        // Making request Content to be sent
+        $requestContent['filter'] = [];
+        $requestContent['pagination'] = [];
+
+        // Making first test case
+        $p0 = [];
+        $product0 = $p0;
+        $expectedResult0['status'] = true;
+        $expectedResult0['message']['response'] = [
+            'products' => $product0,
+            'count' => count($product0)
+        ];
+
+        // Making 2nd Test case
+        $p1 = [
+            'productCode' => 'P001',
+            'productName' => 'shoes',
+            'productDescription' => 'Good shoes',
+            'quantity' => 12.0,
+            'pricePerunit' => 12.0,
+            'status' => 1,
+            'stockAvialable' => 1,
+            'unit' => 'pair'
+        ];
+        $product1 = [$p1];
+        $expectedResult1['status'] = true;
+        $expectedResult1['message']['response'] = [
+            'products' => $product1,
+            'count' => count($product1)
+        ];
+
+        // Making third test case
+        $p2 = [
+            'productCode' => 'P002',
+            'productName' => 'shirt',
+            'productDescription' => 'Good shirt',
+            'quantity' => 12.0,
+            'pricePerunit' => 12.0,
+            'status' => 1,
+            'stockAvialable' => 1,
+            'unit' => 'piece'
+        ];
+        $product2 = [$p1, $p2];
+        $expectedResult2['status'] = true;
+        $expectedResult2['message']['response'] = [
+            'products' => $product2,
+            'count' => count($product2)
+        ];
+
+        return [
+            [$requestContent, $product0, $expectedResult0],
+            [$requestContent, $product1, $expectedResult1],
+            [$requestContent, $product2, $expectedResult2]
+        ];
+    }
+
+    public function getProductDetailTestCase() {
+        // Making the first testcase
+        $productData0 = [
+            'productCode' => 'P001',
+            'productName' => 'shoes',
+            'productDescription' => 'Good shoes',
+            'quantity' => 12.0,
+            'pricePerUnit' => 12.0,
+            'stockAvialable' => 1,
+            'unit' => 'pair',
+            'status' => 1
+        ];
+        $testData0['productCode'] = 'P001';
+        $testData0['product'] = $this->createObjectFromArray($productData0, Product::class, null);
+        $testData0['expectedResult'] = [
+            'status' => true,
+            'message' => [
+                'response' => [
+                    'productCode' => $productData0['productCode'],
+                    'productName' => $productData0['productName'],
+                    'quantity' => $productData0['quantity'],
+                    'pricePerUnit' => $productData0['pricePerUnit'],
+                    'stockAvialable' => $productData0['stockAvialable']
+                ]
+            ]
+        ];
+
+        // Making the array of testcases and returning it
+        $testCases = [
+            $testData0
+        ];
+
+        return $testCases;
+    }
+
+    public function createProductTestCase() {
+        // Making the first testcase
+        $testData0['createProductData'] = [
+            'productCode' => 'P001',
+            'productName' => 'shoes',
+            'productDescription' => 'Good shoes',
+            'quantity' => 12.0,
+            'pricePerUnit' => 12.0,
+            'stockAvialable' => 1,
+            'unit' => 'pair',
+            'status' => 1
+        ];
+        $testData0['product'] = $this->createObjectFromArray($testData0['createProductData'],
+            Product::class, null);
+        $testData0['expectedResult'] = [
+            'status' => true,
+            'message' => [
+                'response' => 'Product Created Successfully.'
+            ]
+        ];
+
+        // Making the array of testcases and returning it
+        $testCases = [
+            $testData0
+        ];
+
+        return $testCases;
+    }
+
+    public function getProductDetailInvaidProductCodeTestCase() {
+        return [
+            ['XXXX']
+        ];
+    }
+
+    public function updateProductDetailInvaidProductCodeTestCase() {
+        // Making first Test case
+        $testData0['updateParameter'] = [
+            'productCode' => 'P001',
+            'quantity' => 12.0,
+            'pricePerUnit' => 12.0,
+            'stockAvialable' => 0
+        ];
+
+        // Making the array of testcases and returning it
+        $testCases = [
+            $testData0
+        ];
+
+        return $testCases;
+    }
+
+    public function updateProductTestCase() {
+        // Making first Test case
+        $productEntityData0 = [
+            'productCode' => 'P001',
+            'productName' => 'shoes',
+            'productDescription' => 'Good shoes',
+            'unit' => 'pair',
+            'quantity' => 12.0,
+            'pricePerUnit' => 12.0,
+            'stockAvialable' => 0
+        ];
+        $testData0['updateParameter'] = [
+            'productCode' => 'P001',
+            'quantity' => 12.0,
+            'pricePerUnit' => 12.0,
+            'stockAvialable' => 0
+        ];
+        $testData0['product'] = $this->createObjectFromArray($productEntityData0, Product::class, null);
+        $testData0['expextedResult'] = [
+            'status' => true,
+            'message' => [
+                'response' => 'Product Updated Successfully.'
+            ]
+        ];
+
+        // Making the array of testcases and returning it
         $testCases = [
             $testData0
         ];

@@ -79,7 +79,8 @@ class ProductService extends BaseService
             $this->entityManager->persist($product);
             $this->entityManager->flush();
             $processResult['status'] = true;
-            $processResult['message']['response'] = $this->getTranslator()->trans('api.response.success.product_created');
+            $processResult['message']['response'] = $this->getTranslator()
+                ->trans('api.response.success.product_created');
         } catch (\Exception $ex) {
             $this->logger->error(__FUNCTION__.' Function failed due to Error :'. $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);

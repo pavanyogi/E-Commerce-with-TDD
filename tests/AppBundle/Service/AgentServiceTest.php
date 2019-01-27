@@ -11,11 +11,6 @@ class AgentServiceTest extends BaseServiceTest
     /** @var AgentService */
     private $agentService;
 
-    public static function setUpBeforeClass()
-    {
-        self::bootKernel();
-    }
-
     protected function setUp()
     {
         parent::setUp();

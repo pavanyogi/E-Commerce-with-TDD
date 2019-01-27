@@ -11,11 +11,6 @@ class AuthenticateAuthorizeServiceTest extends BaseServiceTest
     /** @var AuthenticateAuthorizeService */
     private $authenticateAutherizeService;
 
-    public static function setUpBeforeClass()
-    {
-        self::bootKernel();
-    }
-
     protected function setUp()
     {
         parent::setUp();
