@@ -11,7 +11,6 @@ use AppBundle\Entity\Customer;
 use AppBundle\Entity\Product;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use AppBundle\Entity\User;
-use Symfony\Component\HttpFoundation\Request;
 
 class ServiceTestCase
 {

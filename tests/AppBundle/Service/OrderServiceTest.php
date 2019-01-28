@@ -7,7 +7,6 @@
  */
 namespace Tests\AppBundle\Service;
 
-use AppBundle\Entity\Customer;
 use PHPUnit_Framework_MockObject_MockObject;
 use AppBundle\Service\OrderService;
 use AppBundle\Repository\CustomerRepository;

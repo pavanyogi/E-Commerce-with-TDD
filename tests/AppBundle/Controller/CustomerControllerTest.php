@@ -1,25 +1,20 @@
 <?php
 
-namespace tests\AppBundle\Controller;
+namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use AppBundle\Constants\GeneralConstants;
 use Symfony\Component\HttpFoundation\Response;
 
-class CustomerControllerTest extends WebTestCase
+class CustomerControllerTest extends BaseControllerTest
 {
-    private $client;
-
     protected function setUp()
     {
         parent::setUp();
-        $this->client = static::createClient();
     }
 
     protected function tearDown()
     {
         parent::tearDown();
-        $this->client = null;
     }
 
     public function testGetCustomerListAction()
@@ -35,7 +30,8 @@ class CustomerControllerTest extends WebTestCase
         );
         $response = $this->client->getResponse();
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
-        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'), 'Invalid JSON response');
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'),
+            'Invalid JSON response');
     }
 
     /**
@@ -54,17 +50,14 @@ class CustomerControllerTest extends WebTestCase
         );
         $response = $this->client->getResponse();
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
-        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'), 'Invalid JSON response');
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'),
+            'Invalid JSON response');
     }
 
     public function getCustomerDetailActionDataProvider() {
-        $requestContent = [
-            'id' => 1
-        ];
+        $customerDetailActionTestCases = (new ControllerTestCase())->getCustomerDetailActionTestCases();
 
-        return [
-            [$requestContent]
-        ];
+        return $customerDetailActionTestCases;
     }
 
     /**
@@ -83,17 +76,13 @@ class CustomerControllerTest extends WebTestCase
         );
         $response = $this->client->getResponse();
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
-        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'), 'Invalid JSON response');
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'),
+            'Invalid JSON response');
     }
 
     public function createCustomerActionDataProvider() {
-        $requestContent = [
-            'name' => 'Prafulla',
-            'phoneNumber' => '9777096808'
-        ];
+        $createCustomerActionTestCases = (new ControllerTestCase())->createCustomerActionTestCases();
 
-        return [
-            [$requestContent]
-        ];
+        return $createCustomerActionTestCases;
     }
 }

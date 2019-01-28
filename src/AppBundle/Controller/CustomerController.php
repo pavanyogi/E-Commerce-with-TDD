@@ -22,7 +22,7 @@ class CustomerController extends Controller
             // Process the request and fetch the list of products
             $customers = $this->container
                 ->get('app.service.customer')
-                ->getAll();
+                ->getAllCustomer();
 
             // Creating the final array response.
             $response = $this->container
@@ -52,7 +52,7 @@ class CustomerController extends Controller
             // Process the request and fetch the list of products
             $customers = $this->container
                 ->get('app.service.customer')
-                ->getOne($content['id']);
+                ->getCustomerDetail($content['id']);
 
             // Creating the final array response.
             $response = $this->container
@@ -82,7 +82,7 @@ class CustomerController extends Controller
             // Process the request and fetch the list of products
             $processProduct = $this->container
                 ->get('app.service.customer')
-                ->createOne($content);
+                ->createCustomer($content);
 
             // Creating the final array response.
             $response = $this->container

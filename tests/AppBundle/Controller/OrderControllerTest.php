@@ -1,29 +1,23 @@
 <?php
 
-namespace tests\AppBundle\Controller;
+namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use AppBundle\Constants\GeneralConstants;
-use Symfony\Component\HttpFoundation\Response;
 
-class OrderControllerTest extends WebTestCase
+class OrderControllerTest extends BaseControllerTest
 {
-    private $client;
-
     protected function setUp()
     {
         parent::setUp();
-        $this->client = static::createClient();
     }
 
     protected function tearDown()
     {
         parent::tearDown();
-        $this->client = null;
     }
 
     /**
-     * @dataProvider getPlaceOrderActionTestDataProvider
+     * @dataProvider placeOrderActionTestDataProvider
      */
     public function testPlaceOrderAction($requestContent, $expectedStatusCode)
     {
@@ -38,28 +32,15 @@ class OrderControllerTest extends WebTestCase
         );
         $response = $this->client->getResponse();
         $this->assertEquals($expectedStatusCode, $response->getStatusCode());
-        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'), 'Invalid JSON response');
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'),
+            'Invalid JSON response');
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function getPlaceOrderActionTestDataProvider()
+    public function placeOrderActionTestDataProvider()
     {
-        $requestContent = [];
-        $requestContent['orderItems'] = [
-            [
-                'productCode' => 'P001',
-                'quantity' => 2
-            ]
-        ];
-        $requestContent['customerDetails'] = [
-            'name' => 'Prafulla Meher',
-            'phoneNumber' => '9777096808'
-        ];
+        $placeOrderActionTestCases = (new ControllerTestCase())->getPlaceOrderActionTestCases();
 
-        $expectedStatusCode = Response::HTTP_OK;
-
-        return [
-            [$requestContent, $expectedStatusCode]
-        ];
+        return $placeOrderActionTestCases;
     }
 }

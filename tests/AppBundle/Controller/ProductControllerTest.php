@@ -1,30 +1,25 @@
 <?php
 
-namespace tests\AppBundle\Controller;
+namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use AppBundle\Constants\GeneralConstants;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
-class ProductControllerTest extends WebTestCase
+class ProductControllerTest extends BaseControllerTest
 {
-    private $client;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->client = static::createClient();
     }
 
     protected function tearDown()
     {
         parent::tearDown();
-        $this->client = null;
     }
 
     /**
-     * @dataProvider getTestGetProductListActionDataProvider
+     * @dataProvider getProductListActionDataProvider
      */
     public function testGetProductListAction($requestContent, $expectedStatusCode)
     {
@@ -33,7 +28,8 @@ class ProductControllerTest extends WebTestCase
             GeneralConstants::GET_PRODUCT_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json', 'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            ['Content-Type' => 'application/json',
+                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();
@@ -42,32 +38,15 @@ class ProductControllerTest extends WebTestCase
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function getTestGetProductListActionDataProvider()
+    public function getProductListActionDataProvider()
     {
-        $requestContent0 = [];
-        $requestContent0['filter'] = [];
-        $requestContent0['pagination'] = ['page' => 1, 'limit' => 2];
-        $expectedStatusCode0 = Response::HTTP_OK;
+        $getProductListActionTestCases = (new ControllerTestCase())->getProductListActionTestCases();
 
-        $requestContent1 = [];
-        $requestContent1['filter'] = [
-            'productCode' => 'P001',
-            'productName' => 'shoes',
-            'productDescription' => 'A good shoes',
-            'quantity' => 12.00,
-            'stockAvialable' => 1
-        ];
-        $requestContent1['pagination'] = ['page' => 1, 'limit' => 2];
-        $expectedStatusCode1 = Response::HTTP_OK;
-
-        return [
-            [$requestContent0, $expectedStatusCode0],
-            [$requestContent1, $expectedStatusCode1]
-        ];
+        return $getProductListActionTestCases;
     }
 
     /**
-     * @dataProvider getTestGetProductDetailActionDataProvider
+     * @dataProvider getProductDetailActionDataProvider
      */
     public function testGetProductDetailAction($requestContent, $expectedStatusCode)
     {
@@ -85,19 +64,15 @@ class ProductControllerTest extends WebTestCase
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function getTestGetProductDetailActionDataProvider()
+    public function getProductDetailActionDataProvider()
     {
-        $requestContent0 = [];
-        $requestContent0['productCode'] = 'P001';
-        $expectedStatusCode0 = Response::HTTP_OK;
+        $getProductDetailActionTestCases = (new ControllerTestCase())->getProductDetailActionTestCases();
 
-        return [
-            [$requestContent0, $expectedStatusCode0]
-        ];
+        return $getProductDetailActionTestCases;
     }
 
     /**
-     * @dataProvider getTestUpdateProductActionDataProvider
+     * @dataProvider updateProductActionDataProvider
      */
     public function testUpdateProductAction($requestContent, $expectedStatusCode)
     {
@@ -115,23 +90,15 @@ class ProductControllerTest extends WebTestCase
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function getTestUpdateProductActionDataProvider()
+    public function updateProductActionDataProvider()
     {
-        $requestContent0 = [
-            'productCode' => 'P001',
-            'quantity' => 12.0,
-            'pricePerUnit' => 15.0,
-            'stockAvialable' => 1
-        ];
-        $expectedStatusCode0 = Response::HTTP_OK;
+        $updateProductActionTestCases = (new ControllerTestCase())->updateProductActionTestCases();
 
-        return [
-            [$requestContent0, $expectedStatusCode0]
-        ];
+        return $updateProductActionTestCases;
     }
 
     /**
-     * @dataProvider getTestCreateProductActionDataProvider
+     * @dataProvider createProductActionDataProvider
      */
     public function testCreateProductAction($requestContent, $expectedStatusCode)
     {
@@ -149,22 +116,10 @@ class ProductControllerTest extends WebTestCase
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function getTestCreateProductActionDataProvider()
+    public function createProductActionDataProvider()
     {
-        $requestContent0 = [
-            'productCode' => 'P031',
-            'productName' => 'bottle',
-            'productDescription' => 'Good Product',
-            'quantity' => 12.0,
-            'pricePerUnit' => 15.0,
-            'stockAvialable' => 1,
-            'unit' => 'piece',
-            'status' => 1
-        ];
-        $expectedStatusCode0 = Response::HTTP_OK;
+        $createProductActionTestCases = (new ControllerTestCase())->createProductActionTestCases();
 
-        return [
-            [$requestContent0, $expectedStatusCode0]
-        ];
+        return $createProductActionTestCases;
     }
 }

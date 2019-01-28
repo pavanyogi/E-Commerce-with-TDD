@@ -1,29 +1,34 @@
 <?php
 
-namespace tests\AppBundle\Controller;
+namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use AppBundle\Entity\User;
 use AppBundle\Constants\GeneralConstants;
-use Symfony\Component\HttpFoundation\Response;
 
-class AgentControllerTest extends WebTestCase
+class AgentControllerTest extends BaseControllerTest
 {
-    private $client;
-
     protected function setUp()
     {
         parent::setUp();
-        $this->client = static::createClient();
     }
 
     protected function tearDown()
     {
+        $userRepo = $this->entityManager->getRepository(User::class);
+        $controllerTestCases = (new ControllerTestCase())->getLoginTestCases();
+        foreach ($controllerTestCases as $controllerTestCase) {
+            $user = $userRepo->findOneBy(['username' =>
+                $controllerTestCase['requestContent']['credentials']['username']]);
+            if($user) {
+                $user->setAuthenticationToken(null);
+            }
+        }
+        $this->entityManager->flush();
         parent::tearDown();
-        $this->client = null;
     }
 
     /**
-     * @dataProvider getLoginActionTestDataProvider
+     * @dataProvider loginActionTestDataProvider
      */
     public function testLoginAction($requestContent, $expectedStatusCode)
     {
@@ -38,22 +43,15 @@ class AgentControllerTest extends WebTestCase
         );
         $response = $this->client->getResponse();
         $this->assertEquals($expectedStatusCode, $response->getStatusCode());
-        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'), 'Invalid JSON response');
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'),
+            'Invalid JSON response');
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function getLoginActionTestDataProvider()
+    public function loginActionTestDataProvider()
     {
-        $requestContent = [];
-        $requestContent['credentials'] = [
-            'username' => 'superadmin',
-            'password' => '123'
-        ];
+        $loginActionTestCases = (new ControllerTestCase())->getLoginTestCases();
 
-        $expectedStatusCode = Response::HTTP_OK;
-
-        return [
-            [$requestContent, $expectedStatusCode]
-        ];
+        return $loginActionTestCases;
     }
 }
