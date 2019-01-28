@@ -9,310 +9,6 @@
     <list default="true" id="a6937c8d-ca2d-463c-a0fb-b988159a978b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.scannerwork/report-task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.scannerwork/report-task.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/activerules.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/analysis.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-112.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-113.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-115.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-125.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-134.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-62.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/changesets-96.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-1.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-109.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-110.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-112.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-113.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-114.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-115.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-117.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-122.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-123.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-124.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-125.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-126.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-128.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-129.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-131.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-133.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-134.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-136.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-25.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-26.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-27.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-48.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-49.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-52.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-54.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-58.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-61.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-62.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-64.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-81.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-96.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/component-98.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/context-props.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-110.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-112.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-113.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-115.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-122.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-123.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-125.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-128.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-131.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-134.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-25.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-26.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-49.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-62.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/coverages-96.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-110.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-122.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-128.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-131.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-49.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/duplications-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/issues-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-110.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-112.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-113.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-115.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-122.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-123.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-125.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-128.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-131.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-134.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-25.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-26.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-49.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-62.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/measures-96.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/metadata.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-103.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-108.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-110.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-111.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-112.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-113.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-115.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-116.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-118.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-119.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-120.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-121.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-122.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-123.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-125.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-127.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-128.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-130.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-131.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-132.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-134.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-135.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-25.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-26.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-47.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-49.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-51.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-53.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-55.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-56.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-57.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-59.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-60.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-62.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-80.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/source-96.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-110.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-112.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-113.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-115.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-122.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-123.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-125.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-128.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-131.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-134.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-49.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-62.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/symbols-96.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-103.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-108.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-110.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-111.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-112.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-113.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-115.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-116.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-118.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-119.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-120.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-121.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-122.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-123.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-125.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-127.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-128.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-130.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-131.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-132.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-134.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-135.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-25.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-26.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-47.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-49.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-51.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-53.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-55.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-56.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-57.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-59.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-60.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-62.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-80.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.scannerwork/scanner-report/syntax-highlightings-96.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sonar-project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sonar-project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Command/CreateAgentCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Command/CreateAgentCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Service/OrderService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Command/CreateAgentCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Command/CreateAgentCommandTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/CustomerControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/CustomerControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Repository/CustomerRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Repository/CustomerRepositoryTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Service/OrderServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Service/OrderServiceTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/AppBundle.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/AppBundle.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/Command/CreateAgentCommand.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Command/CreateAgentCommand.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/Command/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Command/dashboard.html" afterDir="false" />
@@ -356,7 +52,6 @@
       <change beforePath="$PROJECT_DIR$/tests/report/Service/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/Service/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/testdox.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/testdox.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/tests-clover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/tests-clover.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/report/tests-junit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/report/tests-junit.xml" afterDir="false" />
     </list>
@@ -398,6 +93,7 @@
         <counts>
           <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="2" />
@@ -412,7 +108,7 @@
           <entry key="project.open.time.74" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -490,8 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AppBundle/Command/CreateAgentCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
                 <element signature="e#6#117#0#PHP" expanded="true" />
               </folding>
@@ -502,7 +198,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="540">
               <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
             </state>
           </provider>
@@ -511,8 +207,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sonar-project.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            <state relative-caret-position="315">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -713,6 +409,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -740,13 +437,25 @@
               <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony_3.4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony_3.4" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="report" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -848,6 +557,7 @@
       <workItem from="1548247123947" duration="1731000" />
       <workItem from="1548308208540" duration="9864000" />
       <workItem from="1548323611363" duration="972000" />
+      <workItem from="1548653618882" duration="1026000" />
     </task>
     <servers />
   </component>
@@ -884,7 +594,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223157000" />
+    <option name="totallyTimeSpent" value="224183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -899,7 +609,7 @@
     <frame x="47" y="-4" width="1319" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27808326" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28279653" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1276,19 +986,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Command/CreateAgentCommandTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="e#6#117#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="540">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
@@ -1300,10 +1000,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Command/CreateAgentCommandTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="e#6#117#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sonar-project.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="315">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>

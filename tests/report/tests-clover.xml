@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1548323857">
-  <project timestamp="1548323857">
+<coverage generated="1548653920">
+  <project timestamp="1548653920">
     <package name="AppBundle">
       <file name="/var/www/html/TDD/symfony_3.4/src/AppBundle/AppBundle.php">
         <class name="AppBundle\AppBundle" namespace="AppBundle">
