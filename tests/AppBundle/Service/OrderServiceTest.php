@@ -8,10 +8,8 @@
 namespace Tests\AppBundle\Service;
 
 use AppBundle\Entity\Customer;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use AppBundle\Service\OrderService;
-use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Repository\CustomerRepository;
 use AppBundle\Repository\ProductRepository;
 use AppBundle\Entity\OrderDetail;
@@ -54,44 +52,16 @@ class OrderServiceTest extends BaseServiceTest
     /**
      * @dataProvider getPlaceOrderDataProvider
      */
-    public function testProcessPlaceOrderRequest($requestContent)
+    public function testProcessPlaceOrderRequest($requestContent, $customer, $products)
     {
-        $customer = new Customer();
-        $customer->setName($requestContent['customerDetails']['name'])
-            ->setPhoneNumber($requestContent['customerDetails']['phoneNumber']);
-
-        $this->customerRepositoryMock
-            ->expects($this->once())
-            ->method('findOneBy')
-            ->with(['phoneNumber' => $requestContent['customerDetails']['phoneNumber']])
-            ->willReturn($customer);
-
-        $fetchProductForOrderReturnedContent = [
-            [
-                'id' => 1,
-                'pricePerUnit' => 23,
-                'quantity' => 23,
-                'productCode' => 'P001'
-            ],
-            [
-                'id' => 2,
-                'pricePerUnit' => 23,
-                'quantity' => 23,
-                'productCode' => 'P002'
-            ]
-        ];
-
-        $this->productRepositoryMock
-            ->expects($this->once())
-            ->method('fetchProductForOrder')
-            ->with($requestContent['orderItems'])
-            ->willReturn($fetchProductForOrderReturnedContent);
-
         $this->entityManagerInterfaceMock->expects($this->any())
             ->method('getRepository')
-            ->with($this->anything())
+            ->with($this->logicalOr(
+                $this->equalTo('AppBundle:Customer'),
+                $this->equalTo('AppBundle:Product')
+            ))
             ->will($this->returnCallback(
-                function($entityName) use($requestContent, $fetchProductForOrderReturnedContent, $customer) {
+                function($entityName) use($requestContent, $products, $customer) {
 
                     if ($entityName === 'AppBundle:Customer') {
                         $this->customerRepositoryMock
@@ -108,7 +78,7 @@ class OrderServiceTest extends BaseServiceTest
                             ->expects($this->once())
                             ->method('fetchProductForOrder')
                             ->with($requestContent['orderItems'])
-                            ->willReturn($fetchProductForOrderReturnedContent);
+                            ->willReturn($products);
 
                         return $this->productRepositoryMock;
                     }
@@ -122,58 +92,32 @@ class OrderServiceTest extends BaseServiceTest
         $this->productRepositoryMock
             ->expects($this->once())
             ->method('lockProduct')
-            ->with(array_column($fetchProductForOrderReturnedContent, 'id'));
+            ->with(array_column($products, 'id'));
+
+        $this->entityManagerInterfaceMock
+            ->expects($this->exactly(3))
+            ->method('persist')
+            ->withConsecutive([$this->isInstanceOf(Orders::class)],
+                [$this->isInstanceOf(OrderDetail::class)],
+                [$this->isInstanceOf(OrderDetail::class)]);
 
         $this->entityManagerInterfaceMock
             ->expects($this->any())
             ->method('flush');
-
-        $orders = new Orders();
-        $orders->setAgentId(null);
-        $orders->setOrderId($this->orderService->generateOrderId());
-        $orders->setBookedDate(new \DateTime('now'));
-        $orders->setCustomerId($customer);
-
-        $orderDetail1 = new OrderDetail();
-        $orderDetail1->setPrice(23)
-            ->setQuantity(23)
-            ->setProductId(1)
-            ->setOrderId($orders);
-
-        $orderDetail2 = new OrderDetail();
-        $orderDetail2->setPrice(23)
-            ->setQuantity(23)
-            ->setProductId(2)
-            ->setOrderId($orders);
 
         $result = $this->orderService->processPlaceOrderRequest($requestContent);
         $this->assertNotNull($result);
     }
 
     public function getPlaceOrderDataProvider() {
-        $requestContent = [];
-        $requestContent['orderItems'] = [
-            'P001' => [
-                'productCode' => 'P001',
-                'quantity' => 2
-            ],
-            'P002' => [
-                'productCode' => 'P002',
-                'quantity' => 2
-            ]
-        ];
-        $requestContent['customerDetails'] = [
-            'name' => 'Prafulla Meher',
-            'phoneNumber' => '9777096808'
-        ];
+        $serviceTest = new ServiceTestCase();
+        $placeOrderTestCases = $serviceTest->getPlaceOrderTestCase();
 
-        return [
-            [$requestContent]
-        ];
+        return $placeOrderTestCases;
     }
 
     /**
-     * @dataProvider getValidatePlaceOrderDataProvider
+     * @dataProvider validatePlaceOrderDataProvider
      */
     public function testValidatePlaceOrderRequest($orderItemsInput, $orderItemsExpected)
     {
@@ -182,48 +126,15 @@ class OrderServiceTest extends BaseServiceTest
         $this->assertEquals($orderItemsExpected, $result);
     }
 
-    public function getValidatePlaceOrderDataProvider() {
-        $orderItemsInput = [];
-        $orderItemsInput['orderItems'] = [
-            [
-                'productCode' => 'P001',
-                'quantity' => 2
-            ],
-            [
-                'productCode' => 'P002',
-                'quantity' => 2
-            ]
-        ];
-        $orderItemsInput['customerDetails'] = [
-            'name' => 'Prafulla Meher',
-            'phoneNumber' => '9777096808',
-            'address' => 'Bhubaneswar',
-        ];
+    public function validatePlaceOrderDataProvider() {
+        $serviceTest = new ServiceTestCase();
+        $validateplaceOrderRequestTestCases = $serviceTest->validatePlaceOrderRequestTestCase();
 
-        $orderItemsExpected = [];
-        $orderItemsExpected['orderItems'] = [
-            'P001' => [
-                'productCode' => 'P001',
-                'quantity' => 2
-            ],
-            'P002' => [
-                'productCode' => 'P002',
-                'quantity' => 2
-            ]
-        ];
-        $orderItemsExpected['customerDetails'] = [
-            'name' => 'Prafulla Meher',
-            'phoneNumber' => '9777096808',
-            'address' => 'Bhubaneswar',
-        ];
-
-        return [
-            [$orderItemsInput, $orderItemsExpected]
-        ];
+        return $validateplaceOrderRequestTestCases;
     }
 
     /**
-     * @dataProvider getFetchOrCreateCustomerDataProvider
+     * @dataProvider fetchOrCreateCustomerDataProvider
      */
     public function testFetchOrCreateCustomer($customerDataInput, $customer, $expectedResult)
     {
@@ -253,22 +164,11 @@ class OrderServiceTest extends BaseServiceTest
         $this->assertEquals($result, $expectedResult);
     }
 
-    public function getFetchOrCreateCustomerDataProvider() {
-        $customerDataInput = [
-            'name' => 'Prafulla Meher',
-            'phoneNumber' => '9777096808',
-            'address' => 'Bhubaneswar',
-        ];
+    public function fetchOrCreateCustomerDataProvider() {
+        $serviceTest = new ServiceTestCase();
+        $fetchOrCreateCustomerTestCases = $serviceTest->fetchOrCreateCustomerTestCase();
 
-        $customer = new Customer();
-        $customer->setPhoneNumber($customerDataInput['phoneNumber']);
-        $customer->setName($customerDataInput['name']);
-        $expectedResult = $customer;
-
-        return [
-            [$customerDataInput, null, $expectedResult],
-            [$customerDataInput, $customer, $expectedResult]
-        ];
+        return $fetchOrCreateCustomerTestCases;
     }
 
 

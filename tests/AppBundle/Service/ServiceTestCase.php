@@ -524,7 +524,7 @@ class ServiceTestCase
             'name' => 'Test Name',
             'phoneNumber' => '9777096809'
         ];
-        $customers0 = $this->createObjectFromArray($updateParameter0,Customer::class, null);;
+        $customers0 = $this->createObjectFromArray($updateParameter0,Customer::class, null);
         $expectedMessage0 = [
             'status' => true,
             'message' => [
@@ -535,6 +535,105 @@ class ServiceTestCase
         // Making array of testcase and returning it
         return [
             [$id0, $updateParameter0, $customers0, $expectedMessage0]
+        ];
+    }
+
+    public function getPlaceOrderTestCase() {
+        // Making first test case
+        $requestContent0 = [];
+        // Here pass only two products, If you are changing number of products then you should also
+        // change the arguments passed to persist method also.
+        $requestContent0['orderItems'] = [
+            'P001' => [
+                'productCode' => 'P001',
+                'quantity' => 2
+            ],
+            'P002' => [
+                'productCode' => 'P002',
+                'quantity' => 2
+            ]
+        ];
+        $requestContent0['customerDetails'] = [
+            'name' => 'Prafulla Meher',
+            'phoneNumber' => '9777096808'
+        ];
+
+        $customer0 = $this->createObjectFromArray($requestContent0['customerDetails'],
+            Customer::class, null);
+
+        $products0 = [
+            [
+                'id' => 1,
+                'pricePerUnit' => 23,
+                'quantity' => 23,
+                'productCode' => 'P001'
+            ],
+            [
+                'id' => 2,
+                'pricePerUnit' => 23,
+                'quantity' => 23,
+                'productCode' => 'P002'
+            ]
+        ];
+
+        // Making array of testcases and returning it
+        return [
+            [$requestContent0, $customer0, $products0]
+        ];
+    }
+
+    public function validatePlaceOrderRequestTestCase() {
+        $orderItemsInput = [];
+        $orderItemsInput['orderItems'] = [
+            [
+                'productCode' => 'P001',
+                'quantity' => 2
+            ],
+            [
+                'productCode' => 'P002',
+                'quantity' => 2
+            ]
+        ];
+        $orderItemsInput['customerDetails'] = [
+            'name' => 'Prafulla Meher',
+            'phoneNumber' => '9777096808',
+            'address' => 'Bhubaneswar',
+        ];
+
+        $orderItemsExpected = [];
+        $orderItemsExpected['orderItems'] = [
+            'P001' => [
+                'productCode' => 'P001',
+                'quantity' => 2
+            ],
+            'P002' => [
+                'productCode' => 'P002',
+                'quantity' => 2
+            ]
+        ];
+        $orderItemsExpected['customerDetails'] = $orderItemsInput['customerDetails'];
+
+        return [
+            [$orderItemsInput, $orderItemsExpected]
+        ];
+    }
+
+    public function fetchOrCreateCustomerTestCase() {
+        $customerDataInput = [
+            'name' => 'Prafulla Meher',
+            'phoneNumber' => '9777096808',
+            'address' => 'Bhubaneswar',
+        ];
+
+        $customer = new Customer();
+        $customer->setPhoneNumber($customerDataInput['phoneNumber']);
+        $customer->setName($customerDataInput['name']);
+        $expectedResult = $customer;
+
+        // Making array of testcases and returning it.
+        return [
+            [$customerDataInput, null, $expectedResult],
+            [$customerDataInput, $customer, $expectedResult]
         ];
     }
 
