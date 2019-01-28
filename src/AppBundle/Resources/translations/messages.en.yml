@@ -16,11 +16,14 @@ api:
       invalid_authorization_token: Invalid Authorization Token.
       invalid_authorization_or_username: Invalid Authorization Token or User Name found.
       invalid_product_quantity: Limited amount of product with the given quantity present.
+      invalid_customer_id: Invalid Customer Id found in the request content.
 
     success:
       message: success
       product_created: Product Created Successfully.
       product_updated: Product Updated Successfully.
+      customer_created: Customer Created Successfully.
+      customer_updated: Customer Updated Successfully.
 
     failure:
       message: failure

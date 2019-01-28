@@ -1,21 +1,16 @@
 <?php
-namespace tests\AppBundle\Service;
+namespace Tests\AppBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
-use AppBundle\Entity\Customer;
 use AppBundle\Repository\CustomerRepository;
 use AppBundle\Service\CustomerService;
 use PHPUnit_Framework_MockObject_MockObject;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
-class CustomerServiceTest extends KernelTestCase
+class CustomerServiceTest extends BaseServiceTest
 {
     /** @var CustomerRepository|PHPUnit_Framework_MockObject_MockObject */
     private $customerRepositoryMock;
-    /** @var EntityManagerInterface|PHPUnit_Framework_MockObject_MockObject */
-    private $entityManagerInterfaceMock;
     /** @var CustomerService */
     private $customerService;
 
@@ -25,53 +20,52 @@ class CustomerServiceTest extends KernelTestCase
         $this->customerRepositoryMock = $this->getMockBuilder(CustomerRepository::class)
             ->disableOriginalConstructor()
             ->getMock();
-
         $this->entityManagerInterfaceMock = $this->getMockBuilder(EntityManagerInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $kernel = self::bootKernel();
-        $container = $kernel->getContainer();
         $this->customerService = new CustomerService();
-        $this->customerService->setServiceContainer($container->get('service_container'));
+        $this->customerService->setServiceContainer($this->serviceContainerMock);
         $this->customerService->setEntityManager($this->entityManagerInterfaceMock);
-        $this->customerService->setLogger($container->get('monolog.logger.exception'));
-        $this->customerService->setTranslator($container->get('translator.default'));
+        $this->customerService->setLogger($this->logger);
+        $this->customerService->setTranslator($this->translator);
     }
 
     protected function tearDown()
     {
         parent::tearDown();
         $this->customerRepositoryMock = null;
-        $this->entityManagerInterfaceMock = null;
         $this->customerService = null;
     }
 
-    public function testCreateOne()
+    /**
+     * @dataProvider createCustomerDataProvider
+     */
+    public function testCreateCustomer($customerData, $customer, $expectedMessage)
     {
-        $customer = new Customer();
-        $customer->setName('Name 1');
-        $customer->setPhoneNumber('9777096808');
-
         $this->entityManagerInterfaceMock
             ->expects($this->once())
             ->method('persist')
             ->with($customer);
-
         $this->entityManagerInterfaceMock
             ->expects($this->once())
             ->method('flush');
 
-        $result = $this->customerService->createOne(['name' => 'Name 1', 'phoneNumber' => '9777096808']);
-        $this->assertEquals($customer->getId(), $result);
-        $this->assertEquals($customer->getName(), 'Name 1');
-        $this->assertEquals($customer->getPhoneNumber(), '9777096808');
+        $result = $this->customerService->createCustomer($customerData);
+        $this->assertEquals($expectedMessage, $result);
+    }
+
+    public function createCustomerDataProvider() {
+        $serviceTest = new ServiceTestCase();
+        $createCustomerTestCases = $serviceTest->createCustomerTestCase();
+
+        return $createCustomerTestCases;
     }
 
     /**
      * @dataProvider getAllCustomerDataProvider
      */
-    public function testGetAll($customers, $expected)
+    public function testGetAllCustomer($customers, $expected)
     {
         $this->customerRepositoryMock
             ->expects($this->once())
@@ -83,39 +77,22 @@ class CustomerServiceTest extends KernelTestCase
             ->method('getRepository')
             ->willReturn($this->customerRepositoryMock);
 
-        $result = $this->customerService->getAll();
+        $result = $this->customerService->getAllCustomer();
         $this->assertEquals($expected, $result);
     }
 
     public function getAllCustomerDataProvider()
     {
-        $c0 = [];
-        $customers0 = [$c0];
+        $serviceTest = new ServiceTestCase();
+        $getAllCustomerTestCases = $serviceTest->getAllCustomerTestCase();
 
-        $c1 = new Customer();
-        $c1->setId(1);
-        $c1->setName('Name 1');
-        $c1->setPhoneNumber('9777096808');
-        $customers1 = [$c1];
-
-        $c2 = new Customer();
-        $c2->setId(2);
-        $c2->setName('Name 2');
-        $c2->setPhoneNumber('9348575256');
-        $customers2 = [$c1, $c2];
-
-        return [
-            [$customers0, $customers0],
-            [$customers1, $customers1],
-            [$customers2, $customers2]
-        ];
+        return $getAllCustomerTestCases;
     }
 
-
     /**
-     * @dataProvider getOneCustomerDataProvider
+     * @dataProvider getCustomerDetailDataProvider
      */
-    public function testGetOne($id, $customer, $expected)
+    public function testGetCustomerDetail($id, $customer, $expected)
     {
         $this->customerRepositoryMock
             ->expects($this->any())
@@ -128,148 +105,97 @@ class CustomerServiceTest extends KernelTestCase
             ->method('getRepository')
             ->willReturn($this->customerRepositoryMock);
 
-        $result = $this->customerService->getOne($id);
+        $result = $this->customerService->getCustomerDetail($id);
         $this->assertEquals($expected, $result);
     }
 
-    public function getOneCustomerDataProvider()
+    public function getCustomerDetailDataProvider()
     {
-        $id0 = 0;
-        $c0 = null;
-        $customers0 = $c0;
+        $serviceTest = new ServiceTestCase();
+        $getCustomerDetailTestCases = $serviceTest->getCustomerDetailTestCase();
 
-        $id1 = 1;
-        $c1 = new Customer();
-        $c1->setId($id1);
-        $c1->setName('Name 1');
-        $c1->setPhoneNumber('9777096808');
-        $customers1 = $c1;
-
-        return [
-            [$id0, $customers0, $c0],
-            [$id1, $customers1, $c1],
-        ];
-    }
-
-    public function testUpdateOneShouldThrowExceptionForInvalidCustomerId()
-    {
-        $id = 666;
-
-        $this->customerRepositoryMock
-            ->expects($this->once())
-            ->method('findOneById')
-            ->with($id)
-            ->willReturn(null);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('getRepository')
-            ->willReturn($this->customerRepositoryMock);
-
-        $this->expectException(UnprocessableEntityHttpException::class);
-        $this->expectExceptionMessage(sprintf('Customer with id [%s] not found', $id));
-
-        $this->customerService->updateOne(['name' => 'New Name 1', 'phoneNumber' => '9777097809'], $id);
+        return $getCustomerDetailTestCases;
     }
 
     /**
-     * @dataProvider getUpdateOneCustomerDataProvider
+     * @dataProvider getCustomerDetailInvalidCustomerIdDataProvider
      */
-    public function testUpdateOne($id, $customer)
+    public function testGetCustomerDetailThrowExceptionForInvalidCustomerId($id, $customer)
+    {
+        $this->customerRepositoryMock
+            ->expects($this->any())
+            ->method('findOneById')
+            ->with($id)
+            ->willReturn($customer);
+
+        $this->entityManagerInterfaceMock
+            ->expects($this->any())
+            ->method('getRepository')
+            ->willReturn($this->customerRepositoryMock);
+        $this->expectException(UnprocessableEntityHttpException::class);
+        $this->customerService->getCustomerDetail($id);
+    }
+
+    public function getCustomerDetailInvalidCustomerIdDataProvider() {
+        $serviceTest = new ServiceTestCase();
+        $getCustomerDetailInvalidCustomerIdTestCases = $serviceTest->getCustomerDetailInvalidCustomerIdTestCase();
+
+        return $getCustomerDetailInvalidCustomerIdTestCases;
+    }
+
+    /**
+     * @dataProvider updateCustomerInvalidCustomerIdDataProvider
+     */
+    public function testUpdateCustomerShouldThrowExceptionForInvalidCustomerId($id, $updateParameter, $customer)
     {
         $this->customerRepositoryMock
             ->expects($this->once())
             ->method('findOneById')
             ->with($id)
             ->willReturn($customer);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('getRepository')
-            ->willReturn($this->customerRepositoryMock);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('flush');
-
-        $this->customerService->updateOne(['name' => 'New Name 1', 'phoneNumber' => '9777096809'], $id);
-
-        $this->assertEquals($customer->getName(), 'New Name 1');
-        $this->assertEquals($customer->getPhoneNumber(), '9777096809');
-    }
-
-    public function getUpdateOneCustomerDataProvider()
-    {
-        $customer = new Customer();
-        $customer->setId(1);
-        $customer->setName('Name 1');
-        $customer->setPhoneNumber('9777096809');
-
-        return [
-            [1, $customer],
-        ];
-    }
-
-    public function testDeleteOneShouldThrowExceptionForInvalidCustomerId()
-    {
-        $id = 666;
-
-        $this->customerRepositoryMock
-            ->expects($this->once())
-            ->method('findOneById')
-            ->with($id)
-            ->willReturn(null);
-
         $this->entityManagerInterfaceMock
             ->expects($this->once())
             ->method('getRepository')
             ->willReturn($this->customerRepositoryMock);
 
         $this->expectException(UnprocessableEntityHttpException::class);
-        $this->expectExceptionMessage(sprintf('Customer with id [%s] not found', $id));
-
-        $this->customerService->deleteOne($id);
+        $this->customerService->updateCustomerDetails($updateParameter, $id);
     }
 
+    public function updateCustomerInvalidCustomerIdDataProvider() {
+        $serviceTest = new ServiceTestCase();
+        $updateCustomerInvalidCustomerIdTestCases = $serviceTest->updateCustomerInvalidCustomerIdTestCase();
 
+        return $updateCustomerInvalidCustomerIdTestCases;
+    }
 
     /**
-     * @dataProvider getRemoveOneCustomerDataProvider
+     * @dataProvider updateCustomerDetailDataProvider
      */
-    public function testDeleteOne($id, $customer)
+    public function testUpdateOne($id, $updateParameter, $customer, $expectedMessage)
     {
         $this->customerRepositoryMock
             ->expects($this->once())
             ->method('findOneById')
             ->with($id)
             ->willReturn($customer);
-
         $this->entityManagerInterfaceMock
             ->expects($this->once())
             ->method('getRepository')
             ->willReturn($this->customerRepositoryMock);
-
-        $this->entityManagerInterfaceMock
-            ->expects($this->once())
-            ->method('remove')
-            ->with($customer);
-
         $this->entityManagerInterfaceMock
             ->expects($this->once())
             ->method('flush');
 
-        $this->customerService->deleteOne($id);
+        $result = $this->customerService->updateCustomerDetails($updateParameter, $id);
+        $this->assertEquals($result, $expectedMessage);
     }
 
-    public function getRemoveOneCustomerDataProvider()
+    public function updateCustomerDetailDataProvider()
     {
-        $customer = new Customer();
-        $customer->setId(1);
-        $customer->setName('Name 1');
-        $customer->setPhoneNumber('9777096808');
+        $serviceTest = new ServiceTestCase();
+        $updateCustomerDetailTestCases = $serviceTest->updateCustomerDetailTestCase();
 
-        return [
-            [1, $customer],
-        ];
+        return $updateCustomerDetailTestCases;
     }
 }

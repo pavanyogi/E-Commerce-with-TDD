@@ -2,7 +2,6 @@
 namespace AppBundle\Service;
 
 use AppBundle\Entity\Product;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use SensioLabs\Security\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 use AppBundle\Constants\ErrorConstants;

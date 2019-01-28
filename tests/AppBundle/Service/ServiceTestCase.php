@@ -7,6 +7,7 @@
  */
 namespace Tests\AppBundle\Service;
 
+use AppBundle\Entity\Customer;
 use AppBundle\Entity\Product;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use AppBundle\Entity\User;
@@ -404,6 +405,137 @@ class ServiceTestCase
         ];
 
         return $testCases;
+    }
+
+    public function createCustomerTestCase() {
+        // Making first Test case
+        $testData0['customerData'] = [
+            'name' => 'Test Name',
+            'phoneNumber' => '9777096808'
+        ];
+        $testData0['customer'] = $this->createObjectFromArray($testData0['customerData'],
+            Customer::class, null);
+        $testData0['expextedResult'] = [
+            'status' => true,
+            'message' => [
+                'response' => 'Customer Created Successfully.'
+            ]
+        ];
+
+        // Making the array of testcases and returning it
+        $testCases = [
+            $testData0
+        ];
+
+        return $testCases;
+    }
+
+    public function getAllCustomerTestCase() {
+        $c0 = [];
+        $customers0 = [$c0];
+        $expectedResult0 = [
+            'status' => true,
+            'message' => [
+                'response' => [
+                    'customers' => $customers0
+                ]
+            ]
+        ];
+
+        $c1 = $this->createObjectFromArray(['name' => 'Test Name 1', 'phoneNumber' => '9777096808'],
+            Customer::class, null);
+        $customers1 = [$c1];
+        $expectedResult1 = [
+            'status' => true,
+            'message' => [
+                'response' => [
+                    'customers' => $customers1
+                ]
+            ]
+        ];
+
+        $c2 = $this->createObjectFromArray(['name' => 'Test Name 2', 'phoneNumber' => '9348575256'],
+            Customer::class, null);
+        $customers2 = [$c1, $c2];
+        $expectedResult2 = [
+            'status' => true,
+            'message' => [
+                'response' => [
+                    'customers' => $customers2
+                ]
+            ]
+        ];
+
+        return [
+            [$customers0, $expectedResult0],
+            [$customers1, $expectedResult1],
+            [$customers2, $expectedResult2]
+        ];
+    }
+
+    public function getCustomerDetailTestCase() {
+        // Making 1st Test case
+        $id0 = 1;
+        $customers0 = $this->createObjectFromArray(['name' => 'Test Name', 'phoneNumber' => '9777096808'],
+            Customer::class, null);
+        $expectedResult0 = [
+            'status' => true,
+            'message' => [
+                'response' => $customers0
+            ]
+        ];
+
+        // Making array of testcase and returning it
+        return [
+            [$id0, $customers0, $expectedResult0],
+        ];
+    }
+
+    public function getCustomerDetailInvalidCustomerIdTestCase() {
+        // Making first Test case
+        $id0 = 0;
+        $customers0 = null;
+
+        // Making array of testcase and returning it
+        return [
+            [$id0, $customers0]
+        ];
+    }
+
+    public function updateCustomerInvalidCustomerIdTestCase() {
+        // Making first Test case
+        $id0 = 0;
+        $updateParameter0 = [
+            'name' => 'Test Name',
+            'phoneNumber' => '9777097809'
+        ];
+        $customers0 = null;
+
+        // Making array of testcase and returning it
+        return [
+            [$id0, $updateParameter0, $customers0]
+        ];
+    }
+
+    public function updateCustomerDetailTestCase() {
+        // Making first Test case
+        $id0 = 0;
+        $updateParameter0 = [
+            'name' => 'Test Name',
+            'phoneNumber' => '9777096809'
+        ];
+        $customers0 = $this->createObjectFromArray($updateParameter0,Customer::class, null);;
+        $expectedMessage0 = [
+            'status' => true,
+            'message' => [
+                'response' => 'Customer Updated Successfully.'
+            ]
+        ];
+
+        // Making array of testcase and returning it
+        return [
+            [$id0, $updateParameter0, $customers0, $expectedMessage0]
+        ];
     }
 
     /**

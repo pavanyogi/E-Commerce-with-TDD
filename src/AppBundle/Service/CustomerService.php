@@ -2,66 +2,87 @@
 namespace AppBundle\Service;
 
 use AppBundle\Entity\Customer;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use AppBundle\Constants\ErrorConstants;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
 class CustomerService extends BaseService
 {
-    public function getAll()
+    public function getAllCustomer()
     {
+        $processResult['status'] = false;
         try {
-            return $this->entityManager->getRepository(Customer::class)->findAll();
+            $customers = $this->entityManager->getRepository(Customer::class)->findAll();
+            $processResult['message']['response'] = [
+                'customers' => $customers
+            ];
+            $processResult['status'] = true;
         } catch (\Exception $ex) {
             $this->logger->error('Get Customer could not be processed due to Error : '.
                 $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
         }
+
+        return $processResult;
     }
 
-    public function getOne($id)
+    public function getCustomerDetail($id)
     {
+        $processResult['status'] = false;
         try {
-            return $this->entityManager->getRepository(Customer::class)->findOneById($id);
+            $customer = $this->entityManager->getRepository(Customer::class)->findOneById($id);
+            if(!$customer) {
+                throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CUSTOMER_ID);
+            }
+
+            $processResult['message']['response'] = $customer;
+            $processResult['status'] = true;
+        } catch (UnprocessableEntityHttpException $ex) {
+            throw $ex;
         } catch (\Exception $ex) {
-            $this->logger->error('Get single Customer Data function could not be processed due to Error : '.
-                $ex->getMessage());
+            $this->logger->error(__FUNCTION__.' Function failed due to Error :'. $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
         }
+
+        return $processResult;
     }
 
-    public function createOne(array $customerData)
+    public function createCustomer($customerData)
     {
+        $processResult['status'] = false;
         try {
             $customer = new Customer();
-            $customer->setName($customerData['name']);
-            $customer->setPhoneNumber($customerData['phoneNumber']);
+            $customer->setName($customerData['name'])
+                ->setPhoneNumber($customerData['phoneNumber']);
 
             $this->entityManager->persist($customer);
             $this->entityManager->flush();
+            $processResult['status'] = true;
+            $processResult['message']['response'] = $this->getTranslator()
+                ->trans('api.response.success.customer_created');
         } catch (\Exception $ex) {
-            $this->logger->error('Fetch/Create Customer could not be processed due to Error : '.
+            $this->logger->error('Create Customer could not be processed due to Error : '.
             $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
         }
 
-        return $customer->getId();
+        return $processResult;
     }
 
-    public function updateOne(array $customerData, $id)
+    public function updateCustomerDetails($customerData, $id)
     {
+        $processResult['status'] = false;
         try {
             $customer = $this->entityManager->getRepository(Customer::class)->findOneById($id);
-            if (!$customer instanceof Customer) {
-                throw new UnprocessableEntityHttpException(sprintf('Customer with id [%s] not found', $id));
+            if (!$customer) {
+                throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CUSTOMER_ID);
             }
-
             $customer->setName($customerData['name']);
             $customer->setPhoneNumber($customerData['phoneNumber']);
 
             $this->entityManager->flush();
-
+            $processResult['status'] = true;
+            $processResult['message']['response'] = $this->translator->trans('api.response.success.customer_updated');
         } catch (UnprocessableEntityHttpException $ex) {
             throw $ex;
         } catch (\Exception $ex) {
@@ -69,25 +90,7 @@ class CustomerService extends BaseService
             $ex->getMessage());
             throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
         }
-    }
 
-    public function deleteOne($id)
-    {
-        try {
-            $customer = $this->entityManager->getRepository(Customer::class)->findOneById($id);
-            if (!$customer instanceof Customer) {
-                throw new UnprocessableEntityHttpException(sprintf('Customer with id [%s] not found', $id));
-            }
-
-            $this->entityManager->remove($customer);
-            $this->entityManager->flush();
-
-        } catch (UnprocessableEntityHttpException $ex) {
-            throw $ex;
-        } catch (\Exception $ex) {
-            $this->logger->error('Update Customer could not be processed due to Error : '.
-            $ex->getMessage());
-            throw new HttpException(500, ErrorConstants::INTERNAL_ERR);
-        }
+        return $processResult;
     }
 }

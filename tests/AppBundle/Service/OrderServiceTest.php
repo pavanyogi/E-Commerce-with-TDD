@@ -5,7 +5,7 @@
  *  @category Service
  *  @author Ashish Kumar
  */
-namespace tests\AppBundle\Service;
+namespace Tests\AppBundle\Service;
 
 use AppBundle\Entity\Customer;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -17,10 +17,8 @@ use AppBundle\Repository\ProductRepository;
 use AppBundle\Entity\OrderDetail;
 use AppBundle\Entity\Orders;
 
-class OrderServiceTest extends KernelTestCase
+class OrderServiceTest extends BaseServiceTest
 {
-    /** @var EntityManagerInterface|PHPUnit_Framework_MockObject_MockObject */
-    private $entityManagerInterfaceMock;
     /** @var CustomerRepository|PHPUnit_Framework_MockObject_MockObject */
     private $customerRepositoryMock;
     /** @var ProductRepository|PHPUnit_Framework_MockObject_MockObject */
@@ -34,28 +32,22 @@ class OrderServiceTest extends KernelTestCase
         $this->customerRepositoryMock = $this->getMockBuilder(CustomerRepository::class)
             ->disableOriginalConstructor()
             ->getMock();
-
-        $this->entityManagerInterfaceMock = $this->getMockBuilder(EntityManagerInterface::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
         $this->productRepositoryMock = $this->getMockBuilder(ProductRepository::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $kernel = self::bootKernel();
-        $container = $kernel->getContainer();
         $this->orderService = new OrderService();
-        $this->orderService->setServiceContainer($container->get('service_container'));
+        $this->orderService->setServiceContainer($this->serviceContainerMock);
         $this->orderService->setEntityManager($this->entityManagerInterfaceMock);
-        $this->orderService->setLogger($container->get('monolog.logger.exception'));
-        $this->orderService->setTranslator($container->get('translator.default'));
+        $this->orderService->setLogger($this->logger);
+        $this->orderService->setTranslator($this->translator);
     }
 
     protected function tearDown()
     {
         parent::tearDown();
-        $this->entityManagerInterfaceMock = null;
+        $this->customerRepositoryMock = null;
+        $this->productRepositoryMock = null;
         $this->orderService = null;
     }
 
