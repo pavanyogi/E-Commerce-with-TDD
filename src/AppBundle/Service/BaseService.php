@@ -4,7 +4,7 @@
  *  This Service class should be extended as parent Service to the custom Application Service.
  *
  *  @category Service
- *  @author Ashish Kumar<ashish.k@mindfiresolutions.com>
+ *  @author Prafulla Meher<prafulla.m@mindfiresolutions.com>
  */
 
 namespace AppBundle\Service;
