@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\AppBundle\EventListener;
+namespace Tests\AppBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
@@ -8,31 +8,93 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use AppBundle\EventListener\RequestListener;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Tests\AppBundle\Service\BaseServiceTest;
+use AppBundle\Service\AuthenticateAuthorizeService;
 
-class RequestListenerTest extends KernelTestCase
+class RequestListenerTest extends BaseServiceTest
 {
-    /**
-     * @expectedException \Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException
-     */
-    public function testListenerThrowsWhenMasterRequestHasInconsistentClientIps()
+    /** @var RequestListener */
+    private $requestListener;
+
+    protected function setUp()
     {
-        $dispatcher = new EventDispatcher();
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        parent::setUp();
+        $container = self::$kernel->getContainer();
+        $this->requestListener = new RequestListener($container->get('monolog.logger.api'));
+        $this->requestListener->setServiceContainer($this->serviceContainerMock);
+        $this->requestListener->setEntityManager($this->entityManagerInterfaceMock);
+        $this->requestListener->setLogger($this->logger);
+        $this->requestListener->setTranslator($this->translator);
+    }
+
+    protected function tearDown()
+    {
+        parent::tearDown();
+        $this->requestListener = null;
+    }
+
+    /**
+     * @dataProvider requestListenerDataProvider
+     */
+    public function testRequestListener($httpMethod, $requestType, $routeName, $routeParameter, $userName, $roles)
+    {
+        // Making a mock object of kernel
+        $kernel = $this->getMockBuilder(HttpKernelInterface::class)->getMock();
+
+        // Configuring the request
         $request = new Request();
-        $request->setTrustedProxies(array('1.1.1.1'));
-        $request->server->set('REMOTE_ADDR', '1.1.1.1');
-        $request->headers->set('FORWARDED', 'for=2.2.2.2');
-        $request->headers->set('X_FORWARDED_FOR', '3.3.3.3');
-        $container = (self::bootKernel())->getContainer();
-        $requestListener = new RequestListener();
-        $requestListener->setServiceContainer($container->get('service_container'));
-        $requestListener->setEntityManager($container->get('doctrine')->getManager());
-        $requestListener->setLogger($container->get('monolog.logger.exception'));
-        $requestListener->setTranslator($container->get('translator.default'));
-        $dispatcher->addListener(KernelEvents::REQUEST, array($requestListener,
+        $request->setMethod($httpMethod);
+        $request->attributes->set('_route', $routeName);
+        if($httpMethod === Request::METHOD_GET) {
+            $request->request->set('data', $routeParameter);
+        }
+
+        $apiAutheticateAuthorizeServiceMock = $this->getMockBuilder(AuthenticateAuthorizeService::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $authenticateResult = [
+            'message' => [
+                'username' => $userName,
+                'roles' => $roles
+            ],
+            'status' => true
+        ];
+
+        // Making mock of the authenticateApiRequest
+        $apiAutheticateAuthorizeServiceMock
+            ->expects($this->any())
+            ->method('authenticateApiRequest')
+            ->with($request)
+            ->willReturn($authenticateResult);
+
+        $this->serviceContainerMock->expects($this->any())
+            ->method('get')
+            ->with('app.authenticate_autherize_service')
+            ->willReturn($apiAutheticateAuthorizeServiceMock);
+
+        // Disaptchning the event
+        $dispatcher = new EventDispatcher();
+        $dispatcher->addListener(KernelEvents::REQUEST, array($this->requestListener,
             'onKernelRequest'));
-        $event = new GetResponseEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new GetResponseEvent($kernel, $request, $requestType);
         $dispatcher->dispatch(KernelEvents::REQUEST, $event);
+
+        // Making assertion
+        if($httpMethod !== Request::METHOD_OPTIONS &&
+            $requestType !== HttpKernelInterface::SUB_REQUEST &&
+            $routeName !== 'agent_login') {
+            $this->assertEquals($userName, $request->attributes->get('username'));
+            $this->assertEquals(explode(",", $roles), $request->attributes->get('roles'));
+        } else {
+            $this->assertTrue(TRUE);
+        }
+    }
+
+    public function requestListenerDataProvider() {
+        $eventListenerTest = new EventListenerTestCase();
+        $requestListenerTestCase = $eventListenerTest->requestListenerTestCase();
+
+        return $requestListenerTestCase;
     }
 }

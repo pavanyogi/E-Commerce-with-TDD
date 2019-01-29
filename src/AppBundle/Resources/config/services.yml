@@ -21,6 +21,7 @@ services:
   app.listener.request:
     class: AppBundle\EventListener\RequestListener
     parent: app.base_service
+    arguments: ["@monolog.logger.api"]
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
     public: true
@@ -28,6 +29,7 @@ services:
   app.listener.response:
     class: AppBundle\EventListener\ResponseListener
     parent: app.base_service
+    arguments: ["@monolog.logger.api"]
     tags:
       - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
     public: true
@@ -44,6 +46,11 @@ services:
 
   app.order_service:
     class: AppBundle\Service\OrderService
+    parent: app.base_service
+    public: true
+
+  app.authenticate_autherize_service:
+    class: AppBundle\Service\AuthenticateAuthorizeService
     parent: app.base_service
     public: true
 

@@ -111,7 +111,13 @@ monolog:
             level: error
             channels: [exception]
             formatter: api_formatter
-    channels: [exception]
+        api:
+            type: stream
+            path: "%kernel.logs_dir%/apiRequest.log"
+            level: debug
+            channels: [api]
+            formatter: api_formatter
+    channels: [exception, api]
 
 fos_user:
     db_driver: orm

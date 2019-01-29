@@ -13,7 +13,7 @@ use AppBundle\Constants\ErrorConstants;
 class AgentController extends Controller
 {
     /**
-     * @Route("/agent/login", name="agent_list", methods={"POST", "OPTIONS"})
+     * @Route("/agent/login", name="agent_login", methods={"POST", "OPTIONS"})
      */
     public function loginAction(Request $request)
     {

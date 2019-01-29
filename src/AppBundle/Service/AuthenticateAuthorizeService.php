@@ -4,13 +4,11 @@
  *  Related tasks.
  *
  *  @category Service
- *  @author Ashish Kumar
+ *  @author Prafulla Meher<prafulla.m@mindfiresolutions.com>
  */
 namespace AppBundle\Service;
 
-use AppBundle\Entity\User;
 use AppBundle\Constants\ErrorConstants;
-use AppBundle\Constants\GeneralConstants;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;

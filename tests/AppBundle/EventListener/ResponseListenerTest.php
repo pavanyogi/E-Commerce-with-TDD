@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\AppBundle\EventListener;
+namespace Tests\AppBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,35 +9,67 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use AppBundle\EventListener\ResponseListener;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Tests\AppBundle\Service\BaseServiceTest;
 
-class ResponseListenerTest extends KernelTestCase
+class ResponseListenerTest extends BaseServiceTest
 {
-    private $dispatcher;
-    private $kernelMock;
+    /** @var ResponseListener */
+    private $responseListener;
 
-    protected function setUp() {
-        $this->dispatcher = new EventDispatcher();
-        $container = (self::bootKernel())->getContainer();
-        $responseListener = new ResponseListener();
-        $responseListener->setServiceContainer($container->get('service_container'));
-        $responseListener->setEntityManager($container->get('doctrine')->getManager());
-        $responseListener->setLogger($container->get('monolog.logger.exception'));
-        $responseListener->setTranslator($container->get('translator.default'));
-        $this->dispatcher->addListener(KernelEvents::RESPONSE, array($responseListener, 'onKernelResponse'));
-        $this->kernelMock = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+    protected function setUp()
+    {
+        parent::setUp();
+        $container = self::$kernel->getContainer();
+        $this->responseListener = new ResponseListener($container->get('monolog.logger.api'));
+        $this->responseListener->setServiceContainer($this->serviceContainerMock);
+        $this->responseListener->setEntityManager($this->entityManagerInterfaceMock);
+        $this->responseListener->setLogger($this->logger);
+        $this->responseListener->setTranslator($this->translator);
     }
 
-    protected function tearDown() {
-        $this->dispatcher = null;
-        $this->kernelMock = null;
+    protected function tearDown()
+    {
+        parent::tearDown();
+        $this->responseListener = null;
     }
 
-    public function testFilterDoesNothingForSubRequests() {
+    /**
+     * @dataProvider responseListenerDataProvider
+     */
+    public function testResponseListener($requsetType) {
+        // Mocking the kernel
+        $kernel = $this->getMockBuilder(HttpKernelInterface::class)->getMock();
+
+        // Creating the response
         $response = new Response('foo');
-        $event = new FilterResponseEvent($this->kernelMock, new Request(), HttpKernelInterface::SUB_REQUEST,
+
+        // Creating the request
+        $request = new Request();
+
+        // Dispatching the event
+        $event = new FilterResponseEvent($kernel, $request, $requsetType,
             $response);
-        $this->dispatcher->dispatch(KernelEvents::RESPONSE, $event);
+        $dispatcher = new EventDispatcher();
+        $dispatcher->addListener(KernelEvents::RESPONSE, array($this->responseListener, 'onKernelResponse'));
+        $dispatcher->dispatch(KernelEvents::RESPONSE, $event);
         $this->assertEquals('', $event->getResponse()->headers->get('content-type'));
+    }
+
+    public function responseListenerDataProvider() {
+        // Making first test case (Does Nothing For SubRequests)
+        $testData0 = [
+            $requestType = HttpKernelInterface::SUB_REQUEST
+        ];
+
+        // Making second test case
+        $testData1 = [
+            $requestType = HttpKernelInterface::MASTER_REQUEST
+        ];
+
+        // Making array of testcase and returning it
+        return [
+            $testData0,
+            $testData1
+        ];
     }
 }
