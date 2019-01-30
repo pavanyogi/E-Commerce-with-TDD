@@ -26,8 +26,12 @@ class OrderControllerTest extends BaseControllerTest
             GeneralConstants::PLACE_ORDER_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json',
-                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();

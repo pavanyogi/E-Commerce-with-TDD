@@ -60,4 +60,32 @@ class ApiResponseService extends BaseService
             ]
         ];
     }
+
+    /**
+     *  Function to create API Error Response.
+     *
+     * @param string $errorCode
+     * @param string $transactionId (default = null)
+     *
+     * @return array
+     */
+    public function createApiErrorResponse($errorCode, $transactionId = null)
+    {
+        $response = [
+            'Response' => [
+                'reasonCode' => '1',
+                'reasonText' => $this->translator->trans('api.response.failure.message'),
+                'error' => [
+                    'code' => ErrorConstants::$errorCodeMap[$errorCode]['code'],
+                    'text' => $this->translator
+                        ->trans(ErrorConstants::$errorCodeMap[$errorCode]['message'])
+                ],
+            ]
+        ];
+
+        if (!empty($transactionId)) {
+            $response['transactionId'] = $transactionId;
+        }
+        return $response;
+    }
 }

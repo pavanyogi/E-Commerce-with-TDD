@@ -10,19 +10,5 @@ namespace AppBundle\Repository;
  */
 class CustomerRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAll()
-    {
-        return $this->createQueryBuilder('c')
-            ->getQuery()
-            ->getArrayResult();
-    }
 
-    public function findOneById($id)
-    {
-        return $this->createQueryBuilder('c')
-            ->where('c.id = :id')
-            ->setParameter('id', $id)
-            ->getQuery()
-            ->getOneOrNullResult();
-    }
 }

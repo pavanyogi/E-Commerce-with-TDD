@@ -115,7 +115,7 @@ class ControllerTestCase
 
     public function getCustomerDetailActionTestCases() {
         $requestContent = [
-            'id' => 1
+            'phoneNumber' => '9777096808'
         ];
 
         return [

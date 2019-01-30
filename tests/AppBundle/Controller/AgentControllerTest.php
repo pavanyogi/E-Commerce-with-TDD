@@ -37,8 +37,12 @@ class AgentControllerTest extends BaseControllerTest
             GeneralConstants::LOGIN_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json',
-                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'Content-Type' => 'application/json',
+                'Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();

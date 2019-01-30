@@ -56,20 +56,9 @@ class ResponseListenerTest extends BaseServiceTest
     }
 
     public function responseListenerDataProvider() {
-        // Making first test case (Does Nothing For SubRequests)
-        $testData0 = [
-            $requestType = HttpKernelInterface::SUB_REQUEST
-        ];
+        $eventListenerTest = new EventListenerTestCase();
+        $responseListenerTestCase = $eventListenerTest->responseListenerTestCase();
 
-        // Making second test case
-        $testData1 = [
-            $requestType = HttpKernelInterface::MASTER_REQUEST
-        ];
-
-        // Making array of testcase and returning it
-        return [
-            $testData0,
-            $testData1
-        ];
+        return $responseListenerTestCase;
     }
 }

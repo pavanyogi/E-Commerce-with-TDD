@@ -34,6 +34,13 @@ services:
       - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
     public: true
 
+  app.exception_listener:
+    class: AppBundle\EventListener\ExceptionListener
+    parent: app.base_service
+    tags:
+    - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+    public: true
+
   app.api_response_service:
     class: AppBundle\Service\ApiResponseService
     parent: app.base_service

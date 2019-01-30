@@ -155,7 +155,8 @@ class ServiceTestCase
         $testData0['expectedResult'] = [
             'status' => 1,
             'message' => [
-                'username' => 'testAuthenticationAuthorization'
+                'username' => 'testAuthenticationAuthorization',
+                'roles' => ['ROLE_USER']
             ]
         ];
         $testCases = [
@@ -474,7 +475,7 @@ class ServiceTestCase
 
     public function getCustomerDetailTestCase() {
         // Making 1st Test case
-        $id0 = 1;
+        $phoneNumber0 = '9777096808';
         $customers0 = $this->createObjectFromArray(['name' => 'Test Name', 'phoneNumber' => '9777096808'],
             Customer::class, null);
         $expectedResult0 = [
@@ -486,24 +487,24 @@ class ServiceTestCase
 
         // Making array of testcase and returning it
         return [
-            [$id0, $customers0, $expectedResult0],
+            [$phoneNumber0, $customers0, $expectedResult0],
         ];
     }
 
     public function getCustomerDetailInvalidCustomerIdTestCase() {
         // Making first Test case
-        $id0 = 0;
+        $phoneNumber0 = 0;
         $customers0 = null;
 
         // Making array of testcase and returning it
         return [
-            [$id0, $customers0]
+            [$phoneNumber0, $customers0]
         ];
     }
 
     public function updateCustomerInvalidCustomerIdTestCase() {
         // Making first Test case
-        $id0 = 0;
+        $phoneNumber0 = 0;
         $updateParameter0 = [
             'name' => 'Test Name',
             'phoneNumber' => '9777097809'
@@ -512,13 +513,13 @@ class ServiceTestCase
 
         // Making array of testcase and returning it
         return [
-            [$id0, $updateParameter0, $customers0]
+            [$phoneNumber0, $updateParameter0, $customers0]
         ];
     }
 
     public function updateCustomerDetailTestCase() {
         // Making first Test case
-        $id0 = 0;
+        $phoneNumber0 = '9777096809';
         $updateParameter0 = [
             'name' => 'Test Name',
             'phoneNumber' => '9777096809'
@@ -533,7 +534,7 @@ class ServiceTestCase
 
         // Making array of testcase and returning it
         return [
-            [$id0, $updateParameter0, $customers0, $expectedMessage0]
+            [$phoneNumber0, $updateParameter0, $customers0, $expectedMessage0]
         ];
     }
 

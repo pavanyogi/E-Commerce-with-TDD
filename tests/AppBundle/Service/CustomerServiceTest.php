@@ -92,12 +92,12 @@ class CustomerServiceTest extends BaseServiceTest
     /**
      * @dataProvider getCustomerDetailDataProvider
      */
-    public function testGetCustomerDetail($id, $customer, $expected)
+    public function testGetCustomerDetail($phoneNumber, $customer, $expected)
     {
         $this->customerRepositoryMock
             ->expects($this->any())
-            ->method('findOneById')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['phoneNumber' => $phoneNumber])
             ->willReturn($customer);
 
         $this->entityManagerInterfaceMock
@@ -105,7 +105,7 @@ class CustomerServiceTest extends BaseServiceTest
             ->method('getRepository')
             ->willReturn($this->customerRepositoryMock);
 
-        $result = $this->customerService->getCustomerDetail($id);
+        $result = $this->customerService->getCustomerDetail($phoneNumber);
         $this->assertEquals($expected, $result);
     }
 
@@ -120,12 +120,12 @@ class CustomerServiceTest extends BaseServiceTest
     /**
      * @dataProvider getCustomerDetailInvalidCustomerIdDataProvider
      */
-    public function testGetCustomerDetailThrowExceptionForInvalidCustomerId($id, $customer)
+    public function testGetCustomerDetailThrowExceptionForInvalidCustomerId($phoneNumber, $customer)
     {
         $this->customerRepositoryMock
             ->expects($this->any())
-            ->method('findOneById')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['phoneNumber' => $phoneNumber])
             ->willReturn($customer);
 
         $this->entityManagerInterfaceMock
@@ -133,7 +133,7 @@ class CustomerServiceTest extends BaseServiceTest
             ->method('getRepository')
             ->willReturn($this->customerRepositoryMock);
         $this->expectException(UnprocessableEntityHttpException::class);
-        $this->customerService->getCustomerDetail($id);
+        $this->customerService->getCustomerDetail($phoneNumber);
     }
 
     public function getCustomerDetailInvalidCustomerIdDataProvider() {
@@ -146,12 +146,12 @@ class CustomerServiceTest extends BaseServiceTest
     /**
      * @dataProvider updateCustomerInvalidCustomerIdDataProvider
      */
-    public function testUpdateCustomerShouldThrowExceptionForInvalidCustomerId($id, $updateParameter, $customer)
+    public function testUpdateCustomerShouldThrowExceptionForInvalidCustomerId($phoneNumber, $updateParameter, $customer)
     {
         $this->customerRepositoryMock
             ->expects($this->once())
-            ->method('findOneById')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['phoneNumber' => $phoneNumber])
             ->willReturn($customer);
         $this->entityManagerInterfaceMock
             ->expects($this->once())
@@ -159,7 +159,7 @@ class CustomerServiceTest extends BaseServiceTest
             ->willReturn($this->customerRepositoryMock);
 
         $this->expectException(UnprocessableEntityHttpException::class);
-        $this->customerService->updateCustomerDetails($updateParameter, $id);
+        $this->customerService->updateCustomerDetails($updateParameter, $phoneNumber);
     }
 
     public function updateCustomerInvalidCustomerIdDataProvider() {
@@ -172,12 +172,12 @@ class CustomerServiceTest extends BaseServiceTest
     /**
      * @dataProvider updateCustomerDetailDataProvider
      */
-    public function testUpdateOne($id, $updateParameter, $customer, $expectedMessage)
+    public function testUpdateOne($phoneNumber, $updateParameter, $customer, $expectedMessage)
     {
         $this->customerRepositoryMock
             ->expects($this->once())
-            ->method('findOneById')
-            ->with($id)
+            ->method('findOneBy')
+            ->with(['phoneNumber' => $phoneNumber])
             ->willReturn($customer);
         $this->entityManagerInterfaceMock
             ->expects($this->once())
@@ -187,7 +187,7 @@ class CustomerServiceTest extends BaseServiceTest
             ->expects($this->once())
             ->method('flush');
 
-        $result = $this->customerService->updateCustomerDetails($updateParameter, $id);
+        $result = $this->customerService->updateCustomerDetails($updateParameter, $phoneNumber);
         $this->assertEquals($result, $expectedMessage);
     }
 

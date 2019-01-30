@@ -24,8 +24,12 @@ class CustomerControllerTest extends BaseControllerTest
             GeneralConstants::GET_CUSTOMER_LIST_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json',
-                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             []
         );
         $response = $this->client->getResponse();
@@ -44,8 +48,12 @@ class CustomerControllerTest extends BaseControllerTest
             GeneralConstants::GET_CUSTOMER_DETAIL_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json',
-                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();
@@ -70,8 +78,12 @@ class CustomerControllerTest extends BaseControllerTest
             GeneralConstants::CREATE_CUSTOMER_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json',
-                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();

@@ -26,11 +26,11 @@ class CustomerService extends BaseService
         return $processResult;
     }
 
-    public function getCustomerDetail($id)
+    public function getCustomerDetail($phoneNumber)
     {
         $processResult['status'] = false;
         try {
-            $customer = $this->entityManager->getRepository(Customer::class)->findOneById($id);
+            $customer = $this->entityManager->getRepository(Customer::class)->findOneBy(['phoneNumber' => $phoneNumber]);
             if(!$customer) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CUSTOMER_ID);
             }
@@ -69,11 +69,12 @@ class CustomerService extends BaseService
         return $processResult;
     }
 
-    public function updateCustomerDetails($customerData, $id)
+    public function updateCustomerDetails($customerData, $phoneNumber)
     {
         $processResult['status'] = false;
         try {
-            $customer = $this->entityManager->getRepository(Customer::class)->findOneById($id);
+            $customer = $this->entityManager->getRepository(Customer::class)
+                ->findOneBy(['phoneNumber' => $phoneNumber]);
             if (!$customer) {
                 throw new UnprocessableEntityHttpException(ErrorConstants::INVALID_CUSTOMER_ID);
             }

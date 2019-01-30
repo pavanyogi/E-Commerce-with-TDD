@@ -26,20 +26,11 @@ class AuthenticateAuthorizeService extends BaseService
     {
         $authenticateResult['status'] = false;
         try {
-            // Validating Content-Type in Request.
-            $contentType = $request->headers->get('Content-Type');
-            if ($request->getMethod() === Request::METHOD_POST
-                && 'application/json' !== $contentType
-            ) {
-                throw new UnauthorizedHttpException(null, ErrorConstants::INVALID_CONTENT_TYPE);
-            }
-
             // Checking Authorization Key for validating Token.
             $authorization = $request->headers->get('Authorization');
             if (strlen($authorization) !== 14) {
                 throw new UnauthorizedHttpException(null, ErrorConstants::INVALID_AUTHORIZATION);
             }
-
             $userName = $request->headers->get('username');
             $userManager = $this->serviceContainer->get('fos_user.user_manager');
             $user = $userManager->findUserByUsername($userName);
@@ -49,8 +40,10 @@ class AuthenticateAuthorizeService extends BaseService
             if(!$user->isEnabled()) {
                 throw new UnauthorizedHttpException(null, ErrorConstants::DISABLEDUSER);
             }
-
-            $authenticateResult['message']['username'] = $request->headers->get('username');
+            $authenticateResult['message'] = [
+                'username' => $request->headers->get('username'),
+                'roles' => $user->getRoles()
+            ];
             $authenticateResult['status'] = true;
         } catch (UnauthorizedHttpException $ex) {
             throw $ex;

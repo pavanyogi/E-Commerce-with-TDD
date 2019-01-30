@@ -37,7 +37,6 @@ class OrderController extends Controller
                 ->createOrderApiSuccessResponse('BookOrderResponse',
                     $processResult['message']['response']);
         } catch (\Exception $ex) {
-            print_r($ex->getMessage()); die();
             $logger->error(__FUNCTION__ . 'Function failed due to error : '.
                 $ex->getMessage());
             // Throwing Internal Server Error Response In case of Unknown Errors.

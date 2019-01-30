@@ -87,8 +87,7 @@ class OrderService extends BaseService
 
             if (!$customer) {
                 $customer = new Customer();
-                $customer->setPhoneNumber($customerDetails['phoneNumber']);
-                $customer->setName($customerDetails['name']);
+                $customer->setPhoneNumber($customerDetails['phoneNumber'])->setName($customerDetails['name']);
                 $this->entityManager->persist($customer);
                 $this->entityManager->flush();
             }

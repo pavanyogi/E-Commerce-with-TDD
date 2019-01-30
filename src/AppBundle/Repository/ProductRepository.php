@@ -2,7 +2,6 @@
 
 namespace AppBundle\Repository;
 
-use Doctrine\ORM\ORMException;
 use Doctrine\ORM\QueryBuilder;
 use AppBundle\Constants\GeneralConstants;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
@@ -152,6 +151,9 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
             $qb->andWhere('p.stockAvialable = :stockAvialable');
             $params['stockAvialable'] = $filter['stockAvialable'];
         }
+
+        $qb->andWhere('p.status = :productStatus');
+        $params['productStatus'] = GeneralConstants::$productStatusMap[GeneralConstants::PRODUCT_STATUS_ACTIVE];
 
         // Setting the Parameters.
         $qb->setParameters($params);

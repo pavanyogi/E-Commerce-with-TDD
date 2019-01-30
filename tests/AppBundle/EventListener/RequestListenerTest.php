@@ -85,7 +85,6 @@ class RequestListenerTest extends BaseServiceTest
             $requestType !== HttpKernelInterface::SUB_REQUEST &&
             $routeName !== 'agent_login') {
             $this->assertEquals($userName, $request->attributes->get('username'));
-            $this->assertEquals(explode(",", $roles), $request->attributes->get('roles'));
         } else {
             $this->assertTrue(TRUE);
         }

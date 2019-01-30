@@ -3,7 +3,7 @@
 namespace Tests\AppBundle\Controller;
 
 use AppBundle\Constants\GeneralConstants;
-use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Entity\Product;
 
 class ProductControllerTest extends BaseControllerTest
 {
@@ -15,6 +15,15 @@ class ProductControllerTest extends BaseControllerTest
 
     protected function tearDown()
     {
+        $createProductActionTestCases = (new ControllerTestCase())->createProductActionTestCases();
+        $productRepo = $this->entityManager->getRepository(Product::class);
+        foreach ($createProductActionTestCases as $value) {
+            $product = $productRepo->findOneBy(['productCode' => $value['requestContent']['productCode']]);
+            if($product) {
+                $this->entityManager->remove($product);
+            }
+        }
+        $this->entityManager->flush();
         parent::tearDown();
     }
 
@@ -28,8 +37,12 @@ class ProductControllerTest extends BaseControllerTest
             GeneralConstants::GET_PRODUCT_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json',
-                'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            array(
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ),
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();
@@ -55,7 +68,12 @@ class ProductControllerTest extends BaseControllerTest
             GeneralConstants::DETAIL_PRODUCT_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json', 'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();
@@ -81,7 +99,12 @@ class ProductControllerTest extends BaseControllerTest
             GeneralConstants::UPDATE_PRODUCT_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json', 'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_Content-Type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();
@@ -107,7 +130,12 @@ class ProductControllerTest extends BaseControllerTest
             GeneralConstants::CREATE_PRODUCT_URL,
             array(),
             array(),
-            ['Content-Type' => 'application/json', 'Date' => new \DateTime('now', new \DateTimeZone('UTC'))],
+            [
+                'HTTP_content-type' => 'application/json',
+                'HTTP_Date' => new \DateTime('now', new \DateTimeZone('UTC')),
+                'HTTP_username' => 'testuser',
+                'HTTP_Authorization' => 'qwertyuiopasdf'
+            ],
             json_encode($requestContent)
         );
         $response = $this->client->getResponse();

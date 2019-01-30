@@ -76,7 +76,7 @@ class RequestListener extends BaseService
         // Checking API Request Authentication.
         $authResult = $authService->authenticateApiRequest($request);
         $request->attributes->set('username', $authResult['message']['username']);
-        $request->attributes->set('roles', explode(",", $authResult['message']['roles']));
+        $request->attributes->set('roles', $authResult['message']['roles']);
     }
 
     /**

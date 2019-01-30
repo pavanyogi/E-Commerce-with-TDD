@@ -17,6 +17,9 @@ api:
       invalid_authorization_or_username: Invalid Authorization Token or User Name found.
       invalid_product_quantity: Limited amount of product with the given quantity present.
       invalid_customer_id: Invalid Customer Id found in the request content.
+      resource_not_found: The resource request could not be found on the server.
+      request_method_not_allowed: This operation is not allowed on the requested url.
+      request_timed_out: The request has timed out, i.e. request was not received within expected time interval by server.
 
     success:
       message: success

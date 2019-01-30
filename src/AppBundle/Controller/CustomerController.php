@@ -52,7 +52,7 @@ class CustomerController extends Controller
             // Process the request and fetch the list of products
             $customers = $this->container
                 ->get('app.service.customer')
-                ->getCustomerDetail($content['id']);
+                ->getCustomerDetail($content['phoneNumber']);
 
             // Creating the final array response.
             $response = $this->container
